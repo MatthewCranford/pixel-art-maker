@@ -10,18 +10,27 @@ $(document).ready(function() {
     })
     
     // Select size input
-    var height = $("#inputHeight").val();
-    var weight = $("#inputWeight").val();
- 
+   
     // When size is submitted by the user, call makeGrid()
     $("#sizePicker").submit(function(event) {
+        $("#pixelCanvas").empty();
+        var height = $("#inputHeight").val();
+        var width = $("#inputWidth").val();
         event.preventDefault();
-        console.log(height,weight);
-        makeGrid();
+        makeGrid(height,width);
     })
-    function makeGrid() {
+    function makeGrid(row,data) {
     // Your code goes here!
-    
+    console.log(typeof row);
+    console.log(row);
+    for(var i = 0; i < row; i++) {
+        $("#pixelCanvas").append("<tr></tr>");
+        console.log(i);
+        for(var j = 0; j < data; j++) {
+            $("tr").last().append("<td></td>"); 
+        }
+    }
+
     }
     
 });
