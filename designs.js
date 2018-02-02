@@ -43,9 +43,14 @@ $(document).ready(function() {
         isMouseDown = false;
         console.log(isMouseDown);
     });
+    
+    $("#pixelCanvas").on("mousedown","td", function() {
+        $(this).css("background-color",color);
+    });
 
-    $("#pixelCanvas").on("mouseenter","td",function() {
+    $("#pixelCanvas").on("mouseenter","td",function(event) {
         console.log("!");
+        event.preventDefault();
         if(isMouseDown) {
             $(this).css("background-color",color);
         }
