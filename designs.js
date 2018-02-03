@@ -12,27 +12,35 @@ $(document).ready(function() {
     // Select size input
    
     // When size is submitted by the user, call makeGrid()
-    $("#sizePicker").submit(function(event) {
-        $("#pixelCanvas").empty();
+    $("#create-btn").click(function(event) {
         var height = $("#inputHeight").val();
         var width = $("#inputWidth").val();
         event.preventDefault();
         makeGrid(height,width);
-    })
+    });
+
+    $("#clear-btn").click(function(event) {
+        $("#pixelCanvas").empty();
+        event.preventDefault();
+    });
+
     function makeGrid(row,data) {
         // Your code goes here!
+        
         console.log(typeof row);
         console.log(row);
-        for(var i = 0; i < row; i++) {
+        for(var i = $("#pixelCanvas tr").length; i < row; i++) {
             $("#pixelCanvas").append("<tr></tr>");
             console.log(i);
-            for(var j = 0; j < data; j++) {
+        }
+        for(var i = 0; i < row; i++) {
+            for(var j = $("#pixelCanvas tr td").length; j < data; j++) {
                 $("tr").last().append("<td></td>"); 
             }
-        }
-                
+        }            
     }
-    console.log(isMouseDown);
+
+
     var isMouseDown = false;
 
     $("body").mousedown(function() {
