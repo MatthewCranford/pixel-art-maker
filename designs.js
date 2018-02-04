@@ -16,7 +16,17 @@ $(document).ready(function() {
         var height = $("#inputHeight").val();
         var width = $("#inputWidth").val();
         event.preventDefault();
-        makeGrid(height,width);
+        if ($("#pixelCanvas tr").length < 1) {
+            makeGrid(height,width);
+        }
+        else if ($("#pixelCanvas tr").length < height) {
+            console.log("working!");
+            addHeight(height,width);
+        }
+        else if ($("#pixelCanvas tr td").length < width) {
+            addWidth(width);
+        }
+        
     });
 
     $("#clear-btn").click(function(event) {
@@ -24,20 +34,30 @@ $(document).ready(function() {
         event.preventDefault();
     });
 
-    function makeGrid(row,data) {
+    function makeGrid(height,width) {
         // Your code goes here!
-        
-        console.log(typeof row);
-        console.log(row);
-        for(var i = $("#pixelCanvas tr").length; i < row; i++) {
+
+        for(var i = 0; i < height; i++) {
             $("#pixelCanvas").append("<tr></tr>");
-            console.log(i);
-        }
-        for(var i = 0; i < row; i++) {
-            for(var j = $("#pixelCanvas tr td").length; j < data; j++) {
+            for(var j = 0; j < width; j++) {
                 $("tr").last().append("<td></td>"); 
             }
         }            
+    }
+
+    function addHeight(height,width) {
+        for(var i = $("#pixelCanvas tr").length; i < height; i++) {
+            $("#pixelCanvas").append("<tr></tr>");
+            for(var j = 0; j < width; j++) {
+                $("tr").last().append("<td></td>"); 
+            }
+        }
+    }
+
+    function addWidth(width) {
+        for(var i = $("#pixelCanvas tr").length; i < width; i++) {
+            $("#pixelCanvas").append("<tr></tr>");
+        }
     }
 
 
