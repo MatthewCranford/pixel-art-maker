@@ -24,7 +24,7 @@ $(document).ready(function() {
             addHeight(height,width);
         }
         else if ($("#pixelCanvas tr td").length < width) {
-            addWidth(width);
+            addWidth(height,width);
         }
         
     });
@@ -54,9 +54,12 @@ $(document).ready(function() {
         }
     }
 
-    function addWidth(width) {
-        for(var i = $("#pixelCanvas tr").length; i < width; i++) {
-            $("#pixelCanvas").append("<tr></tr>");
+    function addWidth(height,width) {
+        for(var i = 0; i < height; i++) {
+            console.log("working");
+            for(var j = $("#pixelCanvas tr td").length; j < width; j++) {
+                $("tr").last().append("<td></td>"); 
+            }
         }
     }
 
