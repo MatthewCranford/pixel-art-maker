@@ -55,7 +55,9 @@ $(document).ready(function() {
     }
 
     function addWidth(height,width) {
-        for(var i = 0; i < height; i++) {
+        for($("#pixelCanvas tr").each(function () {
+            
+        })) {
             console.log("working");
             for(var j = $("#pixelCanvas tr td").length; j < width; j++) {
                 $("tr").last().append("<td></td>"); 
