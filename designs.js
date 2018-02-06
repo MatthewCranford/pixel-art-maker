@@ -1,5 +1,11 @@
 $(document).ready(function() {
 
+	var height,width;
+
+
+
+
+
 	// Select color input
 	var color = $("#colorPicker").val()
 	console.log(color);
@@ -13,12 +19,12 @@ $(document).ready(function() {
 
 	// When size is submitted by the user, call makeGrid()
 	$("#create-btn").click(function(event) {
-		var height = $("#inputHeight").val();
-		var width = $("#inputWidth").val();
+		height = $("#inputHeight").val();
+		width = $("#inputWidth").val();
 		event.preventDefault();
-		if ($("#pixelCanvas tr").length < 1) {
+	
 			makeGrid(height,width);
-		}
+
 		// else if ($("#pixelCanvas tr").length < height) {
 		// 	console.log("Calling addHeight");
 		// 	addHeight(height,width);
@@ -37,13 +43,18 @@ $(document).ready(function() {
 
 	function makeGrid(height,width) {
 		// Your code goes here!
+		$("#pixelCanvas").empty();
 
 		for(var i = 0; i < height; i++) {
 			$("#pixelCanvas").append("<tr></tr>");
-			for(var j = 0; j < width; j++) {
+			for(var j =0; j < width; j++) {
 				$("tr").last().append("<td></td>");
 			}
 		}
+
+	
+
+		
 	}
 
 	// function addHeight(height,width) {
@@ -72,11 +83,11 @@ $(document).ready(function() {
 
 	$("body").mousedown(function() {
 		isMouseDown = true;
-		console.log(isMouseDown)
+		// console.log(isMouseDown)
 	})
 	.mouseup(function() {
 		isMouseDown = false;
-		console.log(isMouseDown);
+		// console.log(isMouseDown);
 	});
 
 	$("#pixelCanvas").on("mousedown","td", function() {
@@ -84,7 +95,7 @@ $(document).ready(function() {
 	});
 
 	$("#pixelCanvas").on("mouseenter","td",function(event) {
-		console.log("!");
+		// console.log("!");
 		event.preventDefault();
 		if(isMouseDown) {
 			$(this).css("background-color",color);
