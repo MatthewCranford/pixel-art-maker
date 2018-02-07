@@ -7,11 +7,11 @@ $(document).ready(function() {
 
 
 	// Select color input
-	var color = $("#colorPicker").val()
+	var color = $("#color-picker").val()
 	console.log(color);
 
-	$("#colorPicker").change(function() {
-		color = $("#colorPicker").val();
+	$("#color-picker").change(function() {
+		color = $("#color-picker").val();
 		console.log(color);
 	})
 
@@ -19,17 +19,17 @@ $(document).ready(function() {
 
 	// When size is submitted by the user, call makeGrid()
 	$("#create-btn").click(function(event) {
-		height = $("#inputHeight").val();
-		width = $("#inputWidth").val();
+		height = $("#input-height").val();
+		width = $("#input-width").val();
 		event.preventDefault();
 	
 			makeGrid(height,width);
 
-		// else if ($("#pixelCanvas tr").length < height) {
+		// else if ($("#pixel-canvas tr").length < height) {
 		// 	console.log("Calling addHeight");
 		// 	addHeight(height,width);
 		// }
-		// else if ($("#pixelCanvas tr td").length < width) {
+		// else if ($("#pixel-canvas tr td").length < width) {
 		// 	console.log("Calling addWidth");
 		// 	addWidth(height,width);
 		// }
@@ -37,16 +37,16 @@ $(document).ready(function() {
 	});
 
 	$("#clear-btn").click(function(event) {
-		$("#pixelCanvas").empty();
+		$("#pixel-canvas").empty();
 		event.preventDefault();
 	});
 
 	function makeGrid(height,width) {
 		// Your code goes here!
-		$("#pixelCanvas").empty();
+		$("#pixel-canvas").empty();
 
 		for(var i = 0; i < height; i++) {
-			$("#pixelCanvas").append("<tr></tr>");
+			$("#pixel-canvas").append("<tr></tr>");
 			for(var j =0; j < width; j++) {
 				$("tr").last().append("<td></td>");
 			}
@@ -58,8 +58,8 @@ $(document).ready(function() {
 	}
 
 	// function addHeight(height,width) {
-	// 	for(var i = $("#pixelCanvas tr").length; i < height; i++) {
-	// 	  $("#pixelCanvas").append("<tr></tr>");
+	// 	for(var i = $("#pixel-canvas tr").length; i < height; i++) {
+	// 	  $("#pixel-canvas").append("<tr></tr>");
 	// 	  for(var j = 0; j < width; j++) {
 	// 			$("tr").last().append("<td></td>");
 	// 	  }
@@ -67,8 +67,8 @@ $(document).ready(function() {
 	// }
 
 	// function addWidth(height,width) {
-	// 	// for(var i = $("#pixelCanvas tr").length; i < height; i++) {
-	// 	// 	for(var j = $("#pixelCanvas tr td").length; j < width; j++) {
+	// 	// for(var i = $("#pixel-canvas tr").length; i < height; i++) {
+	// 	// 	for(var j = $("#pixel-canvas tr td").length; j < width; j++) {
 			
 	// 			$("tr").each(function() {
 	// 				$(this).append("<td></td>");
@@ -90,16 +90,45 @@ $(document).ready(function() {
 		// console.log(isMouseDown);
 	});
 
-	$("#pixelCanvas").on("mousedown","td", function() {
+	$("#pixel-canvas").on("mousedown","td", function() {
 		$(this).css("background-color",color);
 	});
 
-	$("#pixelCanvas").on("mouseenter","td",function(event) {
+	$("#pixel-canvas").on("mouseenter","td",function(event) {
 		// console.log("!");
 		event.preventDefault();
 		if(isMouseDown) {
 			$(this).css("background-color",color);
 		}
 	});
+
+	$("#height-add-btn").click(function() {
+		var counter = $("#input-height").val();
+		counter++
+		$("#input-height").val(counter);
+	});
+
+	$("#height-minus-btn").click(function() {
+		var counter = $("#input-height").val();
+		if (counter > 1) {
+			counter--
+			$("#input-height").val(counter);
+		} 
+	});
+
+	$("#width-add-btn").click(function() {
+		var counter = $("#input-width").val();
+		counter++
+		$("#input-width").val(counter);
+	});
+
+	$("#width-minus-btn").click(function() {
+		var counter = $("#input-width").val();
+		if (counter > 1) {
+			counter--
+			$("#input-width").val(counter);
+		} 
+	});
+
 
 });

@@ -1,32 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Pixel Art Maker!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="styles.css">
     <script src="designs.js"></script>
-    
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 </head>
 <body>
+    <div id="modal"></div>
     <h1>Pixel Art Maker</h1>
-    <div class="interface-container">
+    <div id="interface-container">
         <h2>Choose Grid Size</h2>
-        <form id="sizePicker">
-        <span>Grid Height:</span>
-        <input type="number" id="inputHeight" name="height" min="1" value="1">
-        <span>Grid Width:</span>
-        <input type="number" id="inputWidth" name="width" min="1" value="1">
-        <input id="create-btn" type="submit" value="Make Grid">
-        <!-- <input type="submit" value="Clear"> -->
+        <form id="size-picker">
+            <div id="height-container">
+                <span class="input-title">Grid Height:</span>
+                <input class="input-box" type="text" id="input-height" name="height" min="1" value="1">
+                <div class="btn-col">
+                    <span id="height-minus-btn"><i class="fas fa-minus"></i></span>
+                    <span id="height-add-btn"><i class="fas fa-plus"></i></span>
+                    
+                </div>
+            
+                
+            </div>
+            <div id="width-container">
+                <span class="input-title">Grid Width:</span>
+                <input class="input-box" type="text" id="input-width" name="width" min="1" value="1">
+                <div class="btn-col">
+                    <span id="width-minus-btn"><i class="fas fa-minus"></i></span>
+                    <span id="width-add-btn"><i class="fas fa-plus"></i></span>
+                    
+                    
+                </div>
+            
+            </div>
+            <input id="create-btn" type="submit" value="Make Grid">
+            <!-- <input type="submit" value="Clear"> -->
         </form>
         <h2>Pick A Color</h2>
-        <input type="color" id="colorPicker">
+        <input type="color" id="color-picker">
     </div>
     
 
     <h2>Design Canvas</h2>
-    <table id="pixelCanvas">
+    <table id="pixel-canvas">
 
     </table>
 

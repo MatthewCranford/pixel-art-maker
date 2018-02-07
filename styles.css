@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+
+/* =============
+    Elements
+================*/
+
 body {
     text-align: center;
 }
 
 h1 {
-    font-family: Monoton;
-    font-size: 70px;
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
     margin: 0.2em;
 }
 
@@ -39,6 +46,66 @@ input[type=number] {
     width: 6em;
 }
 
-.interface-container {
+/* =============
+    Classes
+================*/
+
+.btn-col {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    align-content: flex-end;
+    margin-left: 1rem;
+    flex-basis: 0%;
+}
+
+.input-box {
+    width: 60px;
+    text-align: center;
+    border: 2px solid;
+    padding: 3px;
+    font-size: 1.2rem;
+ 
+}
+
+.input-title {
+    width: 120px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* =============
+    IDs
+================*/
+
+
+
+#interface-container {
     background-color: #cac8d8;
+    width: 80%;
+    margin: auto;
+    border-radius: 5px;
+    padding: .5rem 0 1rem;
+}
+
+#height-container {
+    margin: 2rem 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#width-container {
+    margin: 2rem 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#create-btn {
+    border-radius: 5px;
+    background-color: white;
+    border: 2px solid;
+    padding: 5px;
+    font-weight: 900; 
+    margin: 1rem 0 0 0;
 }
