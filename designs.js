@@ -4,8 +4,6 @@ $(document).ready(function() {
 
 
 
-
-
 	// Select color input
 	var color = $("#color-picker").val()
 	console.log(color);
@@ -15,24 +13,17 @@ $(document).ready(function() {
 		console.log(color);
 	})
 
-	// Select size input
+	
 
 	// When size is submitted by the user, call makeGrid()
 	$("#create-btn").click(function(event) {
+		// Select size input
 		height = $("#input-height").val();
 		width = $("#input-width").val();
 		event.preventDefault();
 	
-			makeGrid(height,width);
-
-		// else if ($("#pixel-canvas tr").length < height) {
-		// 	console.log("Calling addHeight");
-		// 	addHeight(height,width);
-		// }
-		// else if ($("#pixel-canvas tr td").length < width) {
-		// 	console.log("Calling addWidth");
-		// 	addWidth(height,width);
-		// }
+		makeGrid(height,width);
+	
 
 	});
 
@@ -43,19 +34,25 @@ $(document).ready(function() {
 
 	function makeGrid(height,width) {
 		// Your code goes here!
-		$("#pixel-canvas").empty();
 
+		$("#pixel-canvas").append("<tr></tr>");
 		for(var i = 0; i < height; i++) {
-			$("#pixel-canvas").append("<tr></tr>");
+		
 			for(var j =0; j < width; j++) {
 				$("tr").last().append("<td></td>");
 			}
+			$("#pixel-canvas").append("<tr></tr>");
 		}
 
 	
 
-		
+		$("#modal-mask").css("display", "block");
 	}
+
+	$("#close").click(function() {
+		$("#modal-mask").css("display", "none");
+		$("#pixel-canvas").empty();
+	});
 
 	// function addHeight(height,width) {
 	// 	for(var i = $("#pixel-canvas tr").length; i < height; i++) {
