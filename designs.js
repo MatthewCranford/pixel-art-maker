@@ -25,8 +25,8 @@ $(document).ready(function() {
 		$("#modal-mask").css("display", "block");
 	}
 
-	// modal close btn
-	$("#close-btn").click(function() {
+	// close modal
+	$("#modal-close-btn").click(function() {
 		$("#modal-mask").css("display", "none");
 		$("#pixel-canvas").empty();
 	});

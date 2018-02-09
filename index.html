@@ -14,53 +14,44 @@
 <body>
     <div id="modal-mask"> 
         <div id="modal-content">
-            <span id="close-btn">&times;</span>
+            <span id="modal-close-btn">&times;</span>
             <h2>Design Canvas</h2>
-            <div id="paint-container">
-                <i id="paint-icon" class="fas fa-paint-brush"></i>
-                <input id="color-picker" type="color">
+            
+            <div id="canvas-toolbar">
+                <i id="clear-icon" class="far fa-file"></i>
+                <div id="paint-container">
+                    <i id="paint-icon" class="fas fa-paint-brush"></i>
+                    <input id="color-picker" type="color">
+                </div>
             </div>
-            <p>Change Color by Clicking Paint Brush!</p>
+            
+            <!-- <p>Change Color by Clicking Paint Brush!</p> -->
             <table id="pixel-canvas">
             </table>
         </div>
     </div>
-
     <h1>Pixel Art Maker</h1>
     <div id="interface-container">
         <h2>Choose Grid Size</h2>
         <form id="size-picker">
-            <div id="height-container">
-                <span class="input-title">Grid Height:</span>
-                <input class="input-box" type="text" id="input-height" name="height" min="1" value="10">
-                <div class="btn-col">
+            <div class="interface-input-container">
+                <span class="interface-input-title">Grid Height:</span>
+                <input class="interface-input" type="text" id="input-height" name="height" min="1" value="10">
+                <div class="interface-btn-col">
                     <span id="height-minus-btn"><i class="fas fa-minus"></i></span>
                     <span id="height-add-btn"><i class="fas fa-plus"></i></span>
-                    
-                </div>
-            
-                
+                </div>    
             </div>
-            <div id="width-container">
-                <span class="input-title">Grid Width:</span>
-                <input class="input-box" type="text" id="input-width" name="width" min="1" value="10">
-                <div class="btn-col">
+            <div class="interface-input-container" >
+                <span class="interface-input-title">Grid Width:</span>
+                <input class="interface-input" type="text" id="input-width" name="width" min="1" value="10">
+                <div class="interface-btn-col">
                     <span id="width-minus-btn"><i class="fas fa-minus"></i></span>
-                    <span id="width-add-btn"><i class="fas fa-plus"></i></span>
-                    
-                    
+                    <span id="width-add-btn"><i class="fas fa-plus"></i></span> 
                 </div>
-            
             </div>
             <input id="create-btn" type="submit" value="Create Grid">
-            <!-- <input type="submit" value="Clear"> -->
         </form>
-        
-    </div>
-    
-
-    
-   
-    
+    </div> 
 </body>
 </html>
