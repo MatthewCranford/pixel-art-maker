@@ -10,6 +10,7 @@ $(document).ready(function() {
 
 	$("#color-picker").change(function() {
 		color = $("#color-picker").val();
+		$("#paint-icon").css("color", color);
 		console.log(color);
 	})
 

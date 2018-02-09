@@ -118,19 +118,35 @@ input[type=number] {
     
 }
 
+#modal-bar {
+    display: inline-block;
+}
+
+#paint-container {
+    display: inline;
+    position: relative;
+}
+
 #paint-icon  {
-    font-size: 3.5
+    
+    font-size: 2rem;
+   
 
 }
 
 #color-picker {
     text-align: start;
     border-radius: 100%;
-    width: 20px;
+    position: absolute;
+    left: 0;
+    top: 10;
+    width: 100%;
+    opacity: 0;
+    height: 30px;
 }
 
 #pixel-canvas {
-    border: solid 12px #1b140d;
+    border: solid 12px #27190c;
     
 }
 
