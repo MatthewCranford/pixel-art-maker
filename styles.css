@@ -99,7 +99,6 @@ input[type=number] {
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
-    
     border: 2px solid #202020;
     width: 80%;
     min-height: 50%;
@@ -114,8 +113,7 @@ input[type=number] {
     position: absolute;
     right: 30px;
     top: 20px;
-    
-    
+    cursor: pointer;
 }
 
 #modal-bar {
@@ -128,10 +126,7 @@ input[type=number] {
 }
 
 #paint-icon  {
-    
     font-size: 2rem;
-   
-
 }
 
 #color-picker {
