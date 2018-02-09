@@ -6,7 +6,10 @@
 ================*/
 
 body {
+
     text-align: center;
+   
+    
 }
 
 h1 {
@@ -92,21 +95,27 @@ input[type=number] {
 }
 
 #modal-content {
-    background-color: #a78d71;
+    background-image: url("https://drive.google.com/uc?id=1cpnYG8TeAh76LS65mPJOA0FVLFbWefE_");
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: auto;
-    padding: 20px;
+    
     border: 2px solid #202020;
     width: 80%;
+    min-height: 50%;
+    position: relative;
 }
-
-
 
 #close {
     color: #000000;
-    float: right;
     font-size: 4rem;
     font-weight: bold;
-  
+    line-height: 40px;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    
+    
 }
 
 #paint-icon  {
@@ -118,6 +127,11 @@ input[type=number] {
     text-align: start;
     border-radius: 100%;
     width: 20px;
+}
+
+#pixel-canvas {
+    border: solid 12px #1b140d;
+    
 }
 
 #pixel-canvas tr {

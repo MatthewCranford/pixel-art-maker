@@ -35,13 +35,13 @@ $(document).ready(function() {
 	function makeGrid(height,width) {
 		// Your code goes here!
 
-		$("#pixel-canvas").append("<tr></tr>");
+	
 		for(var i = 0; i < height; i++) {
-		
+			$("#pixel-canvas").append("<tr></tr>");
 			for(var j =0; j < width; j++) {
 				$("tr").last().append("<td></td>");
 			}
-			$("#pixel-canvas").append("<tr></tr>");
+			
 		}
 
 	
