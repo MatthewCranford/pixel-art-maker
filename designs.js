@@ -1,12 +1,5 @@
 $(document).ready(function() {
 
-	// set color
-	var color = $("#color-picker").val();
-	$("#color-picker").change(function() {
-		color = $("#color-picker").val();
-		$("#paint-icon").css("color", color);
-	});
-
 	// create grid
 	var height,width;
 	$("#create-btn").click(function(event) {
@@ -24,6 +17,20 @@ $(document).ready(function() {
 		}
 		$("#modal-mask").css("display", "block");
 	}
+
+	// set color
+	var color = $("#color-picker").val();
+	$("#color-picker").change(function() {
+		color = $("#color-picker").val();
+		$("#paint-icon").css("color", color);
+	});
+
+	// clear grid
+	$("#clear-container").click(function() {
+		console.log("clear!")
+		$("#pixel-canvas tr td").css("background-color", "white");
+		$("#popup").addClass("is-visible");
+	});
 
 	// close modal
 	$("#modal-close-btn").click(function() {

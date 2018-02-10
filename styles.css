@@ -7,8 +7,10 @@
 
 body {
     text-align: center;
+    background: url("https://drive.google.com/uc?id=1cpnYG8TeAh76LS65mPJOA0FVLFbWefE_") no-repeat center center fixed;
+    background-size: cover;
+   
 }
-
 h1 {
     font-family: 'Indie Flower', cursive;
     font-size: 50px;
@@ -79,6 +81,10 @@ input[type=number] {
     flex-basis: 0%;
 }
 
+.icon {
+    font-size: 2rem; 
+}
+
 /* =============
     IDs
 ================*/
@@ -86,11 +92,12 @@ input[type=number] {
 /* Create grid interface CSS */
 
 #interface-container {
-    background-color: #cac8d8;
+    background-color: #daaf7f;
     width: 80%;
     margin: auto;
     border-radius: 5px;
     padding: .5rem 0 1rem;
+    border: 2px solid #27190c;
 }
 
 #create-btn {
@@ -120,9 +127,7 @@ input[type=number] {
 }
 
 #modal-content {
-    background-image: url("https://drive.google.com/uc?id=1cpnYG8TeAh76LS65mPJOA0FVLFbWefE_");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #daaf7f;
     margin: auto;
     border: 2px solid #202020;
     width: 80%;
@@ -151,10 +156,6 @@ input[type=number] {
     margin-left: 1rem;
 }
 
-#paint-icon  {
-    font-size: 2rem;
-}
-
 #color-picker {
     text-align: start;
     border-radius: 100%;
@@ -166,11 +167,6 @@ input[type=number] {
     height: 30px;
 }
 
-#clear-icon {
-    font-size: 2rem;
-    
-}
-
 #pixel-canvas {
     border: solid 12px #27190c;
 }
@@ -178,3 +174,41 @@ input[type=number] {
 #pixel-canvas tr {
     background-color: white;
 }
+
+/* popup */
+
+#popup {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s 0s, visibility 0s 0.3;
+}
+
+#popup-container {
+    position: absolute;
+    z-index: 999;
+    border: 2px solid;
+    width: 50%;
+    margin: auto;
+    top: 25%;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+
+#popup-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#popup-list li {
+    cursor: pointer;
+}
+
+#popup.is-visible {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
+  }
