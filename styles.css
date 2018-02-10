@@ -170,13 +170,35 @@ input[type=number] {
 #paint-tooltip {
     position: absolute;
     width: 120px;
-    background-color: white;
+    background-color: #1d1d1d;
     padding: 5px 0;
     border-radius: 6px;
     display: inline-block;
     font-size: 1rem;
     left: 50px;
+    border: 2px solid black;
+    color:white;
+    animation: bounce 1.85s ease infinite;
 
+}
+
+#paint-tooltip::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    margin-left: -12px;
+    margin-top: -6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color:  transparent #1d1d1d transparent transparent;
+ 
+}
+
+@keyframes bounce {
+    0% {top: -17px;}
+    50% {top: -12px;}
+    100% {top: -17px;}
 }
 
 #pixel-canvas {
