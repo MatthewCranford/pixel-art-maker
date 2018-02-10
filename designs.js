@@ -28,8 +28,17 @@ $(document).ready(function() {
 	// clear grid
 	$("#clear-container").click(function() {
 		console.log("clear!")
-		$("#pixel-canvas tr td").css("background-color", "white");
 		$("#popup").addClass("is-visible");
+	});
+
+	// popup yes btn
+	$("#popup-yes-btn").click(function() {
+		$("#pixel-canvas tr td").css("background-color", "white");
+		$("#popup").removeClass("is-visible");
+	});
+	// popup yes btn
+	$("#popup-no-btn").click(function() {
+		$("#popup").removeClass("is-visible");
 	});
 
 	// close modal

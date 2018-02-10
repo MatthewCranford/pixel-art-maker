@@ -167,6 +167,18 @@ input[type=number] {
     height: 30px;
 }
 
+#paint-tooltip {
+    position: absolute;
+    width: 120px;
+    background-color: white;
+    padding: 5px 0;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 1rem;
+    left: 50px;
+
+}
+
 #pixel-canvas {
     border: solid 12px #27190c;
 }

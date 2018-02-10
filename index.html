@@ -16,8 +16,8 @@
         <div id="popup-container">
             <p>Are you sure you want to reset your canvas?</p>
             <ul id="popup-list">
-                <li>Yes</li>
-                <li>No</li>
+                <li id="popup-yes-btn">Yes</li>
+                <li id="popup-no-btn">No</li>
             </ul>
         </div>
     </div>
@@ -28,9 +28,11 @@
             
             <div id="canvas-toolbar">
                 <span id="clear-container"><i class="far fa-file icon"></i></span>
+
                 <div id="paint-container">
                     <i class="fas fa-paint-brush icon"></i>
                     <input id="color-picker" type="color">
+                    <span id="paint-tooltip">Pick your color!</span>
                 </div>
             </div>
             <table id="pixel-canvas">
