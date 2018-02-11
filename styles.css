@@ -1,20 +1,23 @@
-
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-
 /* =============
     Elements
 ================*/
 
 body {
     text-align: center;
-    background: url("https://drive.google.com/uc?id=1cpnYG8TeAh76LS65mPJOA0FVLFbWefE_") no-repeat center center fixed;
+    background: url("https://pixabay.com/get/eb32b30b2bfc063ed1534705fb0938c9bd22ffd41cb0194294f1c479a4/square-2724387_1920.jpg") no-repeat center center fixed;
     background-size: cover;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
    
 }
 h1 {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Press Start 2P', cursive;
     font-size: 50px;
-    margin: 0.2em;
+    padding: 1rem 0 ;
+    background-color: #02b3e4d7;
+    color: rgb(24, 24, 24);
+    width: 100%;
+    margin: 0 0 2rem;
 }
 
 h2 {
@@ -92,12 +95,12 @@ input[type=number] {
 /* Create grid interface CSS */
 
 #interface-container {
-    background-color: #daaf7f;
+    background-color: #02b3e493;
     width: 80%;
     margin: auto;
     border-radius: 5px;
     padding: .5rem 0 1rem;
-    border: 2px solid #27190c;
+    border: 2px solid #0c2127;
 }
 
 #create-btn {
@@ -116,7 +119,7 @@ input[type=number] {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+   
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -128,11 +131,13 @@ input[type=number] {
 
 #modal-content {
     background-color: #daaf7f;
-    margin: auto;
-    border: 2px solid #202020;
-    width: 80%;
-    min-height: 50%;
-    position: relative;
+    
+  
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+
 }
 
 #modal-close-btn {
@@ -146,8 +151,10 @@ input[type=number] {
     cursor: pointer;
 }
 
+
+
 #canvas-toolbar {
-    margin: 1rem 0 .5rem;
+    padding: 1rem;
 }
 
 #paint-container {
@@ -202,11 +209,13 @@ input[type=number] {
 }
 
 #pixel-canvas {
-    border: solid 12px #27190c;
+
+   
 }
 
 #pixel-canvas tr {
     background-color: white;
+    
 }
 
 /* popup */
