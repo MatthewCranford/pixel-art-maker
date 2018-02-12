@@ -13,29 +13,29 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
-    <div id="popup">
-        <div id="popup-container">
+    <div class="popup">
+        <div class="popup-content">
             <p>Are you sure you want to reset your canvas?</p>
-            <ul id="popup-list">
-                <li id="popup-yes-btn">Yes</li>
-                <li id="popup-no-btn">No</li>
+            <ul class="popup-list">
+                <li class="popup-yes-btn">Yes</li>
+                <li class="popup-no-btn">No</li>
             </ul>
         </div>
     </div>
-    <div id="modal-mask"> 
-        <div id="modal-content">
-            <span id="modal-close-btn">&times;</span>
-            <div id="canvas-toolbar">
-                <div id="paint-container">
+    <div class="modal"> 
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="toolbar">
+                <div class="paint-container">
                     <i class="fas fa-paint-brush icon"></i>
-                    <input id="color-picker" type="color">
-                    <span id="paint-tooltip">Pick your color!</span>
+                    <input class="color-input" type="color">
+                    <span class="paint-tooltip">Pick your color!</span>
                 </div>
-                <div id="clear-container"><i class="far fa-file icon"></i></div>
+                <div class="clear-container"><i class="far fa-file icon"></i></div>
 
             </div>
             <div class="pixel-canvas-container">
-                <table id="pixel-canvas"></table>
+                <table class="pixel-canvas"></table>
             </div>
             
             </table>
@@ -43,26 +43,26 @@
     </div>
 
     <h1>Pixel Art Maker</h1>
-    <div id="interface-container">
+    <div class="interface-container">
         <h2>Choose Grid Size</h2>
-        <form id="size-picker">
-            <div class="interface-input-container">
-                <span class="interface-input-title">Grid Height:</span>
-                <input class="interface-input" type="text" id="input-height" name="height" min="1" value="10">
-                <div class="interface-btn-col">
+        <form>
+            <div class="input-container">
+                <span class="input-title">Grid Height:</span>
+                <input class="input" type="text" id="input-height" name="height" min="1" value="20">
+                <div class="btn-col">
                     <span id="height-minus-btn"><i class="fas fa-minus"></i></span>
                     <span id="height-add-btn"><i class="fas fa-plus"></i></span>
                 </div>    
             </div>
-            <div class="interface-input-container" >
-                <span class="interface-input-title">Grid Width:</span>
-                <input class="interface-input" type="text" id="input-width" name="width" min="1" value="10">
-                <div class="interface-btn-col">
+            <div class="input-container" >
+                <span class="input-title">Grid Width:</span>
+                <input class="input" type="text" id="input-width" name="width" min="1" value="20">
+                <div class="btn-col">
                     <span id="width-minus-btn"><i class="fas fa-minus"></i></span>
                     <span id="width-add-btn"><i class="fas fa-plus"></i></span> 
                 </div>
             </div>
-            <input id="create-btn" type="submit" value="Create Grid">
+            <input class="create-btn" type="submit" value="Create Grid">
         </form>
     </div> 
 </body>

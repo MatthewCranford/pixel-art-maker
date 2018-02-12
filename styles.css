@@ -4,7 +4,7 @@
 
 body {
     text-align: center;
-    background: url("https://pixabay.com/get/eb32b30b2bfc063ed1534705fb0938c9bd22ffd41cb0194294f1c479a4/square-2724387_1920.jpg") no-repeat center center fixed;
+    background: url("https://www.dropbox.com/s/u9fy4h8y303v15v/square-2724387_1920.jpg?raw=1") no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -55,56 +55,9 @@ input[type=number] {
     Classes
 ================*/
 
-.interface-input-container {
-    margin: 2rem 0 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/* Create grid interface */
 
-.interface-input-title {
-    width: 120px;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.interface-input {
-    width: 60px;
-    text-align: center;
-    border: 2px solid;
-    padding: 3px;
-    font-size: 1.2rem;
-}
-
-.interface-btn-col {
-    display: inline-flex;
-    flex-direction: column-reverse;
-    align-content: flex-end;
-    margin-left: 1rem;
-    flex-basis: 0%;
-}
-
-.icon {
-    font-size: 2rem; 
-}
-
-.pixel-canvas-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
- 
-
-    
-}
-
-/* =============
-    IDs
-================*/
-
-/* Create grid interface CSS */
-
-#interface-container {
+.interface-container {
     background-color: #02b3e493;
     width: 80%;
     margin: auto;
@@ -113,44 +66,68 @@ input[type=number] {
     border: 2px solid #0c2127;
 }
 
-#create-btn {
+.input-container {
+    margin: 2rem 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-title {
+    width: 120px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.input {
+    width: 60px;
+    text-align: center;
+    border: 2px solid;
+    padding: 3px;
+    font-size: 1.2rem;
+}
+
+.btn-col {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    align-content: flex-end;
+    margin-left: 1rem;
+    flex-basis: 0%;
+}
+
+.create-btn {
     border-radius: 5px;
     background-color: white;
     border: 2px solid;
     padding: 5px;
     margin: 1rem 0 0 0;
-    /* font-weight: 600; */
     font-size: .9rem;
 }
 
-/* Grid modal CSS */
+/* grid modal */
 
-#modal-mask {
+.modal {
     display: none; /* Hidden by default */
     position: absolute; /* Stay in place */
     z-index: 1; /* Sit on top */
-   
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
+    width: 100%; 
+    height: 100%; 
     overflow: hidden;; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-#modal-content {
-    background-color: #daaf7f;
-    
-  
+.modal-content {
+    background-color: #484d5c; 
     width: 100%;
     height: 100%;
     top: 0;
     z-index: 1;
-
 }
 
-#modal-close-btn {
+.close-btn {
     color: #000000;
     font-size: 4rem;
     font-weight: bold;
@@ -161,9 +138,7 @@ input[type=number] {
     cursor: pointer;
 }
 
-
-
-#canvas-toolbar {
+.toolbar {
     padding: 1rem;
     background-color: grey;
     display: flex;
@@ -177,16 +152,16 @@ input[type=number] {
     
 }
 
-#canvas-toolbar div {
+.toolbar div {
     margin: 0 .5rem;
 }
 
-#paint-container {
+.paint-container {
     display: inline;
     position: relative;
 }
 
-#color-picker {
+.color-input {
     text-align: start;
     border-radius: 100%;
     position: absolute;
@@ -197,7 +172,9 @@ input[type=number] {
     height: 30px;
 }
 
-#paint-tooltip {
+/* paint tooltip */
+
+.paint-tooltip {
     position: absolute;
     width: 120px;
     background-color: #1d1d1d;
@@ -212,7 +189,7 @@ input[type=number] {
 
 }
 
-#paint-tooltip::after {
+.paint-tooltip::after {
     content: " ";
     position: absolute;
     top: 50%;
@@ -222,7 +199,6 @@ input[type=number] {
     border-width: 5px;
     border-style: solid;
     border-color:  transparent  transparent transparent #1d1d1d;
- 
 }
 
 @keyframes bounce {
@@ -231,25 +207,34 @@ input[type=number] {
     100% {top: -2px;}
 }
 
-#pixel-canvas {
-    top:50%;
-    padding: 1rem;
+.icon {
+    font-size: 2rem; 
 }
 
-#pixel-canvas tr {
+.pixel-canvas-container {
+    height: 100%;
+    display: flex;
+    padding-top: 100px; 
+}
+
+.pixel-canvas {
+    margin: 0 auto;
+    margin: 0 auto;
+}
+
+.pixel-canvas tr {
     background-color: white;
-
 }
 
-/* popup */
+/* clear grid popup */
 
-#popup {
+.popup {
     opacity: 0;
     visibility: hidden;
     transition: opacity .3s 0s, visibility 0s 0.3;
 }
 
-#popup-container {
+.popup-content {
     position: absolute;
     z-index: 999;
     border: 2px solid;
@@ -258,10 +243,10 @@ input[type=number] {
     top: 25%;
     left: 0;
     right: 0;
-    background-color: white;
+    background-color: #e2dede;
 }
 
-#popup-list {
+.popup-list {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -269,12 +254,22 @@ input[type=number] {
     justify-content: space-around;
 }
 
-#popup-list li {
+.popup-list li {
     cursor: pointer;
 }
 
-#popup.is-visible {
+.popup.is-visible {
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s 0s, visibility 0s 0s;
   }
+
+/* =============
+    IDs
+================*/
+
+
+
+
+
+

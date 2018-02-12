@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 	// create grid
 	var height,width;
-	$("#create-btn").click(function(event) {
+	$(".create-btn").click(function(event) {
 		height = $("#input-height").val();
 		width = $("#input-width").val();
 		event.preventDefault();
@@ -10,41 +10,40 @@ $(document).ready(function() {
 	});
 	function makeGrid(height,width) {
 		for(var i = 0; i < height; i++) {
-			$("#pixel-canvas").append("<tr></tr>");
+			$(".pixel-canvas").append("<tr></tr>");
 			for(var j =0; j < width; j++) {
 				$("tr").last().append("<td></td>");
 			}
 		}
-		$("#modal-mask").css("display", "block");
+		$(".modal").css("display", "block");
 	}
 
 	// set color
-	var color = $("#color-picker").val();
-	$("#color-picker").change(function() {
-		color = $("#color-picker").val();
-		$("#paint-icon").css("color", color);
+	var color = $(".color-input").val();
+	$(".color-picker").change(function() {
+		color = $(".color-picker").val();
+		$(".paint-icon").css("color", color);
 	});
 
 	// clear grid
-	$("#clear-container").click(function() {
-		console.log("clear!")
-		$("#popup").addClass("is-visible");
+	$(".clear-container").click(function() {
+		$(".popup").addClass("is-visible");
 	});
 
 	// popup yes btn
-	$("#popup-yes-btn").click(function() {
-		$("#pixel-canvas tr td").css("background-color", "white");
-		$("#popup").removeClass("is-visible");
+	$(".popup-yes-btn").click(function() {
+		$(".pixel-canvas tr td").css("background-color", "white");
+		$(".popup").removeClass("is-visible");
 	});
 	// popup yes btn
-	$("#popup-no-btn").click(function() {
-		$("#popup").removeClass("is-visible");
+	$(".popup-no-btn").click(function() {
+		$(".popup").removeClass("is-visible");
 	});
 
 	// close modal
-	$("#modal-close-btn").click(function() {
-		$("#modal-mask").css("display", "none");
-		$("#pixel-canvas").empty();
+	$(".close-btn").click(function() {
+		$(".modal").css("display", "none");
+		$(".pixel-canvas").empty();
 	});
 
 	// mouse down paint
@@ -55,7 +54,7 @@ $(document).ready(function() {
 	.mouseup(function() {
 		isMouseDown = false;
 	});
-	$("#pixel-canvas").on("mouseenter","td",function(event) {
+	$(".pixel-canvas").on("mouseenter","td",function(event) {
 		event.preventDefault();
 		if(isMouseDown) {
 			$(this).css("background-color",color);
@@ -63,7 +62,7 @@ $(document).ready(function() {
 	});
 
 	// single click paint
-	$("#pixel-canvas").on("mousedown","td", function() {
+	$(".pixel-canvas").on("mousedown","td", function() {
 		$(this).css("background-color",color);
 	});
 
