@@ -20,8 +20,8 @@ $(document).ready(function() {
 
 	// set color
 	var color = $(".color-input").val();
-	$(".color-picker").change(function() {
-		color = $(".color-picker").val();
+	$(".color-input").change(function() {
+		color = $(".color-input").val();
 		$(".paint-icon").css("color", color);
 	});
 
