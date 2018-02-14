@@ -1,95 +1,116 @@
 $(document).ready(function() {
 
-	// create grid
-	var height,width;
-	$(".create-btn").click(function(event) {
-		height = $("#input-height").val();
-		width = $("#input-width").val();
-		event.preventDefault();
-		makeGrid(height,width);
-	});
+	// DOM selectors using jQuery.
+	const $heightInput = $("#input-height"); 
+	const $widthInput = $("#input-width");
+	const $createBtn = $(".create-btn");
+	const $modal = $(".modal");
+	const $colorInput = $(".color-input");
+	const $paintIcon = 	$(".paint-container");
+	const $clearIcon = $(".clear-container");
+	const $popup = $(".popup");
+	const $popupYesBtn = $(".popup-yes-btn");
+	const $popupNoBtn = $(".popup-no-btn");
+	const $pixelCanvas = $(".pixel-canvas");
+	const $closeBtn = 	$(".close-btn");	
+	const $heightAddBtn = $("#height-add-btn");
+	const $heightSubBtn = $("#height-sub-btn");
+	const $widthAddBtn = $("#width-add-btn");
+	const $widthSubBtn = $("#width-sub-btn");
+
+
+	// ============
+	// Interface 
+	// ============ 
+
+	// Create grid. 
 	function makeGrid(height,width) {
 		for(var i = 0; i < height; i++) {
-			$(".pixel-canvas").append("<tr></tr>");
+		$pixelCanvas.append("<tr></tr>");
 			for(var j =0; j < width; j++) {
 				$("tr").last().append("<td></td>");
 			}
 		}
-		$(".modal").css("display", "block");
+		$modal.css("display", "block");
 	}
 
-	// set color
-	var color = $(".color-input").val();
-	$(".color-input").change(function() {
-		color = $(".color-input").val();
-		$(".paint-icon").css("color", color);
+	// Create button handler.
+	$createBtn.click(e=> {
+		e.preventDefault();
+		let currentHeight = $heightInput.val();
+		let currentWidth = $widthInput.val();
+		if (currentHeight <= 35 && currentWidth <= 35) {
+			makeGrid(currentHeight,currentWidth);
+		} 
+		else {
+			console.log("toooo BIG!!!")
+		}
+		
 	});
 
-	// clear grid
-	$(".clear-container").click(function() {
-		$(".popup").addClass("is-visible");
+	// Height +/- interface buttons.
+	$heightAddBtn.click(function() {
+		let counter = $heightInput.val();
+		counter++
+		$heightInput.val(counter);
+	});
+	$heightSubBtn.click(function() {
+		let counter = $heightInput.val();
+		if (counter > 1) {
+			counter--
+			$heightInput.val(counter);
+		} 
 	});
 
-	// popup yes btn
-	$(".popup-yes-btn").click(function() {
-		$(".pixel-canvas tr td").css("background-color", "white");
-		$(".popup").removeClass("is-visible");
+	// Width +/- interface buttons.
+	$widthAddBtn.click(function() {
+		let counter = $widthInput.val();
+		counter++
+		$widthInput.val(counter);
 	});
-	// popup yes btn
-	$(".popup-no-btn").click(function() {
-		$(".popup").removeClass("is-visible");
-	});
-
-	// close modal
-	$(".close-btn").click(function() {
-		$(".modal").css("display", "none");
-		$(".pixel-canvas").empty();
+	$widthSubBtn.click(function() {
+		let counter = $widthInput.val();
+		if (counter > 1) {
+			counter--
+			$widthInput.val(counter);
+		} 
 	});
 
-	// mouse down paint
-	var isMouseDown = false;
-	$("body").mousedown(function() {
-		isMouseDown = true;
-	})
-	.mouseup(function() {
-		isMouseDown = false;
-	});
-	$(".pixel-canvas").on("mouseenter","td",function(event) {
-		event.preventDefault();
-		if(isMouseDown) {
-			$(this).css("background-color",color);
+	// ============
+	// Grid Modal 
+	// ============ 
+
+	// Draw to canvas while left mouse is down/over "pixel".
+	$pixelCanvas.on("mousedown mouseover","td", e=> {
+		e.preventDefault();
+		if (e.which === 1) {
+			$(e.target).css("background-color", currentColor);
 		}
 	});
-
-	// single click paint
-	$(".pixel-canvas").on("mousedown","td", function() {
-		$(this).css("background-color",color);
+	
+	// Paint brush color input.
+	let currentColor = $colorInput.val();
+	$colorInput.change(function() {
+		currentColor = $colorInput.val();
+		$paintIcon.css("color", currentColor);
 	});
 
-	// height/width increment/decrement
-	$("#height-add-btn").click(function() {
-		var counter = $("#input-height").val();
-		counter++
-		$("#input-height").val(counter);
+	// Clear button popup.
+	$clearIcon.click(function() {
+		$popup.addClass("is-visible");
 	});
-	$("#height-minus-btn").click(function() {
-		var counter = $("#input-height").val();
-		if (counter > 1) {
-			counter--
-			$("#input-height").val(counter);
-		} 
+	$popupYesBtn.click(function() {
+		$pixelCanvas.find("tr td").css("background-color", "white");
+		$popup.removeClass("is-visible");
 	});
-	$("#width-add-btn").click(function() {
-		var counter = $("#input-width").val();
-		counter++
-		$("#input-width").val(counter);
+	$popupNoBtn.click(function() {
+		$popup.removeClass("is-visible");
 	});
-	$("#width-minus-btn").click(function() {
-		var counter = $("#input-width").val();
-		if (counter > 1) {
-			counter--
-			$("#input-width").val(counter);
-		} 
+
+	// Close modal icon.
+	$closeBtn.click(function() {
+		$modal.css("display", "none");
+		$pixelCanvas.empty();
 	});
 
 });

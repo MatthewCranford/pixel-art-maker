@@ -13,15 +13,31 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
 <body>
-    <div class="popup">
-        <div class="popup-content">
-            <p>Are you sure you want to reset your canvas?</p>
-            <ul class="popup-list">
-                <li class="popup-yes-btn">Yes</li>
-                <li class="popup-no-btn">No</li>
-            </ul>
-        </div>
-    </div>
+
+    <h1>Pixel Art Maker</h1>
+    <div class="interface-container">
+        <h2>Choose Grid Size</h2>
+        <form>
+            <div class="input-container">
+                <label class="input-title" for="input-height">Grid Height:</label>
+                <input class="input" id="input-height" name="height" type="text" size="1" value="20">
+                <div class="btn-col">
+                    <span id="height-sub-btn"><i class="fas fa-minus"></i></span>
+                    <span id="height-add-btn"><i class="fas fa-plus"></i></span>
+                </div>    
+            </div>
+            <div class="input-container" >
+                <label class="input-title" for="input-width">Grid Width:</label>
+                <input class="input" type="text" id="input-width" name="width" min="1" value="20">
+                <div class="btn-col">
+                    <span id="width-sub-btn"><i class="fas fa-minus"></i></span>
+                    <span id="width-add-btn"><i class="fas fa-plus"></i></span> 
+                </div>
+            </div>
+            <input class="create-btn" type="submit" value="Create Grid">   
+        </form>
+    </div> 
+
     <div class="modal"> 
         <div class="modal-content">
             <span class="close-btn">&times;</span>
@@ -32,38 +48,23 @@
                     <span class="paint-tooltip">Pick your color!</span>
                 </div>
                 <div class="clear-container"><i class="far fa-file icon"></i></div>
-
             </div>
             <div class="pixel-canvas-container">
                 <table class="pixel-canvas"></table>
             </div>
-            
-            </table>
         </div>
     </div>
 
-    <h1>Pixel Art Maker</h1>
-    <div class="interface-container">
-        <h2>Choose Grid Size</h2>
-        <form>
-            <div class="input-container">
-                <span class="input-title">Grid Height:</span>
-                <input class="input" type="text" id="input-height" name="height" min="1" value="20">
-                <div class="btn-col">
-                    <span id="height-minus-btn"><i class="fas fa-minus"></i></span>
-                    <span id="height-add-btn"><i class="fas fa-plus"></i></span>
-                </div>    
-            </div>
-            <div class="input-container" >
-                <span class="input-title">Grid Width:</span>
-                <input class="input" type="text" id="input-width" name="width" min="1" value="20">
-                <div class="btn-col">
-                    <span id="width-minus-btn"><i class="fas fa-minus"></i></span>
-                    <span id="width-add-btn"><i class="fas fa-plus"></i></span> 
-                </div>
-            </div>
-            <input class="create-btn" type="submit" value="Create Grid">
-        </form>
-    </div> 
+    <div class="popup">
+        <div class="popup-content">
+            <p>Are you sure you want to reset your canvas?</p>
+            <ul class="popup-list">
+                <li class="popup-yes-btn">Yes</li>
+                <li class="popup-no-btn">No</li>
+            </ul>
+        </div>
+    </div>
+
+
 </body>
 </html>
