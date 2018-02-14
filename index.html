@@ -12,26 +12,28 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
 </head>
+
 <body>
 
-    <h1>Pixel Art Maker</h1>
+    <h1 class="main-title">Pixel Art Maker</h1>
+
     <div class="interface-container">
-        <h2>Choose Grid Size</h2>
+        <h2 class="interface-title">Choose Grid Size</h2>
         <form>
             <div class="input-container">
                 <label class="input-title" for="input-height">Grid Height:</label>
                 <input class="input" id="input-height" name="height" type="text" size="1" value="20">
                 <div class="btn-col">
-                    <span id="height-sub-btn"><i class="fas fa-minus"></i></span>
-                    <span id="height-add-btn"><i class="fas fa-plus"></i></span>
+                    <span class="height-sub-btn btn-col-icon"><i class="fas fa-minus"></i></span>
+                    <span class="height-add-btn btn-col-icon"><i class="fas fa-plus icon"></i></span>
                 </div>    
             </div>
             <div class="input-container" >
                 <label class="input-title" for="input-width">Grid Width:</label>
                 <input class="input" type="text" id="input-width" name="width" min="1" value="20">
                 <div class="btn-col">
-                    <span id="width-sub-btn"><i class="fas fa-minus"></i></span>
-                    <span id="width-add-btn"><i class="fas fa-plus"></i></span> 
+                    <span class="width-sub-btn btn-col-icon"><i class="fas fa-minus"></i></span>
+                    <span class="width-add-btn btn-col-icon"><i class="fas fa-plus"></i></span> 
                 </div>
             </div>
             <input class="create-btn" type="submit" value="Create Grid">   
@@ -43,11 +45,11 @@
             <span class="close-btn">&times;</span>
             <div class="toolbar">
                 <div class="paint-container">
-                    <i class="fas fa-paint-brush icon"></i>
+                    <i class="fas fa-paint-brush toolbar-icon"></i>
                     <input class="color-input" type="color">
                     <span class="paint-tooltip">Pick your color!</span>
                 </div>
-                <div class="clear-container"><i class="far fa-file icon"></i></div>
+                <div class="clear-container"><i class="far fa-file toolbar-icon "></i></div>
             </div>
             <div class="pixel-canvas-container">
                 <table class="pixel-canvas"></table>

@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	// DOM selectors using jQuery.
+	// DOM selectors using colQuery.
 	const $heightInput = $("#input-height"); 
 	const $widthInput = $("#input-width");
 	const $createBtn = $(".create-btn");
@@ -13,28 +13,37 @@ $(document).ready(function() {
 	const $popupNoBtn = $(".popup-no-btn");
 	const $pixelCanvas = $(".pixel-canvas");
 	const $closeBtn = 	$(".close-btn");	
-	const $heightAddBtn = $("#height-add-btn");
-	const $heightSubBtn = $("#height-sub-btn");
-	const $widthAddBtn = $("#width-add-btn");
-	const $widthSubBtn = $("#width-sub-btn");
+	const $heightAddBtn = $(".height-add-btn");
+	const $heightSubBtn = $(".height-sub-btn");
+	const $widthAddBtn = $(".width-add-btn");
+	const $widthSubBtn = $(".width-sub-btn");
+	const $paintTooltip = $(".paint-tooltip");
 
+	// ==================
+	// Interface Scripts
+	// ================== 
 
-	// ============
-	// Interface 
-	// ============ 
-
-	// Create grid. 
+	/* 
+	Create grid using passed parameters 
+	Store rows and cols in memory via tbody
+	Append tbody to the DOM via pixel canvas
+	*/
 	function makeGrid(height,width) {
-		for(var i = 0; i < height; i++) {
-		$pixelCanvas.append("<tr></tr>");
-			for(var j =0; j < width; j++) {
-				$("tr").last().append("<td></td>");
-			}
+		const $tbody = $("<tbody></tbody>");
+
+		for(let row = 0; row < height; row++) {
+			let $tr = $("<tr></tr>");
+			for(let col =0; col < width; col++) {
+				let $td = $("<td></td>")
+				$tr.append($td);
+			}  
+			$tbody.append($tr);
 		}
+		$pixelCanvas.append($tbody);
 		$modal.css("display", "block");
 	}
 
-	// Create button handler.
+	// call makeGrid and pass height/width.
 	$createBtn.click(e=> {
 		e.preventDefault();
 		let currentHeight = $heightInput.val();
@@ -48,7 +57,7 @@ $(document).ready(function() {
 		
 	});
 
-	// Height +/- interface buttons.
+	// height +/- interface buttons.
 	$heightAddBtn.click(function() {
 		let counter = $heightInput.val();
 		counter++
@@ -62,7 +71,7 @@ $(document).ready(function() {
 		} 
 	});
 
-	// Width +/- interface buttons.
+	// width +/- interface buttons.
 	$widthAddBtn.click(function() {
 		let counter = $widthInput.val();
 		counter++
@@ -76,11 +85,11 @@ $(document).ready(function() {
 		} 
 	});
 
-	// ============
-	// Grid Modal 
-	// ============ 
+	// ==================
+	// Modal Scripts
+	// ================== 
 
-	// Draw to canvas while left mouse is down/over "pixel".
+	// draw to canvas while left mouse is down/over "pixel".
 	$pixelCanvas.on("mousedown mouseover","td", e=> {
 		e.preventDefault();
 		if (e.which === 1) {
@@ -88,14 +97,18 @@ $(document).ready(function() {
 		}
 	});
 	
-	// Paint brush color input.
+	// paint brush color input.
 	let currentColor = $colorInput.val();
 	$colorInput.change(function() {
 		currentColor = $colorInput.val();
 		$paintIcon.css("color", currentColor);
 	});
 
-	// Clear button popup.
+	$paintTooltip.click(function() {
+		$(this).css("display", "none");
+	})
+
+	// clear button popup.
 	$clearIcon.click(function() {
 		$popup.addClass("is-visible");
 	});
@@ -107,7 +120,7 @@ $(document).ready(function() {
 		$popup.removeClass("is-visible");
 	});
 
-	// Close modal icon.
+	// close modal icon.
 	$closeBtn.click(function() {
 		$modal.css("display", "none");
 		$pixelCanvas.empty();
