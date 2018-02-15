@@ -1,13 +1,14 @@
 $(document).ready(function() {
 
-	// DOM selectors using colQuery.
+	// jquery selectors
 	const $heightInput = $("#input-height"); 
 	const $widthInput = $("#input-width");
 	const $createBtn = $(".create-btn");
 	const $modal = $(".modal");
 	const $colorInput = $(".color-input");
-	const $paintIcon = 	$(".paint-container");
-	const $clearIcon = $(".clear-container");
+	const $paintBtn = $(".paint-btn");
+	const $eraseBtn = $(".erase-btn");
+	const $clearBtn = $(".clear-btn");
 	const $popup = $(".popup");
 	const $popupYesBtn = $(".popup-yes-btn");
 	const $popupNoBtn = $(".popup-no-btn");
@@ -19,14 +20,15 @@ $(document).ready(function() {
 	const $widthSubBtn = $(".width-sub-btn");
 	const $paintTooltip = $(".paint-tooltip");
 
+
 	// ==================
 	// Interface Scripts
 	// ================== 
 
 	/* 
-	Create grid using passed parameters 
-	Store rows and cols in memory via tbody
-	Append tbody to the DOM via pixel canvas
+	Create grid using passed parameters. 
+	Store rows and cols in memory via tbody.
+	Append tbody to the DOM via pixel canvas.
 	*/
 	function makeGrid(height,width) {
 		const $tbody = $("<tbody></tbody>");
@@ -43,7 +45,7 @@ $(document).ready(function() {
 		$modal.css("display", "block");
 	}
 
-	// call makeGrid and pass height/width.
+	// call makeGrid and pass height/width
 	$createBtn.click(e=> {
 		e.preventDefault();
 		let currentHeight = $heightInput.val();
@@ -57,7 +59,7 @@ $(document).ready(function() {
 		
 	});
 
-	// height +/- interface buttons.
+	// height +/- interface buttons
 	$heightAddBtn.click(function() {
 		let counter = $heightInput.val();
 		counter++
@@ -71,7 +73,7 @@ $(document).ready(function() {
 		} 
 	});
 
-	// width +/- interface buttons.
+	// width +/- interface buttons
 	$widthAddBtn.click(function() {
 		let counter = $widthInput.val();
 		counter++
@@ -89,29 +91,52 @@ $(document).ready(function() {
 	// Modal Scripts
 	// ================== 
 
-	// draw to canvas while left mouse is down/over "pixel".
+	// holds paint/erase state
+	let draw = true;
+
+	// draw to canvas while left mouse is down/over "pixel"
 	$pixelCanvas.on("mousedown mouseover","td", e=> {
 		e.preventDefault();
-		if (e.which === 1) {
-			$(e.target).css("background-color", currentColor);
+		if (draw) {
+			if (e.which === 1) {
+				$(e.target).css("background-color", currentColor);
+			}
 		}
+		else {
+			if (e.which === 1) {
+				$(e.target).css("background-color", "white");
+			}	
+		}
+		
 	});
 	
-	// paint brush color input.
+	// paint brush color input
 	let currentColor = $colorInput.val();
 	$colorInput.change(function() {
+	
 		currentColor = $colorInput.val();
-		$paintIcon.css("color", currentColor);
+		$paintBtn.css("color", currentColor);
 	});
 
-	$paintTooltip.click(function() {
-		$(this).css("display", "none");
-	})
+	// toggle paint and clear popup
+	$paintBtn.click(function() {
+		draw=true;
+		$paintTooltip.css("display", "none");
+	});
+
+
+
+	// toggle eraser by setting draw to false
+	$eraseBtn.click(function() {
+		draw=false;
+	});
+
 
 	// clear button popup.
-	$clearIcon.click(function() {
+	$clearBtn.click(function() {
 		$popup.addClass("is-visible");
 	});
+
 	$popupYesBtn.click(function() {
 		$pixelCanvas.find("tr td").css("background-color", "white");
 		$popup.removeClass("is-visible");
@@ -120,7 +145,7 @@ $(document).ready(function() {
 		$popup.removeClass("is-visible");
 	});
 
-	// close modal icon.
+	// close modal icon
 	$closeBtn.click(function() {
 		$modal.css("display", "none");
 		$pixelCanvas.empty();
