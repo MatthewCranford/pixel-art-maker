@@ -2,6 +2,10 @@
     Elements
 ================*/
 
+body, html {
+height: 100%;
+}
+
 body {
     text-align: center;
     background: url("https://www.dropbox.com/s/u9fy4h8y303v15v/square-2724387_1920.jpg?raw=1") no-repeat center center fixed;
@@ -17,12 +21,13 @@ body {
 .main-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 50px;
-    margin: 0 0 2rem;
-    padding: 1rem 0 ;
+    margin: 0;
+    padding: 2rem 0 ;
     background-color: #02b3e4d7;
     color: rgb(24, 24, 24);
     width: 100%;
-    border: 2px solid;
+    border: solid;
+    border-width: 4px 0px;
     
 }
 
@@ -31,18 +36,19 @@ body {
 .interface-container {
     background-color: #02b3e493;
     width: 80%;
-    margin: auto;
+    margin: 4rem auto;
     border-radius: 5px;
   
-    border: 3px solid #272929;
+    border: 4px solid #272929;
     box-shadow: 5px 5px 11px #000000b6;
     
 }
 
 .interface-title {
-    border-bottom: 2px solid black;
+    border-bottom: 4px solid black;
     margin: 0;
     padding: 1.5rem;
+    font-size: 1.8rem;
     
 }
 
@@ -52,7 +58,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: 2px solid black;
+    border-bottom: 4px solid black;
     border-top: 0px;
     background-color: rgba(179, 195, 219, 0.726);
     
@@ -110,6 +116,7 @@ body {
     overflow: hidden;; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    
 }
 
 .modal-content {
@@ -118,22 +125,32 @@ body {
     height: 100%;
     top: 0;
     z-index: 1;
+    background: url("https://www.dropbox.com/s/u9fy4h8y303v15v/square-2724387_1920.jpg?raw=1") no-repeat center center fixed;
+    background-size: cover;
+}
+
+.modal-nav {
+    background-color: #02b3e4d7;
+    display: flex;
+    justify-content: flex-end;
+    padding: .2rem 0;
+    border: 4px solid;
+    border-width: 4px 0;
 }
 
 .close-btn {
     color: #000000;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: bold;
-    line-height: 40px;
-    position: absolute;
-    right: 30px;
-    top: 20px;
     cursor: pointer;
+    margin-right: 1.5rem;
+
 }
 
 .toolbar {
     padding: 1rem;
-    background-color: grey;
+    
+
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -142,6 +159,9 @@ body {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    background-color: #02b3e4d7;
+    border: 4px solid;
+    border-radius: 5px;
     
 }
 
@@ -247,14 +267,14 @@ body {
 /* grid */
 
 .pixel-canvas-container {
-    height: 100%;
-    display: flex;
-    padding-top: 100px; 
+
+  
 }
 
 .pixel-canvas {
     border-collapse: collapse;
-    margin: 0 auto;
+    margin: 3rem auto;
+    box-shadow: 0px 0px 20px 10px #333333b6
 }
 
 .pixel-canvas tr, td {
@@ -265,7 +285,7 @@ body {
 }
 
 .pixel-canvas td:hover {
-    box-shadow: inset 0px 0px 1px 5px rgba(240, 236, 12, 0.815);
+    box-shadow: inset 0px 0px 1px 5px #02b3e4;
     cursor: pointer;
 }
 
