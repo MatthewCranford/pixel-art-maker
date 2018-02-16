@@ -50,11 +50,11 @@ $(document).ready(function() {
 		e.preventDefault();
 		let currentHeight = $heightInput.val();
 		let currentWidth = $widthInput.val();
-		if (currentHeight <= 35 && currentWidth <= 35) {
+		if ((currentHeight <= 35 && currentHeight > 0) && (currentWidth <= 35 && currentWidth > 0)) {
 			makeGrid(currentHeight,currentWidth);
 		} 
 		else {
-			console.log("toooo BIG!!!")
+			console.log("Bad inputs")
 		}
 		
 	});
