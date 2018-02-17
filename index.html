@@ -15,30 +15,37 @@
 
 <body>
 
-    <h1 class="main-title">Pixel Art Maker</h1>
+    
 
-    <div class="interface-container">
-        <h2 class="interface-title">Choose Grid Size</h2>
-        <form>
-            <div class="input-container">
-                <label class="input-title" for="input-height">Grid Height:</label>
-                <input class="input" id="input-height" name="height" type="text" size="1" value="20">
-                <div class="btn-col">
-                    <span class="height-sub-btn btn-col-icon"><i class="fas fa-minus"></i></span>
-                    <span class="height-add-btn btn-col-icon"><i class="fas fa-plus icon"></i></span>
-                </div>    
-            </div>
-            <div class="input-container" >
-                <label class="input-title" for="input-width">Grid Width:</label>
-                <input class="input" type="text" id="input-width" name="width" min="1" value="20">
-                <div class="btn-col">
-                    <span class="width-sub-btn btn-col-icon"><i class="fas fa-minus"></i></span>
-                    <span class="width-add-btn btn-col-icon"><i class="fas fa-plus"></i></span> 
+    <div class="overflow-container">
+        <header>
+            <h1 class="main-title">Pixel Art Maker</h1>
+        </header>
+        
+        <div class="interface-container">
+            <h2 class="interface-title">Choose Grid Size</h2>
+            <form>
+                <div class="input-container">
+                    <label class="input-title" for="input-height">Grid Height:</label>
+                    <input class="input" id="input-height" name="height" type="text" size="1" value="20">
+                    <div class="btn-col">
+                        <span class="height-sub-btn btn-col-icon"><i class="fas fa-minus"></i></span>
+                        <span class="height-add-btn btn-col-icon"><i class="fas fa-plus icon"></i></span>
+                    </div>    
                 </div>
-            </div>
-            <input class="create-btn" type="submit" value="Create">   
-        </form>
-    </div> 
+                <div class="input-container" >
+                    <label class="input-title" for="input-width">Grid Width:</label>
+                    <input class="input" type="text" id="input-width" name="width" min="1" value="20">
+                    <div class="btn-col">
+                        <span class="width-sub-btn btn-col-icon"><i class="fas fa-minus"></i></span>
+                        <span class="width-add-btn btn-col-icon"><i class="fas fa-plus"></i></span> 
+                    </div>
+                </div>
+                <input class="create-btn" type="submit" value="Create">   
+            </form>
+        </div> 
+    </div>
+    
 
     <div class="modal"> 
         <div class="modal-content">
