@@ -22,6 +22,7 @@ $(document).ready(function() {
 	const $colorBtn = $(".color-btn");
 
 
+
 	// ==================
 	// Interface Scripts
 	// ================== 
@@ -127,11 +128,15 @@ $(document).ready(function() {
 	// set draw to true
 	$paintBtn.click(function() {
 		draw=true;
+		$(".active-icon").removeClass("active-icon");
+		$paintBtn.find(".toolbar-icon").addClass("active-icon");
 	});
 
 	// set draw to false
 	$eraseBtn.click(function() {
 		draw=false;
+		$(".active-icon").removeClass("active-icon");
+		$eraseBtn.find(".toolbar-icon").addClass("active-icon");
 	});
 
 	// clear button popup.
