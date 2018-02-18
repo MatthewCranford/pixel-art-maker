@@ -111,7 +111,7 @@ $(document).ready(function() {
 		
 	});
 	
-	// paint brush color input
+	// color input
 	let currentColor = $colorInput.val();
 	$colorInput.change(function() {
 	
@@ -119,19 +119,20 @@ $(document).ready(function() {
 		$colorBtn.css("color", currentColor);
 	});
 
-	// toggle paint and clear popup
+	// clear popup
+	$colorBtn.click(function() {
+		$paintTooltip.css("display", "none");
+	})
+
+	// set draw to true
 	$paintBtn.click(function() {
 		draw=true;
-		$paintTooltip.css("display", "none");
 	});
 
-
-
-	// toggle eraser by setting draw to false
+	// set draw to false
 	$eraseBtn.click(function() {
 		draw=false;
 	});
-
 
 	// clear button popup.
 	$clearBtn.click(function() {
