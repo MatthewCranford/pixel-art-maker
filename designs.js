@@ -19,6 +19,7 @@ $(document).ready(function() {
 	const $widthAddBtn = $(".width-add-btn");
 	const $widthSubBtn = $(".width-sub-btn");
 	const $paintTooltip = $(".paint-tooltip");
+	const $colorBtn = $(".color-btn");
 
 
 	// ==================
@@ -115,7 +116,7 @@ $(document).ready(function() {
 	$colorInput.change(function() {
 	
 		currentColor = $colorInput.val();
-		$paintBtn.css("color", currentColor);
+		$colorBtn.css("color", currentColor);
 	});
 
 	// toggle paint and clear popup
