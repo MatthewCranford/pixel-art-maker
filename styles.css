@@ -245,27 +245,28 @@ body {
     to {bottom: 0px;}
 }
 
-
-
-.toolbar-icon {
-    font-size: 2rem; 
-    cursor: pointer;
-    margin-right: 1rem;
+.toolbar-icon-container {
     border: 4px solid;
     padding: 5px;
     background-color: white;
+    margin-right: 1rem;
     transition: transform .2s linear;
-   
 }
 
-
-    .toolbar-icon:hover {
+    .toolbar-icon-container:hover {
         transform: scale(1.2); 
     }
 
-    .toolbar-icon:active {
-        box-shadow:  0 0 3px 10px #e44202;
+    .toolbar-icon-container:active {
+        box-shadow:  0 0 3px 3px red;
     }
+
+.toolbar-icon {  
+    font-size: 2rem; 
+    cursor: pointer;  
+}
+
+   
 
 .active-icon {
     box-shadow: inset 0px 0px 3px 3px red;
@@ -274,6 +275,7 @@ body {
 .color-btn {
     position: relative; 
     transition: transform .2s linear;  
+    
 }
 
     .color-btn:hover {

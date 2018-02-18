@@ -118,6 +118,7 @@ $(document).ready(function() {
 	
 		currentColor = $colorInput.val();
 		$colorBtn.css("color", currentColor);
+		$colorBtn.css("border-color", "black");
 	});
 
 	// clear popup
@@ -129,14 +130,14 @@ $(document).ready(function() {
 	$paintBtn.click(function() {
 		draw=true;
 		$(".active-icon").removeClass("active-icon");
-		$paintBtn.find(".toolbar-icon").addClass("active-icon");
+		$paintBtn.addClass("active-icon");
 	});
 
 	// set draw to false
 	$eraseBtn.click(function() {
 		draw=false;
 		$(".active-icon").removeClass("active-icon");
-		$eraseBtn.find(".toolbar-icon").addClass("active-icon");
+		$eraseBtn.addClass("active-icon");
 	});
 
 	// clear button popup.
