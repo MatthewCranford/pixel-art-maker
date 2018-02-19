@@ -132,7 +132,7 @@ input[type="number"] {
         box-shadow: inset 0 0 3px 3px #02b3e4;
         outline: none;
     }
-    
+
     input:invalid { 
         border: 2px solid red;
     }
@@ -169,6 +169,7 @@ input[type="number"] {
     color: rgb(0, 0, 0);
     box-shadow: 3px 3px 4px rgb(51, 50, 50);
     outline: none;
+    width: auto;
 
 }
 
