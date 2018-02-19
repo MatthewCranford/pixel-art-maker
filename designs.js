@@ -129,13 +129,15 @@ $(document).ready(function() {
 		
 	});
 	
-	// color input
+	// set color input & set draw to true
 	let currentColor = $colorInput.val();
 	$colorInput.change(function() {
-	
+		draw=true;
 		currentColor = $colorInput.val();
 		$colorBtn.css("color", currentColor);
 		$colorBtn.css("border-color", "black");
+		$(".active-icon").removeClass("active-icon");
+		$paintBtn.addClass("active-icon");
 	});
 
 	// clear popup
