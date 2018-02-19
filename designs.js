@@ -56,9 +56,9 @@ $(document).ready(function() {
 		if ((currentHeight <= 30 && currentHeight > 0) && (currentWidth <= 30 && currentWidth > 0)) {
 			makeGrid(currentHeight,currentWidth);
 		} 
-		else {
-			alert("30x30 is max!")
-		}
+		// else {
+		// 	alert("30x30 is max!")
+		// }
 		
 	});
 
@@ -114,19 +114,18 @@ $(document).ready(function() {
 	let draw = true;
 
 	// draw to canvas while left mouse is down/over "pixel"
-	$pixelCanvas.on("mousedown mouseover","td", e=> {
+	$pixelCanvas.on("mousedown mouseover","td", function(e) {
 		e.preventDefault();
 		if (draw) {
-			if (e.which === 1) {
+			if (e.buttons == 1) {
 				$(e.target).css("background-color", currentColor);
 			}
 		}
 		else {
-			if (e.which === 1) {
+			if (e.buttons === 1) {
 				$(e.target).css("background-color", "white");
 			}	
 		}
-		
 	});
 	
 	// set color input & set draw to true
