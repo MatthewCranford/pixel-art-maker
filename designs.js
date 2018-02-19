@@ -49,22 +49,20 @@ $(document).ready(function() {
 	}
 
 	// call makeGrid and pass height/width
-	$createBtn.click(e=> {
-		e.preventDefault();
+	$createBtn.click(function(e) {
 		let currentHeight = $heightInput.val();
 		let currentWidth = $widthInput.val();
+
 		if ((currentHeight <= 30 && currentHeight > 0) && (currentWidth <= 30 && currentWidth > 0)) {
+			e.preventDefault();
 			makeGrid(currentHeight,currentWidth);
 		} 
-		// else {
-		// 	alert("30x30 is max!")
-		// }
-		
 	});
 
 	// height +/- interface buttons
 	$heightAddBtn.click(function() {
 		let counter = $heightInput.val();
+
 		if (counter < 30) {
 			counter++
 			$heightInput.val(counter);
@@ -75,6 +73,7 @@ $(document).ready(function() {
 	});
 	$heightSubBtn.click(function() {
 		let counter = $heightInput.val();
+		
 		if (counter > 1) {
 			counter--;
 			$heightInput.val(counter);
@@ -87,6 +86,7 @@ $(document).ready(function() {
 	// width +/- interface buttons
 	$widthAddBtn.click(function() {
 		let counter = $widthInput.val();
+
 		if (counter < 30) {
 			counter++;
 			$widthInput.val(counter);
@@ -97,6 +97,7 @@ $(document).ready(function() {
 	});
 	$widthSubBtn.click(function() {
 		let counter = $widthInput.val();
+
 		if (counter > 1) {
 			counter--
 			$widthInput.val(counter);
