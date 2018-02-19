@@ -73,7 +73,6 @@ $(document).ready(function() {
 	});
 	$heightSubBtn.click(function() {
 		let counter = $heightInput.val();
-		
 		if (counter > 1) {
 			counter--;
 			$heightInput.val(counter);
@@ -97,7 +96,7 @@ $(document).ready(function() {
 	});
 	$widthSubBtn.click(function() {
 		let counter = $widthInput.val();
-
+		
 		if (counter > 1) {
 			counter--
 			$widthInput.val(counter);
