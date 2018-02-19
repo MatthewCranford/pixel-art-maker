@@ -408,6 +408,10 @@ body {
     cursor: pointer;
 }
 
+.pixel-canvas td:focus {
+    
+}
+
 .drop {
     transform: 100% 50%;
 

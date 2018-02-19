@@ -38,7 +38,7 @@ $(document).ready(function() {
 		for(let row = 0; row < height; row++) {
 			let $tr = $("<tr></tr>");
 			for(let col =0; col < width; col++) {
-				let $td = $("<td></td>")
+				let $td = $("<td></td>");
 				$tr.append($td);
 			}  
 			$tbody.append($tr);
@@ -52,11 +52,11 @@ $(document).ready(function() {
 		e.preventDefault();
 		let currentHeight = $heightInput.val();
 		let currentWidth = $widthInput.val();
-		if ((currentHeight <= 35 && currentHeight > 0) && (currentWidth <= 35 && currentWidth > 0)) {
+		if ((currentHeight <= 30 && currentHeight > 0) && (currentWidth <= 30 && currentWidth > 0)) {
 			makeGrid(currentHeight,currentWidth);
 		} 
 		else {
-			console.log("Bad inputs")
+			alert("30x30 is max!")
 		}
 		
 	});
@@ -64,22 +64,35 @@ $(document).ready(function() {
 	// height +/- interface buttons
 	$heightAddBtn.click(function() {
 		let counter = $heightInput.val();
-		counter++
-		$heightInput.val(counter);
+		if (counter < 30) {
+			counter++
+			$heightInput.val(counter);
+		}
+		else {
+			alert("Can't go above 30!");
+		}
 	});
 	$heightSubBtn.click(function() {
 		let counter = $heightInput.val();
 		if (counter > 1) {
-			counter--
+			counter--;
 			$heightInput.val(counter);
 		} 
+		else {
+			alert("Can't go below 1!");
+		}
 	});
 
 	// width +/- interface buttons
 	$widthAddBtn.click(function() {
 		let counter = $widthInput.val();
-		counter++
-		$widthInput.val(counter);
+		if (counter < 30) {
+			counter++;
+			$widthInput.val(counter);
+		}
+		else {
+			alert("Can't go above 30!");
+		}
 	});
 	$widthSubBtn.click(function() {
 		let counter = $widthInput.val();
@@ -87,6 +100,9 @@ $(document).ready(function() {
 			counter--
 			$widthInput.val(counter);
 		} 
+		else {
+			alert("Can't go below 1!");
+		}
 	});
 
 	// ==================
