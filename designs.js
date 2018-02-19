@@ -34,11 +34,12 @@ $(document).ready(function() {
 	*/
 	function makeGrid(height,width) {
 		const $tbody = $("<tbody></tbody>");
+		let $tr, $td;
 
 		for(let row = 0; row < height; row++) {
-			let $tr = $("<tr></tr>");
+			$tr = $("<tr></tr>");
 			for(let col =0; col < width; col++) {
-				let $td = $("<td></td>");
+				$td = $("<td></td>");
 				$tr.append($td);
 			}  
 			$tbody.append($tr);
