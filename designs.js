@@ -140,8 +140,9 @@ $(document).ready(function() {
 	});
 
 	// clear popup
-	$colorBtn.click(function() {
-		$paintTooltip.css("display", "none");
+	$colorBtn.on("click mouseover",function() {
+		$colorBtn.find("span").removeClass("paint-tooltip");
+		$colorBtn.find("span").addClass("tooltip-text");
 	})
 
 	// set draw to true

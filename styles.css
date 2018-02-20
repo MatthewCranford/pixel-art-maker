@@ -48,6 +48,81 @@ input[type="number"] {
 
 }
 
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: #1d1d1d;                      
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    top: -5px;
+    right: 120%;
+}
+
+    .tooltip .tooltip-text::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent black;
+        pointer-events: none;
+
+    }
+    .tooltip:hover .tooltip-text {
+        visibility: visible;
+    }
+
+.active-icon .tooltip-text {
+    right: 130%;
+}
+
+.paint-tooltip {
+    width: 120px;
+    background-color: #1d1d1d;                      
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    top: -5px;
+    right: 120%;
+    animation: bounce 1.85s ease infinite;
+    cursor: pointer;
+}
+    
+    @keyframes bounce {
+        0% {top: -5px;}
+        50% {top: 2px;}
+        100% {top: -5px;}
+    }
+
+
+    .paint-tooltip:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent black;
+        pointer-events: none;
+
+    }
+
+
+
 
 
 /* interface */
@@ -113,6 +188,18 @@ input[type="number"] {
     color:white;
     cursor: pointer;
 }
+
+    .input-tooltip::after {
+        content: " ";
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -5px;
+        margin-right: 111px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent black;
+    }
 
 .input-title {
     width: 120px;
@@ -328,38 +415,7 @@ input[type="number"] {
 
 
 
-.paint-tooltip {
-    position: absolute;
-    width: 120px;
-    background-color: #1d1d1d;
-    padding: 5px 0;
-    border-radius: 6px;
-    display: inline-block;
-    font-size: 1rem;
-    right: 75px;
-    border: 2px solid black;
-    color:white;
-    animation: bounce 1.85s ease infinite;
-    cursor: pointer;
-}
 
-.paint-tooltip::after {
-    content: " ";
-    position: absolute;
-    top: 50%;
-    left: 100%;
-    margin-left: 2px;
-    margin-top: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color:  transparent  transparent transparent #1d1d1d;
-}
-
-@keyframes bounce {
-    0% {top: 10px;}
-    50% {top: 5px;}
-    100% {top: 10px;}
-}
 
 /* clear grid popup */
 
