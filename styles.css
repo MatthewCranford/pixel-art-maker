@@ -94,8 +94,24 @@ input[type="number"] {
     border-top: 0px;
     background-color: #b3c3dbb9;
     flex-grow:0;
+    position: relative;
     
    
+}
+
+.input-tooltip {
+    position: absolute;
+    width: 120px;
+    background-color: #1d1d1d;
+    padding: 5px 0;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 1rem;
+    right: 420px;
+    top: 20px;
+    border: 2px solid black;
+    color:white;
+    cursor: pointer;
 }
 
 .input-title {
@@ -106,6 +122,8 @@ input[type="number"] {
    
    
 }
+
+
 
 .input-wrapper {
     width: 90px;
@@ -141,11 +159,7 @@ input[type="number"] {
     display: inline-flex;
     flex-direction: column-reverse;
     align-content: flex-end;
-    margin-left: 1rem;
-  
-
- 
-   
+    margin-left: 1rem;   
 }
 
 .btn-col-icon {
@@ -157,6 +171,8 @@ input[type="number"] {
     .btn-col-icon:hover {
         transform: scale(1.25);
     }
+
+
 
 .create-btn {
     border-radius: 5px;
