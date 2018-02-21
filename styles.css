@@ -56,7 +56,7 @@ input[type="number"] {
 
 .tooltip .tooltip-text {
     visibility: hidden;
-    width: 120px;
+    width: 100px;
     background-color: #1d1d1d;                      
     color: #fff;
     text-align: center;
@@ -293,7 +293,7 @@ input[type="number"] {
 /* modal */
 
 .modal {
-    display: none; /* Hidden by default */
+    visibility: hidden; /* Hidden by default */
     position: absolute; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
@@ -314,6 +314,10 @@ input[type="number"] {
     z-index: 1;
     background: url("https://www.dropbox.com/s/u9fy4h8y303v15v/square-2724387_1920.jpg?raw=1") no-repeat center center fixed;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 .modal-nav {
@@ -325,6 +329,7 @@ input[type="number"] {
     border-width: 4px 0;
     animation: navDropDown 1s ease-in-out;
     position: relative;
+    flex: 0 0 50px;
    
 }
 
@@ -345,7 +350,38 @@ input[type="number"] {
     .close-btn:hover {
         transform: scale(1.2); 
     }
+.pixel-canvas-container {
+    display: flex;
+    flex: 1 1;
+   
 
+
+}
+.pixel-canvas {
+    border-collapse: collapse;
+    margin:auto;
+    box-shadow: 0px 0px 20px 10px #333333b6;
+    animation: SlideRight 1s ease-in-out;
+    position: relative ;
+}
+
+    @keyframes SlideRight {
+        from {left: -600px;}
+        to {left: 0px;}
+    }
+
+.pixel-canvas tr, td {
+    box-sizing: border-box;
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+}
+
+.pixel-canvas td:hover {
+    box-shadow: inset 0px 0px 1px 5px #02b3e4;
+    cursor: pointer;
+}
 
 
 .toolbar {
@@ -354,14 +390,15 @@ input[type="number"] {
     flex-direction: row;
     justify-content: center;
     width: 300px;
-    position: fixed;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
     background-color: #02b3e4d7;
     border: 4px solid;
     border-radius: 5px;
-    animation: toolbarSlideUp 1s ease-in-out;   
+    animation: toolbarSlideUp 1s ease-in-out; 
+    position: relative;  
+    flex: 0 0 50px;
 }
 
 @keyframes toolbarSlideUp { 
@@ -375,6 +412,7 @@ input[type="number"] {
     background-color: white;
     margin-right: 1rem;
     transition: transform .2s linear;
+   
 }
 
     .toolbar-icon-container:hover {
@@ -471,42 +509,10 @@ input[type="number"] {
   }
 
 
-/* grid */
-
-
-.pixel-canvas {
-    border-collapse: collapse;
-    margin: 3rem auto;
-    box-shadow: 0px 0px 20px 10px #333333b6;
-    animation: SlideRight 1s ease-in-out;
-    position: absolute ;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-    @keyframes SlideRight {
-        from {left: -200px;}
-        to {left: 50%;}
-    }
-
-.pixel-canvas tr, td {
-    border: 1px solid black;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-}
-
-.pixel-canvas td:hover {
-    box-shadow: inset 0px 0px 1px 5px #02b3e4;
-    cursor: pointer;
-}
 
 
 
-.drop {
-    transform: 100% 50%;
 
-}
 
 
 

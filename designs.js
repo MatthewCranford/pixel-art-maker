@@ -12,6 +12,7 @@ $(document).ready(function() {
 	const $popup = $(".popup");
 	const $popupYesBtn = $(".popup-yes-btn");
 	const $popupNoBtn = $(".popup-no-btn");
+	const $pixelCanvasContainer = $(".pixel-canvas-container");
 	const $pixelCanvas = $(".pixel-canvas");
 	const $closeBtn = 	$(".close-btn");	
 	const $heightAddBtn = $(".height-add-btn");
@@ -23,6 +24,10 @@ $(document).ready(function() {
 	const $heightTooltip = $(".height-tooltip");
 	const $widthTooltip = $(".width-tooltip");
 
+	// holds "current" max height/width of pixel canvas container on user's viewport
+	let maxHeight = ($pixelCanvasContainer.height()/20).toFixed();
+	let maxWidth = ($pixelCanvasContainer.width()/20).toFixed()
+		
 
 
 	// ==================
@@ -37,6 +42,7 @@ $(document).ready(function() {
 	function makeGrid(height,width) {
 		const $tbody = $("<tbody></tbody>");
 		let $tr, $td;
+		var height;
 
 		for(let row = 0; row < height; row++) {
 			$tr = $("<tr></tr>");
@@ -47,15 +53,31 @@ $(document).ready(function() {
 			$tbody.append($tr);
 		}
 		$pixelCanvas.append($tbody);
-		$modal.css("display", "block");
+		$modal.css("visibility", "visible");
+	
 	}
+
+	// assign height/width default inputs with max available size
+	$heightInput.val(maxHeight).attr("max", maxHeight);
+	$widthInput.val(maxWidth).attr("max", maxWidth);
+
+	$(window).resize(function() {
+		maxHeight = ($pixelCanvasContainer.height()/20).toFixed();
+		maxWidth = ($pixelCanvasContainer.width()/20).toFixed()
+			
+		$heightInput.val(maxHeight).attr("max", maxHeight);
+		$widthInput.val(maxWidth).attr("max", maxWidth);
+	
+	})
 
 	// call makeGrid and pass height/width
 	$createBtn.click(function(e) {
+
+
 		let currentHeight = $heightInput.val();
 		let currentWidth = $widthInput.val();
 
-		if ((currentHeight <= 30 && currentHeight > 0) && (currentWidth <= 30 && currentWidth > 0)) {
+		if ((currentHeight <= maxHeight && currentHeight > 0) && (currentWidth <= maxWidth && currentWidth > 0)) {
 			e.preventDefault();
 			makeGrid(currentHeight,currentWidth);
 		} 
@@ -181,7 +203,7 @@ $(document).ready(function() {
 
 	// close modal icon
 	$closeBtn.click(function() {
-		$modal.css("display", "none");
+		$modal.css("visibility", "hidden");
 		$pixelCanvas.empty();
 	});
 	
