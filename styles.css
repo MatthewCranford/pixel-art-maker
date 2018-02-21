@@ -174,37 +174,17 @@ input[type="number"] {
    
 }
 
-.input-tooltip {
-    position: absolute;
-    width: 120px;
-    background-color: #1d1d1d;
-    padding: 5px 0;
-    border-radius: 6px;
-    display: inline-block;
-    font-size: 1rem;
-    right: 420px;
-    top: 20px;
-    border: 2px solid black;
-    color:white;
-    cursor: pointer;
-}
 
-    .input-tooltip::after {
-        content: " ";
-        position: absolute;
-        top: 50%;
-        left: 100%;
-        margin-top: -5px;
-        margin-right: 111px;
-        border-width: 5px;
-        border-style: solid;
-        border-color: transparent transparent transparent black;
-    }
+
+
+
+    
 
 .input-title {
     width: 120px;
     font-weight: bold;
     font-size: 1.2rem;
+    user-select: none;
 
    
    
@@ -216,7 +196,36 @@ input[type="number"] {
     width: 90px;
     display: flex;
     justify-content: center;
+    position: relative;
 
+}
+
+.input-tooltip {
+    content: " ";
+    position: absolute;
+    width: 140px;
+    background-color: #1d1d1d;
+    padding: 5px 0;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 1rem;
+    bottom: 130%;
+    left: -30%;
+    border: 2px solid black;
+    color:white;
+    cursor: pointer;
+    user-select: none;
+}
+
+.input-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
 }
 
 .input {

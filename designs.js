@@ -20,6 +20,8 @@ $(document).ready(function() {
 	const $widthSubBtn = $(".width-sub-btn");
 	const $paintTooltip = $(".paint-tooltip");
 	const $colorBtn = $(".color-btn");
+	const $heightTooltip = $(".height-tooltip");
+	const $widthTooltip = $(".width-tooltip");
 
 
 
@@ -64,45 +66,50 @@ $(document).ready(function() {
 		let counter = $heightInput.val();
 
 		if (counter < 30) {
-			counter++
+			$heightTooltip.removeClass("input-tooltip").text("");
+			counter++;
 			$heightInput.val(counter);
 		}
 		else {
-			alert("Can't go above 30!");
+			$heightTooltip.addClass("input-tooltip").text("Max height is 30");
 		}
 	});
 	$heightSubBtn.click(function() {
 		let counter = $heightInput.val();
+
 		if (counter > 1) {
+			$heightTooltip.removeClass("input-tooltip").text("");
 			counter--;
 			$heightInput.val(counter);
 		} 
 		else {
-			alert("Can't go below 1!");
+			$heightTooltip.addClass("input-tooltip").text("Min height is 1");
 		}
 	});
 
 	// width +/- interface buttons
 	$widthAddBtn.click(function() {
 		let counter = $widthInput.val();
-
+		
 		if (counter < 30) {
+			$widthTooltip.removeClass("input-tooltip").text("");
 			counter++;
 			$widthInput.val(counter);
 		}
 		else {
-			alert("Can't go above 30!");
+			$widthTooltip.addClass("input-tooltip").text("Max width is 30");
 		}
 	});
 	$widthSubBtn.click(function() {
 		let counter = $widthInput.val();
 		
 		if (counter > 1) {
+			$widthTooltip.removeClass("input-tooltip").text("");
 			counter--
 			$widthInput.val(counter);
 		} 
 		else {
-			alert("Can't go below 1!");
+			$widthTooltip.addClass("input-tooltip").text("Min width is 1");
 		}
 	});
 
