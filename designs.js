@@ -25,9 +25,10 @@ $(document).ready(function() {
 	const $widthTooltip = $(".width-tooltip");
 
 	// holds "current" max height/width of pixel canvas container on user's viewport
-	let maxHeight = ($pixelCanvasContainer.height()/20).toFixed();
-	let maxWidth = ($pixelCanvasContainer.width()/20).toFixed()
-		
+	let maxHeight = parseInt(($pixelCanvasContainer.height()/20).toFixed());
+	let maxWidth = parseInt(($pixelCanvasContainer.width()/20).toFixed());
+
+
 
 
 	// ==================
@@ -61,9 +62,10 @@ $(document).ready(function() {
 	$heightInput.val(maxHeight).attr("max", maxHeight);
 	$widthInput.val(maxWidth).attr("max", maxWidth);
 
+	// reassign height/width inputs when browser resizes
 	$(window).resize(function() {
-		maxHeight = ($pixelCanvasContainer.height()/20).toFixed();
-		maxWidth = ($pixelCanvasContainer.width()/20).toFixed()
+		maxHeight = parseInt(($pixelCanvasContainer.height()/20).toFixed());
+		maxWidth = parseInt(($pixelCanvasContainer.width()/20).toFixed());
 			
 		$heightInput.val(maxHeight).attr("max", maxHeight);
 		$widthInput.val(maxWidth).attr("max", maxWidth);
@@ -74,8 +76,9 @@ $(document).ready(function() {
 	$createBtn.click(function(e) {
 
 
-		let currentHeight = $heightInput.val();
-		let currentWidth = $widthInput.val();
+		let currentHeight = parseInt($heightInput.val());
+		let currentWidth = parseInt($widthInput.val());
+		console.log(typeof currentHeight);
 
 		if ((currentHeight <= maxHeight && currentHeight > 0) && (currentWidth <= maxWidth && currentWidth > 0)) {
 			e.preventDefault();
@@ -87,13 +90,13 @@ $(document).ready(function() {
 	$heightAddBtn.click(function() {
 		let counter = $heightInput.val();
 
-		if (counter < 30) {
+		if (counter < maxHeight) {
 			$heightTooltip.removeClass("input-tooltip").text("");
 			counter++;
 			$heightInput.val(counter);
 		}
 		else {
-			$heightTooltip.addClass("input-tooltip").text("Max height is 30");
+			$heightTooltip.addClass("input-tooltip").text("Max height is " + maxHeight);
 		}
 	});
 	$heightSubBtn.click(function() {
@@ -113,13 +116,13 @@ $(document).ready(function() {
 	$widthAddBtn.click(function() {
 		let counter = $widthInput.val();
 		
-		if (counter < 30) {
+		if (counter < maxWidth) {
 			$widthTooltip.removeClass("input-tooltip").text("");
 			counter++;
 			$widthInput.val(counter);
 		}
 		else {
-			$widthTooltip.addClass("input-tooltip").text("Max width is 30");
+			$widthTooltip.addClass("input-tooltip").text("Max width is " + maxWidth);
 		}
 	});
 	$widthSubBtn.click(function() {
