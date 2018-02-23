@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Pixel Art Maker!</title>
     <meta charset="UTF-8">
@@ -15,8 +16,6 @@
 
 <body>
 
-    
-
     <div class="overflow-container">
         <header>
             <h1 class="main-title">Pixel Art Maker</h1>
@@ -24,34 +23,37 @@
         
         <div class="interface-container">
             <h2 class="interface-title">Choose Grid Size</h2>
+
             <form>
-                <div class="input-container">
-                    
-                    <label class="input-title" for="input-height">Grid Height:</label>
-                    <div class="input-wrapper">
-                        <input id="input-height" class="input"  type="number" name="height" min="1" max="50" value="20">
-                        <span class="height-tooltip"></span> 
+
+                <div class="interface-ui-container">
+                    <label class="interface-input-title" for="interface-input-height">Grid Height:</label>
+                    <div class="interface-input-container">
+                        <input class="interface-input interface-input-height" type="number" name="height" min="1" max="50" value="20">
+                        <span class="interface-tooltip-height"></span> 
                     </div>
                     
-                    <div class="btn-col">
-                        <span class="height-sub-btn btn-col-icon"><i class="fas fa-minus"></i></span>
-                        <span class="height-add-btn btn-col-icon"><i class="fas fa-plus icon"></i></span>
+                    <div class="interface-btn-col">
+                        <span class="interface-sub-btn-height interface-btn-col-icon"><i class="fas fa-minus"></i></span>
+                        <span class="interface-add-btn-height interface-btn-col-icon"><i class="fas fa-plus icon"></i></span>
                     </div>    
                 </div>
-                <div class="input-container">
-                    
-                    <label class="input-title" for="input-width">Grid Width:</label>
-                    <div class="input-wrapper">
-                        <input id="input-width" class="input" type="number" name="width" min="1" max="50" value="20">
-                        <span class="width-tooltip"></span> 
+
+                <div class="interface-ui-container">
+                    <label class="interface-input-title" for="interface-input-width">Grid Width:</label>
+                    <div class="interface-input-container">
+                        <input class="interface-input interface-input-width" type="number" name="width" min="1" max="50" value="20">
+                        <span class="interface-tooltip-width"></span> 
                     </div>
                    
-                    <div class="btn-col">
-                        <span class="width-sub-btn btn-col-icon"><i class="fas fa-minus"></i></span>
-                        <span class="width-add-btn btn-col-icon"><i class="fas fa-plus"></i></span> 
+                    <div class="interface-btn-col">
+                        <span class="interface-sub-btn-width interface-btn-col-icon"><i class="fas fa-minus"></i></span>
+                        <span class="interface-add-btn-width interface-btn-col-icon"><i class="fas fa-plus"></i></span> 
                     </div>
                 </div>
-                <input class="create-btn" type="submit" value="Create">  
+
+                <input class="interface-create-btn" type="submit" value="Create">  
+
             </form>
              
         </div> 
@@ -61,41 +63,46 @@
     <div class="modal"> 
         <div class="modal-content">
             <div class="modal-nav">
-                <span class="close-btn">&times;</span>
+                <span class="modal-close-btn">&times;</span>
             </div>
-            <div class="pixel-canvas-container">
-                <table class="pixel-canvas"></table>
+
+            <div class="modal-pixel-canvas-container">
+                <table class="modal-pixel-canvas"></table>
             </div>
-            <div class="toolbar">
+
+            <div class="modal-toolbar">
+
+                <div class="modal-color-btn modal-toolbar-icon-container modal-tooltip">
+                    <i class="fas fa-circle modal-toolbar-icon"></i>
+                    <input class="modal-color-input" type="color">
+                    <span class="modal-paint-tooltip">Pick color</span> 
+                </div>
+
+                <div class="modal-paint-btn modal-toolbar-icon-container modal-icon-active modal-tooltip">
+                    <span class="modal-tooltip-text">Draw</span>
+                    <i class="fas fa-paint-brush modal-toolbar-icon"></i>
+                </div>
+
+                <div class="modal-erase-btn modal-toolbar-icon-container modal-tooltip">
+                    <span class="modal-tooltip-text">Erase</span>
+                    <i class="fas fa-eraser modal-toolbar-icon"></i>
+                </div>
                 
-                <div class="color-btn toolbar-icon-container  tooltip" >
-                    <i class="fas fa-circle toolbar-icon"></i>
-                    <input class="color-input" type="color">
-                    <span class="paint-tooltip">Pick color</span> 
-                </div>
-                <div class="paint-btn toolbar-icon-container active-icon tooltip">
-                    <span class="tooltip-text ">Draw</span>
-                    <i class="fas fa-paint-brush toolbar-icon"></i>
-                </div>
-                <div class="erase-btn toolbar-icon-container tooltip" >
-                    <span class="tooltip-text ">Erase</span>
-                    <i class="fas fa-eraser toolbar-icon"></i>
-                </div>
-                <div class="clear-btn toolbar-icon-container tooltip" >
-                    <span class="tooltip-text">Clear Page</span>
-                    <i class="far fa-file toolbar-icon"></i>
+                <div class="modal-clear-btn modal-toolbar-icon-container modal-tooltip" >
+                    <span class="modal-tooltip-text">Clear Page</span>
+                    <i class="far fa-file modal-toolbar-icon"></i>
                 </div>
                   
             </div>
         </div>
     </div>
 
-    <div class="popup">
-        <div class="popup-content">
+    <div class="modal-popup-hide">
+        <div class="modal-popup-content">
             <p>Are you sure you want to reset your canvas?</p>
-            <ul class="popup-list">
-                <li class="popup-yes-btn">Yes</li>
-                <li class="popup-no-btn">No</li>
+            <ul class="modal-popup-list">
+                <li class="modal-popup-yes-btn">Yes</li>
+                <li class="modal-popup-no-btn">No</li>
             </ul>
         </div>
     </div>
