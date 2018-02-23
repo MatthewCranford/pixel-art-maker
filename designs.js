@@ -183,13 +183,17 @@ $(document).ready(function() {
 			}	
 		}
 	});
+
+	// init spectrum color picker
+	$("#custom").spectrum({
+	});
 	
 
 	// set color input & set draw to true
-	let currentColor = $colorInput.val();
-	$colorInput.change(function() {
+	let currentColor = $("#custom").spectrum('get').toHexString();
+	$("#custom").change(function() {
 		draw=true;
-		currentColor = $colorInput.val();
+		currentColor = $("#custom").spectrum('get').toHexString();
 		$colorBtn.css("color", currentColor);
 		$colorBtn.css("border-color", "black");
 		$iconActive.removeClass("modal-icon-active");

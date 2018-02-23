@@ -79,7 +79,7 @@ input[type="number"] {
     font-size: 1.8rem;   
 }
 
-.interface-ui-container {
+.interface-size-container {
     margin: 0.0rem 0 0rem;
     padding: 1rem;
     display: flex;
@@ -353,19 +353,14 @@ input[type="number"] {
     border-radius: 100%;
     position: absolute;
     left: 0;
-    top: 0;
+    top: 222;
     opacity: 0;
     height: 50px;
     width: 50px;
     cursor: pointer;
 }
 
-.modal-tooltip {
-    position: relative;
-    display: inline-block;
-}
-
-.modal-tooltip .modal-tooltip-text {
+.modal-tooltip-text {
     visibility: hidden;
     width: 100px;
     background-color: #1d1d1d;                      
@@ -378,7 +373,7 @@ input[type="number"] {
     right: 120%;
 }
 
-    .modal-tooltip .modal-tooltip-text::after {
+    .modal-tooltip-text::after {
         content: "";
         position: absolute;
         top: 50%;
@@ -388,10 +383,11 @@ input[type="number"] {
         border-style: solid;
         border-color: transparent transparent transparent black;
         pointer-events: none;
-
     }
+
+    /* activate tooltip on hover */
     .modal-tooltip:hover .modal-tooltip-text {
-        visibility: visible;
+        visibility: visible; 
     }
 
 .modal-paint-tooltip {
@@ -477,6 +473,7 @@ input[type="number"] {
 
 
 /* tumbleweed... */
+
 
 
 /* =============

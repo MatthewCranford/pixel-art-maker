@@ -6,12 +6,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Monoton">
     <link rel="stylesheet" href="styles.css">
+    
     <script src="designs.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <script src='spectrum/spectrum.js'></script>
+    <link rel='stylesheet' href='spectrum/spectrum.css'/>
+    
 </head>
 
 <body>
@@ -26,7 +32,7 @@
 
             <form>
 
-                <div class="interface-ui-container">
+                <div class="interface-size-container">
                     <label class="interface-input-title" for="interface-input-height">Grid Height:</label>
                     <div class="interface-input-container">
                         <input class="interface-input interface-input-height" type="number" name="height" min="1" max="50" value="20">
@@ -39,7 +45,7 @@
                     </div>    
                 </div>
 
-                <div class="interface-ui-container">
+                <div class="interface-size-container">
                     <label class="interface-input-title" for="interface-input-width">Grid Width:</label>
                     <div class="interface-input-container">
                         <input class="interface-input interface-input-width" type="number" name="width" min="1" max="50" value="20">
@@ -74,7 +80,7 @@
 
                 <div class="modal-color-btn modal-toolbar-icon-container modal-tooltip">
                     <i class="fas fa-circle modal-toolbar-icon"></i>
-                    <input class="modal-color-input" type="color">
+                    <input class="modal-color-input" id="custom" >
                     <span class="modal-paint-tooltip">Pick color</span> 
                 </div>
 
