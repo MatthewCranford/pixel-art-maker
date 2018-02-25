@@ -81,11 +81,17 @@ $(document).ready(function() {
 
 
 	// call makeGrid and pass height/width
-	$createBtn.click(function(e) {
+	$createBtn.on("click keyup",function(e) {
+		let code = e.keyCode || e.which;
 		let currentHeight = parseInt($heightInput.val());
 		let currentWidth = parseInt($widthInput.val());
-	
-		if ((currentHeight <= maxHeight && currentHeight > 0) && (currentWidth <= maxWidth && currentWidth > 0)) {
+
+		// don't submit on tab or space keypress
+		if (code === 32 || code === 9 ) {	
+			return false;
+		}
+
+		else if ((currentHeight <= maxHeight && currentHeight > 0) && (currentWidth <= maxWidth && currentWidth > 0)) {
 			e.preventDefault();
 			makeGrid(currentHeight,currentWidth);
 		} 
@@ -201,8 +207,8 @@ $(document).ready(function() {
 	});
 
 
-	// clear popup
-	$colorBtn.on("click mouseover",function() {
+	// clear tooltip
+	$colorBtn.on("mouseover",function() {
 		$colorBtn.find("span").removeClass("modal-paint-tooltip");
 		$colorBtn.find("span").addClass("modal-tooltip-text");
 	})

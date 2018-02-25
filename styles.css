@@ -371,6 +371,8 @@ input[type="number"] {
     position: absolute;
     top: -5px;
     right: 120%;
+    pointer-events: none;
+    user-select: none;
 }
 
     .modal-tooltip-text::after {
@@ -382,7 +384,7 @@ input[type="number"] {
         border-width: 5px;
         border-style: solid;
         border-color: transparent transparent transparent black;
-        pointer-events: none;
+  
     }
 
     /* activate tooltip on hover */
@@ -391,31 +393,32 @@ input[type="number"] {
     }
 
 .modal-paint-tooltip {
-    width: 120px;
+    width: 100px;
     background-color: #1d1d1d;                      
     color: #fff;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
     position: absolute;
-    top: -5px;
-    right: 120%;
-    animation: bounce 1.85s ease infinite;
+    top: -80 px;
+    right: -60%;
+    /* animation: bounce 1.85s ease infinite; */
     cursor: pointer;
+    pointer-events: none;
+    user-select: none;
 }
 
     .modal-paint-tooltip::after {
         content: "";
         position: absolute;
-        top: 50%;
-        left: 100%;
+        top: 107%;
+        left: 50%;
         margin-top: -5px;
         border-width: 5px;
         border-style: solid;
-        border-color: transparent transparent transparent black;
-        pointer-events: none;
+        border-color: black transparent transparent transparent ;
     }
-
+         
     @keyframes bounce {
         0% {top: -5px;}
         50% {top: 2px;}
@@ -425,7 +428,7 @@ input[type="number"] {
 
 /* clear grid popup */
 
-.modal-popup-hide {
+.modal-popup {
     opacity: 0;
     visibility: hidden;
    
