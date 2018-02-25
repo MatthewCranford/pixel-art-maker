@@ -211,6 +211,7 @@ $(document).ready(function() {
 	$colorBtn.on("mouseover",function() {
 		$colorBtn.find("span").removeClass("modal-paint-tooltip");
 		$colorBtn.find("span").addClass("modal-tooltip-text");
+		$colorBtn.find("span").text("Change Color");
 	})
 
 
