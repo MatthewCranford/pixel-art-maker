@@ -26,6 +26,7 @@ $(document).ready(function() {
 	const $paintTooltip = $(".modal-paint-tooltip");
 	const $colorBtn = $(".modal-color-btn");
 	const $popup = $(".modal-popup");
+	const $popupText = $(".modal-popup-text");
 	const $popupYesBtn = $(".modal-popup-yes-btn");
 	const $popupNoBtn = $(".modal-popup-no-btn");
 	const $iconActive = $(".modal-icon-active");
@@ -164,12 +165,6 @@ $(document).ready(function() {
 	// ==================
 	
 	
-	// close modal icon
-	$closeBtn.click(function() {
-		$modal.css("visibility", "hidden");
-		$pixelCanvas.empty();
-	});
-	
 
 	// holds paint/erase state
 	let draw = true;
@@ -207,7 +202,7 @@ $(document).ready(function() {
 	});
 
 
-	// clear tooltip
+	// remove "intro" tooltip
 	$colorBtn.on("mouseover",function() {
 		$colorBtn.find("span").removeClass("modal-paint-tooltip");
 		$colorBtn.find("span").addClass("modal-tooltip-text");
@@ -231,16 +226,38 @@ $(document).ready(function() {
 	});
 
 
+	// condition for popup
+	let quit = false;
+
+	// close modal icon
+	$closeBtn.click(function() {
+		quit = true;
+		$popupText.text("All progress will be lost. Are you sure?");
+		$popup.addClass("is-visible");
+		
+	});
+	
+
 	// clear button popup.
 	$clearBtn.click(function() {
+		quit = false;
+		$popupText.text("Are you sure you want to reset your canvas?");
 		$popup.addClass("is-visible");
+		
 	});
 
 
 	// popup yes btn
 	$popupYesBtn.click(function() {
-		$pixelCanvas.find("tr td").css("background-color", "white");
-		$popup.removeClass("is-visible");
+		if (quit) {
+			$modal.css("visibility", "hidden");
+			$pixelCanvas.empty();
+			$popup.removeClass("is-visible");
+		}
+		else {
+			$pixelCanvas.find("tr td").css("background-color", "white");
+			$popup.removeClass("is-visible");
+		}
 	});
 
 
