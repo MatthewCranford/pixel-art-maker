@@ -160,8 +160,12 @@ input[type="number"] {
     width: auto;
 }
 
+    .interface-create-btn:hover {
+        filter: brightness(.95);
+    }
     .interface-create-btn:active {
-        transform: translate(1px,1px)
+        transform: translate(1px,1px);
+        filter: brightness(.90);
     }
 
 .interface-tooltip {
