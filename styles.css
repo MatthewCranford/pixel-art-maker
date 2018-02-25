@@ -471,6 +471,16 @@ input[type="number"] {
     visibility: visible;
   }
 
+/* 
+spectrum custom styles */
+  .sp-replacer {
+    position: absolute;
+    margin: -40px 0 0 0;
+    left: 0;
+    height: 37px;
+    opacity: 0;
+  }
+
 
 /* =============
     IDs
