@@ -88,7 +88,8 @@ input[type="number"] {
     justify-content: center;
     border-bottom: 4px solid black;
     border-top: 0px;
-    background-color: #e3e3e4dc;
+    background-color: #353636ea;
+    color: #f8f8f8;
     flex-grow:0;
     position: relative;
 }   
