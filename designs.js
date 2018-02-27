@@ -192,6 +192,7 @@ $(document).ready(function() {
 
 	// set color input & set draw to true
 	let currentColor = $("#custom").spectrum('get').toHexString();
+	const defaultColor  = currentColor;
 	$("#custom").change(function() {
 		draw=true;
 		currentColor = $("#custom").spectrum('get').toHexString();
@@ -250,9 +251,19 @@ $(document).ready(function() {
 	// popup yes btn
 	$popupYesBtn.click(function() {
 		if (quit) {
+			$("#custom").val("#3355cc");
 			$modal.css("visibility", "hidden");
 			$pixelCanvas.empty();
 			$popup.removeClass("is-visible");
+			// $colorBtn.css("color", currentColor);
+			// $colorBtn.css("border-color", "black");
+
+
+			// set color picker back to default (black)
+			// $("#custom").spectrum("set", "#3355cc");
+			// $("#custom").spectrum("color", "#3355cc")
+			// $("#custom").spectrum("get", "#3355cc");
+			
 		}
 		else {
 			$pixelCanvas.find("tr td").css("background-color", "white");
