@@ -4,6 +4,7 @@ $(document).ready(function() {
 	// jquery selectors
 
 	// interface
+	const $input = $(".interface-input"); 
 	const $heightInput = $(".interface-input-height"); 
 	const $widthInput = $(".interface-input-width");
 	const $heightAddBtn = $(".interface-add-btn-height");
@@ -96,6 +97,12 @@ $(document).ready(function() {
 			e.preventDefault();
 			makeGrid(currentHeight,currentWidth);
 		} 
+	});
+
+
+	// select all text field
+	$input.on("focus", function() {
+		this.select();
 	});
 
 
