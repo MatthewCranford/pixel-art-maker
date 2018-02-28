@@ -453,9 +453,12 @@ input[type="number"] {
     top: 25%;
     left: 0;
     right: 0;
-    background-color: #02b3e4; 
+    background-color: #353636; 
+    color: white;
     font-size: 1.2rem;
     padding: 15px;
+    border: solid 4px #1d1d1d;
+    border-radius: 10px;
 }
 
 .modal-popup-list {
@@ -472,6 +475,7 @@ input[type="number"] {
     padding: 5px 15px;
     border: 2px solid black;
     border-radius: 8px;
+    color: black;
 }
 
 .modal-popup.is-visible {
@@ -486,7 +490,7 @@ spectrum custom styles */
     top: 0px;
     left: 0;
     height: 37px;
-     opacity: 0;
+    opacity: 0;
     background-color: red;
     color: red;
 
@@ -514,9 +518,15 @@ spectrum custom styles */
       
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
+
     .interface-container {
         width: 60%;
     }
+    .modal-popup-content {
+        width: 40%;
+    }
+
+   
  }
 
 /* // Large devices (desktops, 992px and up) */
@@ -525,6 +535,10 @@ spectrum custom styles */
     .interface-container {
         width: 40%;
     }
+
+    .modal-popup-content {
+        width: 30%;
+    }
  }
 
 /* // Extra large devices (large desktops, 1200px and up) */
@@ -532,6 +546,10 @@ spectrum custom styles */
     
     .interface-container {
         width: 30%;
+    }
+
+    .modal-popup-content {
+        width: 20%;
     }
  }
 
