@@ -96,6 +96,7 @@ input[type="number"] {
     position: relative;
 
     /* fixes transform pixel movement */
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
 }   
 
