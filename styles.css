@@ -61,7 +61,7 @@ input[type="number"] {
     background-color: #02b3e4d7;
     width: 80%;
     border-radius: 5px;
-    border: 4px solid #272929;
+    border: 4px solid black;
     box-shadow: 5px 5px 11px #000000b6;
     animation: interfaceDropDown 1.5s ease-in-out;
     position: absolute;
@@ -89,7 +89,6 @@ input[type="number"] {
     align-items: center;
     justify-content: center;
     border-bottom: 4px solid black;
-    border-top: 0px;
     background-color: #353636ea;
     color: #f8f8f8;
     flex-grow:0;
@@ -148,12 +147,39 @@ input[type="number"] {
     cursor: pointer;
     font-size: 1.2rem;
     transition: transform .2s linear;
-
 }
 
     .interface-btn-col-icon:hover {
         transform: scale(1.25);
     }
+
+/* preset grids */
+.interface-presets-container {
+    background-color: #353636ea;
+    border-bottom: 4px solid black;
+    padding: 1rem;
+
+}
+
+    .presets-title {
+        margin: 0;
+        color: white;
+    }
+
+    .presets-ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+        .presets-ul li {
+            color: white;
+            flex: 1 auto;
+            background-color: red;
+            border: 2px solid black;
+        }
 
 .interface-create-btn {
     border-radius: 5px;
