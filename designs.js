@@ -62,9 +62,12 @@ $(document).ready(function() {
 		$modal.css("visibility", "visible");
 	}
 
+
+	// td box dimensions
+	const tdSize = 20;
 	// holds "current" max height/width of pixel canvas container on user's viewport
-	let maxHeight = parseInt(($pixelCanvasContainer.height()/20).toFixed());
-	let maxWidth = parseInt(($pixelCanvasContainer.width()/20).toFixed());
+	let maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
+	let maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
 
 
 	// assign height/width default inputs with max available size
@@ -74,8 +77,8 @@ $(document).ready(function() {
 
 	// reassign height/width inputs when browser resizes
 	$(window).resize(function() {
-		maxHeight = parseInt(($pixelCanvasContainer.height()/20).toFixed());
-		maxWidth = parseInt(($pixelCanvasContainer.width()/20).toFixed());
+		maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
+		maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
 			
 		$heightInput.val(maxHeight).attr("max", maxHeight);
 		$widthInput.val(maxWidth).attr("max", maxWidth);	
