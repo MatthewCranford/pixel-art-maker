@@ -76,12 +76,13 @@ $(document).ready(function() {
 	// holds "current" height/width grids sizes on user's viewport
 	let maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
 	let maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
-	let smallWidth = ((maxWidth * .5).toFixed());
-	let smallHeight = ((maxHeight * .5).toFixed());
-	let mediumHeight = ((maxHeight * .75).toFixed());
-	let mediumWidth = ((maxWidth * .75).toFixed());
-	let largeHeight = ((maxHeight * .85).toFixed());
-	let largeWidth = ((maxWidth * .85).toFixed());
+	
+	let smallHeight = ((maxHeight * .4).toFixed());
+	let smallWidth = ((maxWidth * .3).toFixed());
+	let mediumHeight = ((maxHeight * .6).toFixed());
+	let mediumWidth = ((maxWidth * .4).toFixed());
+	let largeHeight = ((maxHeight * .8).toFixed());
+	let largeWidth = ((maxWidth * .6).toFixed());
 
 
 	// assign height/width default inputs with max available size
@@ -129,12 +130,13 @@ $(document).ready(function() {
 	$(window).resize(function() {
 		maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
 		maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
-		smallWidth = ((maxWidth * .5).toFixed());
-		smallHeight = ((maxHeight * .5).toFixed());
-		mediumHeight = ((maxHeight * .75).toFixed());
-		mediumWidth = ((maxWidth * .75).toFixed());
-		largeHeight = ((maxHeight * .85).toFixed());
-		largeWidth = ((maxWidth * .85).toFixed());
+		smallHeight = ((maxHeight * .4).toFixed());
+		smallWidth = ((maxWidth * .3).toFixed());
+		mediumHeight = ((maxHeight * .6).toFixed());
+		mediumWidth = ((maxWidth * .4).toFixed());
+		largeHeight = ((maxHeight * .8).toFixed());
+		largeWidth = ((maxWidth * .6).toFixed());
+	
 
 		$fullDescription.text(maxHeight + "x" + maxWidth);
 		$largeDescription.text(largeHeight + "x" + largeWidth);
