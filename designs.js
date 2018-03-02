@@ -14,7 +14,15 @@ $(document).ready(function() {
 	const $createBtn = $(".interface-create-btn");
 	const $heightTooltip = $(".interface-tooltip-height");
 	const $widthTooltip = $(".interface-tooltip-width");
-	
+	const $presetSmall = $("#preset-small");
+	const $presetMedium = $("#preset-medium");
+	const $presetLarge = $("#preset-large");
+	const $presetFull = $("#preset-full");
+	const $smallDescription = $("#small-description");
+	const $mediumDescription = $("#medium-description");
+	const $largeDescription = $("#large-description");
+	const $fullDescription = $("#full-description");
+
 	// modal
 	const $modal = $(".modal");
 	const $pixelCanvasContainer = $(".modal-pixel-canvas-container");
@@ -65,24 +73,77 @@ $(document).ready(function() {
 
 	// td box dimensions
 	const tdSize = 20;
-	// holds "current" max height/width of pixel canvas container on user's viewport
+	// holds "current" height/width grids sizes on user's viewport
 	let maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
 	let maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
+	let smallWidth = ((maxWidth * .5).toFixed());
+	let smallHeight = ((maxHeight * .5).toFixed());
+	let mediumHeight = ((maxHeight * .75).toFixed());
+	let mediumWidth = ((maxWidth * .75).toFixed());
+	let largeHeight = ((maxHeight * .85).toFixed());
+	let largeWidth = ((maxWidth * .85).toFixed());
 
 
 	// assign height/width default inputs with max available size
 	$heightInput.val(maxHeight).attr("max", maxHeight);
 	$widthInput.val(maxWidth).attr("max", maxWidth);
 
+	// assign default grid size bases on current viewport
+	$fullDescription.text(maxHeight + "x" + maxWidth);
+	$largeDescription.text(largeHeight + "x" + largeWidth);
+	$mediumDescription.text(mediumHeight + "x" + mediumWidth);
+	$smallDescription.text(smallHeight + "x" + smallWidth);
+
+	// preset grids
+
+	// small
+	$presetSmall.on("click", function() {
+		
+		$heightInput.val((smallHeight));
+		$widthInput.val((smallWidth));
+	});
+
+
+	// medium
+	$presetMedium.on("click", function() {
+		
+		$heightInput.val((mediumHeight));
+		$widthInput.val((mediumWidth));
+	});
+
+	// large
+	$presetLarge.on("click", function() {
+
+		$heightInput.val((largeHeight));
+		$widthInput.val((largeWidth));
+	});
+
+	// full-screen
+	$presetFull.on("click", function() {
+		$heightInput.val((maxHeight));
+		$widthInput.val((maxWidth));
+		
+	});
 
 	// reassign height/width inputs when browser resizes
 	$(window).resize(function() {
 		maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
 		maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
-			
+		smallWidth = ((maxWidth * .5).toFixed());
+		smallHeight = ((maxHeight * .5).toFixed());
+		mediumHeight = ((maxHeight * .75).toFixed());
+		mediumWidth = ((maxWidth * .75).toFixed());
+		largeHeight = ((maxHeight * .85).toFixed());
+		largeWidth = ((maxWidth * .85).toFixed());
+
+		$fullDescription.text(maxHeight + "x" + maxWidth);
+		$largeDescription.text(largeHeight + "x" + largeWidth);
+		$mediumDescription.text(mediumHeight + "x" + mediumWidth);
+		$smallDescription.text(smallHeight + "x" + smallWidth);
+
 		$heightInput.val(maxHeight).attr("max", maxHeight);
 		$widthInput.val(maxWidth).attr("max", maxWidth);	
-	})
+	});
 
 
 	// call makeGrid and pass height/width
