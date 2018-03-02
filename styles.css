@@ -40,7 +40,7 @@ input[type="number"] {
 
 .main-title {
     font-family: 'Press Start 2P', cursive;
-    font-size: 50px;
+    font-size: 1.2rem;
     margin: 0;
     padding: 2rem;
     background-color: #02b3e4d7;
@@ -67,19 +67,20 @@ input[type="number"] {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top: 250px;
+    top: 120px;
+
 }
 
     @keyframes interfaceDropDown {
         from {top: -400px;}
-        to {top: 250px;}
+        to {top: 120px;}
     }
     
 .interface-title {
     border-bottom: 4px solid black;
     margin: 0;
     padding: 1.5rem;
-    font-size: 1.8rem;   
+    font-size: 1.4rem;   
 }
 
 .interface-size-container {
