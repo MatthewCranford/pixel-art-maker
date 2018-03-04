@@ -4,8 +4,8 @@
 
 body, html {
     height: 100%;
-    margin: 0;
-    padding: 0;
+    /* overflow: hidden; bug?? */ 
+   
 }
 
 body {
@@ -277,6 +277,7 @@ input[type="number"] {
     overflow: hidden;; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    margin: 0;
     
 }
 

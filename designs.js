@@ -53,20 +53,38 @@ $(document).ready(function() {
 	Append tbody to the DOM via pixel canvas.
 	*/
 
+	//cache version 100%+ performance boost!?
+	// function makeGrid(height,width) {
+	// 	const $tbody = $("<tbody></tbody>");
+	// 	let $tr, $td;
+		
+
+	// 	for(let row = 0; row < height; row++) {
+	// 		$tr = $("<tr></tr>");
+	// 		for(let col =0; col < width; col++) {
+	// 			$td = $("<td></td>");
+	// 			$tr.append($td);
+	// 		}  
+	// 		$tbody.append($tr);
+	// 	}
+	// 	$pixelCanvas.append($tbody);
+	// 	$modal.css("visibility", "visible");
+	// }
+
+	// // non-cache version
 	function makeGrid(height,width) {
-		const $tbody = $("<tbody></tbody>");
 		let $tr, $td;
 		
 
 		for(let row = 0; row < height; row++) {
 			$tr = $("<tr></tr>");
+			$pixelCanvas.append($tr);
 			for(let col =0; col < width; col++) {
 				$td = $("<td></td>");
 				$tr.append($td);
 			}  
-			$tbody.append($tr);
+			
 		}
-		$pixelCanvas.append($tbody);
 		$modal.css("visibility", "visible");
 	}
 
