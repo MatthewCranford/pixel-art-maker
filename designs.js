@@ -4,6 +4,7 @@ $(document).ready(function() {
 	// jquery selectors
 
 	// interface
+	const $interface = $(".interface-container");
 	const $input = $(".interface-input"); 
 	const $heightInput = $(".interface-input-height"); 
 	const $widthInput = $(".interface-input-width");
@@ -121,8 +122,6 @@ $(document).ready(function() {
 		assignSize(maxHeight,maxWidth);
 	});
 
-	
-	
 
 	// get preset sizes
 	function getSize() {
@@ -136,19 +135,18 @@ $(document).ready(function() {
 		mediumHeight = ((maxHeight * .6).toFixed());
 		mediumWidth = ((maxWidth * .4).toFixed());
 		largeHeight = ((maxHeight * .8).toFixed());
-		largeWidth = ((maxWidth * .6).toFixed());
-	
-
-	
-
-		
+		largeWidth = ((maxWidth * .6).toFixed());	
 	}
 
+
+	// assign height/width inputs
 	function assignSize(height,width) {
 		$heightInput.val(height).attr("max", maxHeight);
 		$widthInput.val(width).attr("max", maxWidth);
 	}
 
+
+	// update preset dimension text
 	function displaySize() {
 		$fullDescription.text(maxHeight + "x" + maxWidth);
 		$largeDescription.text(largeHeight + "x" + largeWidth);
@@ -156,7 +154,6 @@ $(document).ready(function() {
 		$smallDescription.text(smallHeight + "x" + smallWidth);
 	}
 
-	
 
 	// reassign height/width inputs when browser resizes
 	$(window).resize(function() {
@@ -166,6 +163,7 @@ $(document).ready(function() {
 
 	getSize();
 	displaySize();
+
 
 	// call makeGrid and pass height/width
 	$createBtn.on("click keyup",function(e) {
@@ -181,6 +179,7 @@ $(document).ready(function() {
 		else if ((currentHeight <= maxHeight && currentHeight > 0) && (currentWidth <= maxWidth && currentWidth > 0)) {
 			e.preventDefault();
 			makeGrid(currentHeight,currentWidth);
+			$interface.css("display","none");
 		} 
 	});
 
@@ -342,6 +341,7 @@ $(document).ready(function() {
 	// popup yes btn
 	$popupYesBtn.click(function() {
 		if (quit) {
+			$interface.css("display","block");
 			$modal.css("visibility", "hidden");
 			$pixelCanvas.empty();
 			$popup.removeClass("is-visible");
