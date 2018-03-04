@@ -99,7 +99,8 @@ $(document).ready(function() {
 
 	// small
 	$presetSmall.on("click", function() {
-		
+		$(".preset-container").removeClass("active");
+		$(this).addClass("active");
 		$heightInput.val((smallHeight));
 		$widthInput.val((smallWidth));
 	});
@@ -107,20 +108,24 @@ $(document).ready(function() {
 
 	// medium
 	$presetMedium.on("click", function() {
-		
+		$(".preset-container").removeClass("active");
+		$(this).addClass("active");
 		$heightInput.val((mediumHeight));
 		$widthInput.val((mediumWidth));
 	});
 
 	// large
 	$presetLarge.on("click", function() {
-
+		$(".preset-container").removeClass("active");
+		$(this).addClass("active");
 		$heightInput.val((largeHeight));
 		$widthInput.val((largeWidth));
 	});
 
 	// full-screen
 	$presetFull.on("click", function() {
+		$(".preset-container").removeClass("active");
+		$(this).addClass("active");
 		$heightInput.val((maxHeight));
 		$widthInput.val((maxWidth));
 		
