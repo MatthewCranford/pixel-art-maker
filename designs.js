@@ -22,7 +22,6 @@ $(document).ready(function() {
 	const $mediumDescription = $("#medium-description");
 	const $largeDescription = $("#large-description");
 	const $fullDescription = $("#full-description");
-
 	// modal
 	const $modal = $(".modal");
 	const $pixelCanvasContainer = $(".modal-pixel-canvas-container");
@@ -40,12 +39,18 @@ $(document).ready(function() {
 	const $popupNoBtn = $(".modal-popup-no-btn");
 	const $iconActive = $(".modal-icon-active");
 
-	
 
-	// ==================
-	// Interface Scripts
-	// ================== 
+	// interface Scripts
 
+	// sizes
+	let smallHeight;
+	let smallWidth;
+	let mediumHeight;
+	let mediumWidth;
+	let largeHeight;
+	let largeWidth;
+	let maxHeight; 
+	let maxWidth;
 
 	/* 
 	Create grid using passed parameters. 
@@ -53,12 +58,11 @@ $(document).ready(function() {
 	Append tbody to the DOM via pixel canvas.
 	*/
 
-	//cache version 100%+ performance boost!?
+	// cache version 100%+ performance boost!?
 	function makeGrid(height,width) {
 		const $tbody = $("<tbody></tbody>");
 		let $tr, $td;
 		
-
 		for(let row = 0; row < height; row++) {
 			$tr = $("<tr></tr>");
 			for(let col =0; col < width; col++) {
@@ -74,7 +78,6 @@ $(document).ready(function() {
 	// // non-cache version
 	// function makeGrid(height,width) {
 	// 	let $tr, $td;
-		
 
 	// 	for(let row = 0; row < height; row++) {
 	// 		$tr = $("<tr></tr>");
@@ -83,35 +86,10 @@ $(document).ready(function() {
 	// 			$td = $("<td></td>");
 	// 			$tr.append($td);
 	// 		}  
-			
 	// 	}
 	// 	$modal.css("visibility", "visible");
 	// }
 
-
-	// td box dimensions
-	const tdSize = 20;
-	// holds "current" height/width grids sizes on user's viewport
-	let maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
-	let maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
-	
-	let smallHeight = ((maxHeight * .4).toFixed());
-	let smallWidth = ((maxWidth * .3).toFixed());
-	let mediumHeight = ((maxHeight * .6).toFixed());
-	let mediumWidth = ((maxWidth * .4).toFixed());
-	let largeHeight = ((maxHeight * .8).toFixed());
-	let largeWidth = ((maxWidth * .6).toFixed());
-
-
-	// assign height/width default inputs with max available size
-	$heightInput.val(maxHeight).attr("max", maxHeight);
-	$widthInput.val(maxWidth).attr("max", maxWidth);
-
-	// assign default grid size bases on current viewport
-	$fullDescription.text(maxHeight + "x" + maxWidth);
-	$largeDescription.text(largeHeight + "x" + largeWidth);
-	$mediumDescription.text(mediumHeight + "x" + mediumWidth);
-	$smallDescription.text(smallHeight + "x" + smallWidth);
 
 	// preset grids
 
@@ -119,40 +97,40 @@ $(document).ready(function() {
 	$presetSmall.on("click", function() {
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
-		$heightInput.val((smallHeight));
-		$widthInput.val((smallWidth));
+		assignSize(smallHeight,smallWidth);
 	});
-
 
 	// medium
 	$presetMedium.on("click", function() {
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
-		$heightInput.val((mediumHeight));
-		$widthInput.val((mediumWidth));
+		assignSize(mediumHeight,mediumWidth);
 	});
 
 	// large
 	$presetLarge.on("click", function() {
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
-		$heightInput.val((largeHeight));
-		$widthInput.val((largeWidth));
+		assignSize(largeHeight,largeWidth);
 	});
 
 	// full-screen
 	$presetFull.on("click", function() {
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
-		$heightInput.val((maxHeight));
-		$widthInput.val((maxWidth));
-		
+		assignSize(maxHeight,maxWidth);
 	});
 
-	// reassign height/width inputs when browser resizes
-	$(window).resize(function() {
+	
+	
+
+	// get preset sizes
+	function getSize() {
+		const tdSize = 20;
+
 		maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
 		maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
+		
 		smallHeight = ((maxHeight * .4).toFixed());
 		smallWidth = ((maxWidth * .3).toFixed());
 		mediumHeight = ((maxHeight * .6).toFixed());
@@ -161,15 +139,33 @@ $(document).ready(function() {
 		largeWidth = ((maxWidth * .6).toFixed());
 	
 
+	
+
+		
+	}
+
+	function assignSize(height,width) {
+		$heightInput.val(height).attr("max", maxHeight);
+		$widthInput.val(width).attr("max", maxWidth);
+	}
+
+	function displaySize() {
 		$fullDescription.text(maxHeight + "x" + maxWidth);
 		$largeDescription.text(largeHeight + "x" + largeWidth);
 		$mediumDescription.text(mediumHeight + "x" + mediumWidth);
 		$smallDescription.text(smallHeight + "x" + smallWidth);
+	}
 
-		$heightInput.val(maxHeight).attr("max", maxHeight);
-		$widthInput.val(maxWidth).attr("max", maxWidth);	
+	
+
+	// reassign height/width inputs when browser resizes
+	$(window).resize(function() {
+		getSize();
+		displaySize();
 	});
 
+	getSize();
+	displaySize();
 
 	// call makeGrid and pass height/width
 	$createBtn.on("click keyup",function(e) {
