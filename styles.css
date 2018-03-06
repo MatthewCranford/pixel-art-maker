@@ -156,7 +156,7 @@ input[type="number"] {
 
 /* preset grids */
 .interface-presets-container {
-    background-color: #353636ea;
+    background-color: #5f5f5fea;
     border-bottom: 4px solid black;
     padding: 1rem;
 
@@ -184,7 +184,7 @@ input[type="number"] {
             font-weight: 500;
             flex: 1 auto;
             cursor: pointer;
-            margin: 0;
+            margin: 3px;
             padding: 0;
             user-select: none; 
              
@@ -220,7 +220,7 @@ input[type="number"] {
     }              
 
     .preset-description {
-        background-color: #424242;
+        background-color: #353636;
         color:white;
     }
 
