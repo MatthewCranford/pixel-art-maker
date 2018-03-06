@@ -4,7 +4,7 @@
 
 body, html {
     height: 100%;
-     overflow: hidden; /* fixes bug of certain displays */
+  
    
 }
 
@@ -101,9 +101,9 @@ input[type="number"] {
 }   
 
 .interface-input-title {
+    color: white;
     width: 120px;
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     user-select: none;
 }
 
@@ -166,6 +166,7 @@ input[type="number"] {
         margin: 0;
         color: white;
         user-select: none;
+        font-size: 1.1rem;
     }
 
     .presets-ul {
@@ -179,13 +180,13 @@ input[type="number"] {
         .presets-ul li {
             color: rgb(0, 0, 0);
             background-color: #02b3e4;
-            border: 2px solid black;
-            font-weight: 600;
-            flex: 1 auto;
+            border: 5px solid #1d1d1d;
+            font-weight: 500;
+            flex: 1 20%;
             cursor: pointer;
             margin: 0;
             padding: 0;
-            user-select: none;
+            user-select: none; 
              
         }
 
@@ -197,19 +198,33 @@ input[type="number"] {
             filter: brightness(85%)
         }
 
-    .preset-container {
-        padding: 10px;
+    .preset-container { 
+        background-color: #02b3e4; 
     }
+
+        .preset-container.active {
+            border-color: transparent;
+            box-shadow:  0 0 0 4px #fafafa;
+        }
 
         .preset-container p {
             margin: 0;
             padding: 5px 0;
         }
 
-        .preset-container.active {
-            border-color: transparent;
-            box-shadow: inset 0 0 0 5px #ebebeb;
-        }
+    .preset-title {
+        font-weight: 600;
+        background-color: #02b3e4;
+        color: black;
+        border-bottom: solid 2px black;
+    }              
+
+    .preset-description {
+        background-color: #424242;
+        color:white;
+    }
+
+       
 
         
 
