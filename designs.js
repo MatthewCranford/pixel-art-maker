@@ -3,6 +3,8 @@ $(document).ready(function() {
 
 	// jquery selectors
 
+	const $mainTitle = $(".main-title");
+
 	// interface
 	const $interface = $(".interface-container");
 	const $input = $(".interface-input"); 
@@ -167,6 +169,9 @@ $(document).ready(function() {
 
 	// call makeGrid and pass height/width
 	$createBtn.on("click keyup",function(e) {
+		$pixelCanvas.css("display","block");
+		$(".modal-nav").css("display","flex");
+		$(".modal-toolbar").css("display","flex");
 		let code = e.keyCode || e.which;
 		let currentHeight = parseInt($heightInput.val());
 		let currentWidth = parseInt($widthInput.val());
@@ -179,7 +184,9 @@ $(document).ready(function() {
 		else if ((currentHeight <= maxHeight && currentHeight > 0) && (currentWidth <= maxWidth && currentWidth > 0)) {
 			e.preventDefault();
 			makeGrid(currentHeight,currentWidth);
+		
 			$interface.css("display","none");
+			$mainTitle.css("display","none");
 		} 
 	});
 
@@ -342,7 +349,11 @@ $(document).ready(function() {
 	$popupYesBtn.click(function() {
 		if (quit) {
 			$interface.css("display","block");
+			$mainTitle.css("display","block");
 			$modal.css("visibility", "hidden");
+			$pixelCanvas.css("display","none");
+			$(".modal-nav").css("display","none");
+			$(".modal-toolbar").css("display","none");
 			$pixelCanvas.empty();
 			$popup.removeClass("is-visible");
 
