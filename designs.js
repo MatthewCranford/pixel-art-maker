@@ -169,7 +169,7 @@ $(document).ready(function() {
 
 	// call makeGrid and pass height/width
 	$createBtn.on("click keyup",function(e) {
-		$pixelCanvas.css("display","block");
+		// $pixelCanvas.css("display","block");
 		$(".modal-nav").css("display","flex");
 		$(".modal-toolbar").css("display","flex");
 		let code = e.keyCode || e.which;
@@ -351,7 +351,7 @@ $(document).ready(function() {
 			$interface.css("display","block");
 			$mainTitle.css("display","block");
 			$modal.css("visibility", "hidden");
-			$pixelCanvas.css("display","none");
+			// $pixelCanvas.css("display","none");
 			$(".modal-nav").css("display","none");
 			$(".modal-toolbar").css("display","none");
 			$pixelCanvas.empty();
