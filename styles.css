@@ -323,13 +323,17 @@ input[type="number"] {
     padding: .2rem 0;
     border: 4px solid;
     border-width: 4px 0;
-    animation: navDropDown 1s ease-in-out;
+    
     position: relative;
     flex: 0 0 50px; 
-    display: none; 
+    /* display: none;  */
 }
 
-    @keyframes navDropDown { 
+.drop-down {
+    animation: dropDown 1s ease-in-out;
+}
+
+    @keyframes dropDown { 
         from {top: -100px;}
         to {top: 0px;}
     }
@@ -361,9 +365,11 @@ input[type="number"] {
     border-collapse: collapse;
     margin:auto;
     box-shadow: 0px 0px 20px 10px #333333b6;
-    animation: slideRight 1s ease-in-out;
     position: relative ;  
-   
+}
+
+.slide-right {
+    animation: slideRight 1s ease-in-out;
 }
 
     @keyframes slideRight {
@@ -396,13 +402,15 @@ input[type="number"] {
     background-color: #02b3e4d7;
     border: 4px solid;
     border-radius: 5px;
-    animation: toolbarSlideUp 1s ease-in-out; 
     position: relative;  
     flex: 0 0 50px;
-    display: none;
 }
 
-    @keyframes toolbarSlideUp { 
+.slide-up {
+    animation: slideUp 1s ease-in-out; 
+}
+
+    @keyframes slideUp { 
         from {bottom: -100px;}
         to {bottom: 0px;}
     }

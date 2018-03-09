@@ -41,6 +41,8 @@ $(document).ready(function() {
 	const $popupYesBtn = $(".modal-popup-yes-btn");
 	const $popupNoBtn = $(".modal-popup-no-btn");
 	const $iconActive = $(".modal-icon-active");
+	const $modalNav = $(".modal-nav");
+	const $modalToolbar = $(".modal-toolbar");
 
 
 	// interface Scripts
@@ -170,8 +172,10 @@ $(document).ready(function() {
 	// call makeGrid and pass height/width
 	$createBtn.on("click keyup",function(e) {
 		// $pixelCanvas.css("display","block");
-		$(".modal-nav").css("display","flex");
-		$(".modal-toolbar").css("display","flex");
+		$modalNav.toggleClass("drop-down");
+		$modalToolbar.toggleClass("slide-up");
+		$pixelCanvas.toggleClass("slide-right");
+		// $(".modal-toolbar").css("display","flex");
 		let code = e.keyCode || e.which;
 		let currentHeight = parseInt($heightInput.val());
 		let currentWidth = parseInt($widthInput.val());
@@ -351,9 +355,9 @@ $(document).ready(function() {
 			$interface.css("display","block");
 			$mainTitle.css("display","block");
 			$modal.css("visibility", "hidden");
-			// $pixelCanvas.css("display","none");
-			$(".modal-nav").css("display","none");
-			$(".modal-toolbar").css("display","none");
+			$modalNav.toggleClass("drop-down");
+			$pixelCanvas.toggleClass("slide-right");
+			$modalToolbar.toggleClass("slide-up");
 			$pixelCanvas.empty();
 			$popup.removeClass("is-visible");
 
