@@ -44,7 +44,7 @@ input[type="number"] {
     margin: 0;
     padding: 2rem;
     background-color: #02b3e4d7;
-    color: rgb(24, 24, 24);
+    color: #1f1f1f;
     border: solid;
     border-width: 4px 0px;
     position: relative;
@@ -63,29 +63,32 @@ input[type="number"] {
 
 
 .interface-container {
-    background-color: #02b3e4d7;
-    width: 80%;
-    border-radius: 5px;
-    border: 4px solid black;
+    /* background-color: #02b3e4d7; */
+    width: 100%;
+    /* border-radius: 5px; */
+    /* border: 4px solid black; */
     box-shadow: 5px 5px 11px #000000b6;
     animation: interfaceDropDown 1.5s ease-in-out;
-    position: absolute;
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
-    top: 120px;
+    top: 0px;
+    height: 100%;
 
 }
 
     @keyframes interfaceDropDown {
         from {top: -400px;}
-        to {top: 120px;}
+        to {top: 0;}
     }
     
 .interface-title {
-    border-bottom: 4px solid black;
+  
     margin: 0;
     padding: 1.5rem;
-    font-size: 1.4rem;   
+    font-size: 1.2rem;
+    background-color: #353636f5; 
+    color: #fafafa;  
 }
 
 .interface-size-container {
@@ -94,9 +97,9 @@ input[type="number"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 4px solid black;
-    background-color: #353636ea;
-    color: #f8f8f8;
+    border-bottom: 2px solid black;
+    background-color: #02b3e4d0;
+    color: #1f1f1f;
     flex-grow:0;
     position: relative;
 
@@ -106,7 +109,8 @@ input[type="number"] {
 }   
 
 .interface-input-title {
-    color: white;
+    color: #1f1f1f;
+    font-weight: 600;
     width: 120px;
     font-size: 1.1rem;
     user-select: none;
@@ -134,7 +138,7 @@ input[type="number"] {
     }
 
     .interface-input:focus {  
-        box-shadow: inset 0 0 3px 3px #02b3e4;
+        box-shadow: inset 0 0 2px 2px #1f1f1f;
         outline: none;
     }
 
@@ -395,7 +399,7 @@ input[type="number"] {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 300px;
+    width: 100%;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
