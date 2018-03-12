@@ -71,11 +71,6 @@ input[type="number"] {
     }
 
 
-
-
-/* interface */
-
-
 .interface-container {
     /* background-color: #02b3e4d0; */
     width: 100%;
@@ -90,8 +85,6 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     height: 100%;
-
-
 }
 
 .interface-container form {
@@ -118,7 +111,6 @@ input[type="number"] {
 }
 
 
-
 .interface-size-container {
     margin: 0;
     padding: 1rem;
@@ -129,8 +121,6 @@ input[type="number"] {
     border-bottom: 2px solid black;
     background-color: #02b3e4d0;
     color: #1f1f1f;
-    
-   
 
     /* fixes transform pixel movement */
     backface-visibility: hidden;
@@ -192,7 +182,7 @@ input[type="number"] {
         transform: scale(1.25);
     }
 
-/* preset grids */
+
 .interface-presets-container {
     background-color: #5f5f5fd0;
     border-bottom: 4px solid black;
@@ -201,16 +191,13 @@ input[type="number"] {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-
 }
 
     .presets-title {
         margin: 0;
         color: #fafafa;
         user-select: none;
-        font-size: 1.2rem;
-        
+        font-size: 1.2rem;  
     }
 
     .presets-ul {
@@ -231,9 +218,6 @@ input[type="number"] {
             margin: 3px;
             padding: 0;
             user-select: none; 
-       
-     
-    
         }
 
         .presets-ul li:hover {
@@ -275,8 +259,7 @@ input[type="number"] {
 
 .interface-create-btn-container {
     background-color: #02b3e4;
-   
- 
+    flex: 1;
 }
 
 .interface-create-btn {
@@ -291,7 +274,6 @@ input[type="number"] {
     box-shadow: 3px 3px 4px rgb(51, 50, 50);
     outline: none;
     width: auto;
-
 }
 
     .interface-create-btn:hover {
@@ -666,16 +648,70 @@ spectrum custom styles */
 /* // Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
     
+    .main-title {
+        padding: .25rem;      
+    }
+
+    .interface-title {
+        padding: .25rem;
+    }
+
+    .interface-size-container {
+        padding: 1.8rem 0 1.5rem;
+    }   
+
+    .interface-presets-container {
+        padding: .3rem;
+    }
+
+    .interface-create-btn {
+        margin: .4rem 0 .4rem 0;
+ 
+    }
+    
+    
  }
       
 /* // Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
 
-    .interface-container {
-        width: 60%;
-    }
+    
     .modal-popup-content {
         width: 40%;
+    }
+
+    .main-title {
+        padding: 1rem;
+    }
+
+    .interface-container {
+        width: 60%;
+        height: auto;
+        margin-top: 2rem;
+    }
+
+    .interface-title {
+        padding: 1rem;
+    }
+
+    .interface-size-container {
+        padding: 1rem;
+        flex: none;
+    }   
+
+    .interface-presets-container {
+        padding: .5rem;
+        flex: none;
+    }
+
+    .interface-create-btn-container {
+        flex: none;
+    }
+
+    .interface-create-btn {
+        margin: .8rem 0 .8rem 0;
+        flex: none;
+ 
     }
 
    
