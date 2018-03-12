@@ -352,7 +352,7 @@ $(document).ready(function() {
 	// popup yes btn
 	$popupYesBtn.click(function() {
 		if (quit) {
-			$interface.css("display","block");
+			$interface.css("display","flex");
 			$mainTitle.css("display","block");
 			$modal.css("visibility", "hidden");
 			$modalNav.toggleClass("drop-down");
