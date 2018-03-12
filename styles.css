@@ -197,7 +197,7 @@ input[type="number"] {
     background-color: #5f5f5fd0;
     border-bottom: 4px solid black;
     padding: 1rem;
-    flex: 2;
+    flex: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -231,7 +231,9 @@ input[type="number"] {
             margin: 3px;
             padding: 0;
             user-select: none; 
-             
+       
+     
+    
         }
 
         .presets-ul li:hover {
@@ -243,7 +245,9 @@ input[type="number"] {
         }
 
     .preset-container { 
-        background-color: #02b3e4; 
+        display: flex;
+        flex-direction: column;
+        flex: 1;
     }
 
         .preset-container.active {
@@ -254,6 +258,7 @@ input[type="number"] {
         .preset-container p {
             margin: 0;
             padding: 5px 0;
+            flex:1 ;
         }
 
     .preset-title {
@@ -270,7 +275,7 @@ input[type="number"] {
 
 .interface-create-btn-container {
     background-color: #02b3e4;
-    flex: 1;
+   
  
 }
 
