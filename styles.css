@@ -1,5 +1,5 @@
 /* theme colors
-#02b3e4d7 blue
+#02b3e4d0 blue
 #353636f5 dark gray
 #5f5f5fd0 light gray */
 
@@ -57,7 +57,8 @@ input[type="number"] {
     font-size: 1.5rem;
     margin: 0;
     padding: 2rem;
-    background-color: #02b3e4d7;
+    background-color: #02b3e4;
+    background-color: #02b3e4d0;
     color: #1f1f1f;
  
     border-width: 4px 0px;
@@ -75,8 +76,8 @@ input[type="number"] {
     /* background-color: #02b3e4d0; */
     width: 100%;
     /* border-radius: 5px; */
-    /* border: 4px solid black; */
-    box-shadow: 5px 5px 11px #000000b6;
+    /* border: 4px solid #1f1f1f; */
+    box-shadow: 5px 5px 11px #1f1f1f;
     animation: interfaceDropDown 1.5s ease-in-out;
     position: relative;
     left: 50%;
@@ -105,6 +106,7 @@ input[type="number"] {
     margin: 0;
     padding: 1.5rem;
     font-size: 1.1rem;
+    background-color: #353636; 
     background-color: #353636f3; 
     color: #fafafa;  
     flex: 0;
@@ -118,7 +120,8 @@ input[type="number"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #1f1f1f;
+    background-color: #02b3e4;
     background-color: #02b3e4d0;
     color: #1f1f1f;
 
@@ -184,13 +187,14 @@ input[type="number"] {
 
 
 .interface-presets-container {
+    background-color: #5f5f5f;
     background-color: #5f5f5fd0;
-    border-bottom: 4px solid black;
     padding: 1rem;
     flex: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    border-bottom: 2px solid #1f1f1f;
 }
 
     .presets-title {
@@ -209,9 +213,8 @@ input[type="number"] {
     }
 
         .presets-ul li {
-            color: rgb(0, 0, 0);
-            background-color: #02b3e4;
-            border: 5px solid #1d1d1d;
+            color: #1f1f1f;
+            border: 2px solid #1f1f1f ;
             font-weight: 500;
             flex: 1 auto;
             cursor: pointer;
@@ -248,13 +251,13 @@ input[type="number"] {
     .preset-title {
         font-weight: 600;
         background-color: #02b3e4;
-        color: black;
-        border-bottom: solid 2px black;
+        color: #1f1f1f;
+        border-bottom: solid 2px #1f1f1f;
     }              
 
     .preset-description {
         background-color: #353636;
-        color:white;
+        color:#fafafa;
     }
 
 .interface-create-btn-container {
@@ -265,13 +268,13 @@ input[type="number"] {
 .interface-create-btn {
     border-radius: 5px;
     background-color: #353636;
-    color: white;
-    border: 2px solid black;
+    color: #fafafa;
+    border: 2px solid #1f1f1f;
     padding: 5px 8px;
     margin: 1.2rem 0 1.2rem 0;
     font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: 3px 3px 4px rgb(51, 50, 50);
+    box-shadow: 3px 3px 4px #1f1f1f;
     outline: none;
     width: auto;
 }
@@ -288,15 +291,15 @@ input[type="number"] {
     content: " ";
     position: absolute;
     width: 140px;
-    background-color: #1d1d1d;
+    background-color: #1f1f1f;
     padding: 5px 0;
     border-radius: 6px;
     display: inline-block;
     font-size: 1rem;
     bottom: 130%;
     left: -30%;
-    border: 2px solid black;
-    color:white;
+    border: 2px solid #1f1f1f;
+    color:#fafafa;
     cursor: pointer;
     user-select: none;
 }
@@ -309,7 +312,7 @@ input[type="number"] {
         margin-left: -5px;
         border-width: 5px;
         border-style: solid;
-        border-color: black transparent transparent transparent;
+        border-color: #1f1f1f transparent transparent transparent;
     }
 
 
@@ -325,7 +328,7 @@ input[type="number"] {
     height: 100%; 
     overflow: hidden;; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    background-color: rgba(0,0,0,0.4); /* #1f1f1f w/ opacity */
     margin: 0;
   
     
@@ -346,7 +349,8 @@ input[type="number"] {
 }
 
 .modal-nav {
-    background-color: #02b3e4d7;
+    background-color: #02b3e4;
+    background-color: #02b3e4d0;
     display: flex;
     justify-content: flex-end;
     padding: .2rem 0;
@@ -368,7 +372,7 @@ input[type="number"] {
     }
 
 .modal-close-btn {
-    color: #000000;
+    color: #1f1f1f;
     font-size: 3rem;
     font-weight: bold;
     cursor: pointer;
@@ -384,8 +388,6 @@ input[type="number"] {
     display: flex;
     flex: 1 1;
     margin: 0 0 1rem 0;
-    
-    
 }
 
 
@@ -408,10 +410,10 @@ input[type="number"] {
 
 .modal-pixel-canvas tr, td {
     box-sizing: border-box;
-    border: 1px solid black;
+    border: 1px solid #1f1f1f;
     width: 20px;
     height: 20px;
-    background-color: white;
+    background-color: #fafafa;
 }
 
 .modal-pixel-canvas td:hover {
@@ -428,7 +430,8 @@ input[type="number"] {
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #02b3e4d7;
+    background-color: #02b3e4;
+    background-color: #02b3e4d0;
     border: 4px solid;
     border-radius: 5px;
     position: relative;  
@@ -445,9 +448,9 @@ input[type="number"] {
     }
 
 .modal-toolbar-icon-container {
-    border: 4px solid;
+    border: 4px solid #1f1f1f;
     padding: 4px;
-    background-color: white;
+    background-color: #fafafa;
     margin-right: .7rem;
     transition: transform .2s linear;
     height: 25px;
@@ -459,18 +462,20 @@ input[type="number"] {
     }
 
     .modal-toolbar-icon-container:active {
-        box-shadow:  0 0 0px 2px rgb(0, 0, 0);
+        box-shadow:  0 0 0px 2px #1f1f1f;
     }
 
 .modal-toolbar-icon {  
     font-size: 1.7rem; 
     cursor: pointer;  
+    color: #1f1f1f;
   
 
 }
 
 .modal-icon-active {
-    box-shadow:  0px 0px 0px 4px rgb(0, 0, 0);
+    box-shadow:  0px 0px 5px 4px #fafafa;
+
 }
 
 .modal-icon-active .modal-tooltip-text {
@@ -505,8 +510,8 @@ input[type="number"] {
 .modal-tooltip-text {
     visibility: hidden;
     width: 100px;
-    background-color: #1d1d1d;                      
-    color: #fff;
+    background-color: #1f1f1f;                      
+    color: #fafafa;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -525,7 +530,7 @@ input[type="number"] {
         margin-top: -5px;
         border-width: 5px;
         border-style: solid;
-        border-color: transparent transparent transparent black;
+        border-color: transparent transparent transparent #1f1f1f;
   
     }
 
@@ -536,8 +541,8 @@ input[type="number"] {
 
 .modal-paint-tooltip {
     width: 100px;
-    background-color: #1d1d1d;                      
-    color: #fff;
+    background-color: #1f1f1f;                      
+    color: #fafafa;
     text-align: center;
     border-radius: 6px;
     padding: 5px 0;
@@ -564,7 +569,7 @@ input[type="number"] {
         margin-top: -5px;
         border-width: 5px;
         border-style: solid;
-        border-color: black transparent transparent transparent ;
+        border-color: #1f1f1f transparent transparent transparent ;
     }
          
     
@@ -588,10 +593,10 @@ input[type="number"] {
     left: 0;
     right: 0;
     background-color: #353636; 
-    color: white;
+    color: #fafafa;
     font-size: 1.2rem;
     padding: 15px;
-    border: solid 4px #1d1d1d;
+    border: solid 4px #1f1f1f;
     border-radius: 10px;
 }
 
@@ -605,11 +610,11 @@ input[type="number"] {
 
 .modal-popup-list li {
     cursor: pointer;
-    background-color: white;
+    background-color: #fafafa;
     padding: 5px 15px;
-    border: 2px solid black;
+    border: 2px solid #1f1f1f;
     border-radius: 8px;
-    color: black;
+    color: #1f1f1f;
 }
 
 .modal-popup.is-visible {
