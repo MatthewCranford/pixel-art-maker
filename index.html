@@ -89,7 +89,7 @@
     <div class="modal"> 
         <div class="modal-content">
             <div class="modal-nav">
-                <span class="modal-close-btn">&times;</span>
+                <div class="modal-close-btn">&times;</div>
             </div>
 
             <div class="modal-pixel-canvas-container">
@@ -98,37 +98,43 @@
 
             <div class="modal-toolbar">
 
-                <div class="modal-color-btn modal-toolbar-icon-container modal-tooltip">
-                    <i class="fas fa-circle modal-toolbar-icon"></i>
-                    <input class="modal-color-input" id="custom" name="color" value="">
-                    <span class="modal-paint-tooltip">Get started by picking a color!</span> 
+                <div class="bar1">
+                    <div class="modal-color-btn modal-toolbar-icon-container modal-tooltip">
+                        <i class="fas fa-circle modal-toolbar-icon"></i>
+                        <input class="modal-color-input" id="custom" name="color" value="">
+                        <span class="modal-paint-tooltip">Get started by picking a color!</span> 
+                    </div>
+    
+                    <div class="modal-paint-btn modal-toolbar-icon-container modal-icon-active modal-tooltip">
+                        <span class="modal-tooltip-text">Draw</span>
+                        <i class="fas fa-paint-brush modal-toolbar-icon"></i>
+                    </div>
+    
+                    <div class="modal-erase-btn modal-toolbar-icon-container modal-tooltip">
+                        <span class="modal-tooltip-text">Erase</span>
+                        <i class="fas fa-eraser modal-toolbar-icon"></i>
+                    </div>
+                </div>
+                <div class="bar2">
+                    <div class="modal-clear-btn modal-toolbar-icon-container modal-tooltip" >
+                        <span class="modal-tooltip-text">Clear Page</span>
+                        <i class="far fa-file modal-toolbar-icon"></i>
+                    </div>
+    
+                    <div class="modal-download-btn modal-toolbar-icon-container modal-tooltip" >
+                        <span class="modal-tooltip-text">Download</span>
+                        <i class="fas fa-download modal-toolbar-icon"></i>
+                    </div>
+    
+                    <div class="modal-import-btn modal-toolbar-icon-container modal-tooltip" >
+                        <span class="modal-tooltip-text">Import</span>
+                        <i class="fas fa-folder-open modal-toolbar-icon"></i>
+                    </div>            
                 </div>
 
-                <div class="modal-paint-btn modal-toolbar-icon-container modal-icon-active modal-tooltip">
-                    <span class="modal-tooltip-text">Draw</span>
-                    <i class="fas fa-paint-brush modal-toolbar-icon"></i>
-                </div>
-
-                <div class="modal-erase-btn modal-toolbar-icon-container modal-tooltip">
-                    <span class="modal-tooltip-text">Erase</span>
-                    <i class="fas fa-eraser modal-toolbar-icon"></i>
-                </div>
                 
-                <div class="modal-clear-btn modal-toolbar-icon-container modal-tooltip" >
-                    <span class="modal-tooltip-text">Clear Page</span>
-                    <i class="far fa-file modal-toolbar-icon"></i>
-                </div>
-
-                <div class="modal-download-btn modal-toolbar-icon-container modal-tooltip" >
-                    <span class="modal-tooltip-text">Download</span>
-                    <i class="fas fa-download modal-toolbar-icon"></i>
-                </div>
-
-                <div class="modal-import-btn modal-toolbar-icon-container modal-tooltip" >
-                    <span class="modal-tooltip-text">Import</span>
-                    <i class="fas fa-folder-open modal-toolbar-icon"></i>
-                </div>
-
+                
+               
                     
                   
             </div>
