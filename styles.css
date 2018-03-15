@@ -390,6 +390,7 @@ input[type="number"] {
     display: flex;
     flex: 1 1;
     margin: 0 0 1rem 0;
+    
 }
 
 
@@ -399,6 +400,7 @@ input[type="number"] {
     margin:auto;
     box-shadow: 0px 0px 20px 10px #333333b6;
     position: relative ;  
+    
 }
 
 .slide-right {
@@ -413,7 +415,7 @@ input[type="number"] {
 .modal-pixel-canvas tr, td {
     box-sizing: border-box;
     border: 1px solid #1f1f1f;
-    width: 20px;
+    min-width: 20px;
     height: 20px;
     background-color: #fafafa;
 }
