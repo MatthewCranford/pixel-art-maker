@@ -305,7 +305,8 @@ $(document).ready(function() {
 
 
 	// remove "intro" tooltip
-	$colorBtn.on("mouseover",function() {
+	$(".sp-replacer").on("click hover",function() {
+		console.log("Hello");
 		$colorBtn.find("span").removeClass("modal-paint-tooltip");
 		$colorBtn.find("span").addClass("modal-tooltip-text");
 		$colorBtn.find("span").text("Change Color");
