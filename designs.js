@@ -63,24 +63,40 @@ $(document).ready(function() {
 	Append tbody to the DOM via pixel canvas.
 	*/
 
-	// cache version 100%+ performance boost!?
+	// test version @paul 16ms
 	function makeGrid(height,width) {
-		const $tbody = $("<tbody></tbody>");
-		let $tr, $td;
-		
-		for(let row = 0; row < height; row++) {
-			$tr = $("<tr></tr>");
-			for(let col =0; col < width; col++) {
-				$td = $("<td></td>");
-				$tr.append($td);
-			}  
-			$tbody.append($tr);
-		}
-		$pixelCanvas.append($tbody);
+		let tableRows = '';
+		let row = 1;
+		while (row <= height) {
+				tableRows += '<tr>';
+				for (let col=1; col <= width; col++) {
+						tableRows += '<td></td>';
+				}
+				tableRows += '</tr>';
+				row += 1;
+		} // end while loop
+		$pixelCanvas.append(tableRows); // add grid to DOM
 		$modal.css("visibility", "visible");
 	}
 
-	// // non-cache version
+	// cache version 34ms
+	// function makeGrid(height,width) {
+	// 	const $tbody = $("<tbody></tbody>");
+	// 	let $tr, $td;
+		
+	// 	for(let row = 0; row < height; row++) {
+	// 		$tr = $("<tr></tr>");
+	// 		for(let col =0; col < width; col++) {
+	// 			$td = $("<td></td>");
+	// 			$tr.append($td);
+	// 		}  
+	// 		$tbody.append($tr);
+	// 	}
+	// 	$pixelCanvas.append($tbody);
+	// 	$modal.css("visibility", "visible");
+	// }
+
+	// // non-cache version 52ms
 	// function makeGrid(height,width) {
 	// 	let $tr, $td;
 
@@ -94,6 +110,8 @@ $(document).ready(function() {
 	// 	}
 	// 	$modal.css("visibility", "visible");
 	// }
+
+
 
 
 	// preset grids
