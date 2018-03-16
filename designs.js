@@ -312,11 +312,9 @@ $(document).ready(function() {
 	let currentColor = $("#custom").val();
 
 	$("#custom").change(function() {
-
 		draw=true;
 		currentColor = $("#custom").val();
-		$("#paint-icon").css("color", currentColor);
-		console.log(currentColor);
+		$("#color-icon").css("color", currentColor);
 		$colorBtn.css("border-color", "black");
 		$iconActive.removeClass("modal-icon-active");
 		$paintBtn.addClass("modal-icon-active");
