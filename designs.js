@@ -187,6 +187,7 @@ $(document).ready(function() {
 	displaySize();
 
 
+
 	// call makeGrid and pass height/width
 	$createBtn.on("click keyup",function(e) {
 		// $pixelCanvas.css("display","block");
