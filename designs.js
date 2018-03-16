@@ -380,8 +380,7 @@ $(document).ready(function() {
 
 			// set draw and color picker back to default color (black)
 			currentColor = "#000000";
-			$("#custom").spectrum("set", currentColor);
-			$colorBtn.css("color", currentColor);
+			$("#color-icon").css("color", currentColor);
 		}
 
 		else {
