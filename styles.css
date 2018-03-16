@@ -476,6 +476,11 @@ input[type="number"] {
     transition: transform .2s linear;     
 }
 
+#paint-icon {
+    color: red;
+
+}
+
     .modal-color-btn:hover {
         transform: scale(1.2); 
     }
