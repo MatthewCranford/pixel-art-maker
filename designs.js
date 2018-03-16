@@ -322,7 +322,6 @@ $(document).ready(function() {
 
 	// remove "intro" tooltip
 	$(".modal-color-btn").on("click",function() {
-		console.log("Hello");
 		$colorBtn.find("span").removeClass("modal-paint-tooltip");
 		$colorBtn.find("span").addClass("modal-tooltip-text");
 		$colorBtn.find("span").text("Change Color");
