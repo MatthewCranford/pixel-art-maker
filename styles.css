@@ -60,8 +60,8 @@ input[type="number"] {
     background-color: #02b3e4;
     background-color: #02b3e4d0;
     color: #1f1f1f;
- 
-    border-width: 4px 0px;
+    border: solid #1f1f1f;
+    border-width: 2px 0;
     position: relative;
     animation: titleSlideRight 2.5s ease-in-out;
 }
@@ -73,10 +73,7 @@ input[type="number"] {
 
 
 .interface-container {
-    /* background-color: #02b3e4d0; */
     width: 100%;
-    /* border-radius: 5px; */
-    /* border: 4px solid #1f1f1f; */
     box-shadow: 5px 5px 11px #1f1f1f;
     animation: interfaceDropDown 1.5s ease-in-out;
     position: relative;
@@ -315,9 +312,6 @@ input[type="number"] {
         border-color: #1f1f1f transparent transparent transparent;
     }
 
-
-/* modal */
-
 .modal {
     visibility: hidden; /* Hidden by default */
     position: absolute; /* Stay in place */
@@ -354,9 +348,8 @@ input[type="number"] {
     display: flex;
     justify-content: flex-end;
     padding: .2rem 0;
-    border: 4px solid;
-    border-width: 4px 0;
-    
+    border: solid #1f1f1f;
+    border-width: 2px 0;
     position: relative;
     flex: 0 0 50px; 
     /* display: none;  */
@@ -436,10 +429,10 @@ input[type="number"] {
     transform: translateX(-50%);
     background-color: #02b3e4;
     background-color: #02b3e4d0;
-    border: 4px solid;
+    border: 2px solid;
     border-radius: 5px;
-    position: relative;  
-    /* flex: 0 0 50px; */   flex-wrap: wrap;
+    position: relative;    
+    flex-wrap: wrap;
 
 }
 
@@ -562,7 +555,7 @@ input[type="number"] {
 
 .modal-paint-tooltip {
     width: 100px;
-    background-color: #1f1f1f;                      
+    background-color: #1f1f1f;           
     color: #fafafa;
     text-align: center;
     border-radius: 6px;
@@ -609,7 +602,7 @@ input[type="number"] {
     position: absolute;
     z-index: 999;
     border: 2px solid;
-    width: 50%;
+    width: 60%;
     margin: auto;
     top: 25%;
     left: 0;
@@ -618,7 +611,7 @@ input[type="number"] {
     color: #fafafa;
     font-size: 1.2rem;
     padding: 15px;
-    border: solid 4px #1f1f1f;
+    border: solid 2px #1f1f1f;
     border-radius: 10px;
 }
 
@@ -738,49 +731,22 @@ spectrum custom styles */
     .interface-create-btn {
         margin: .8rem 0 .8rem 0;
         flex: none;
- 
     }
-
-    
+   
     .modal-paint-tooltip {
-        width: 100px;
-        background-color: #1f1f1f;                      
-        color: #fafafa;
-        text-align: center;
-        border-radius: 6px;
-        padding: 5px 0;
-        position: absolute;
-        top: -100px;
         right: -90%;
-        animation: bounce 1.85s ease-in-out infinite;
-        cursor: pointer;
-        pointer-events: none;
-        user-select: none;
-        font-size: 1rem;
     }
 
-        @keyframes bounce {
-            0% {top: -82px;}
-            50% {top: -75px;}
-            100% {top: -82px;}
-        }
 
         .modal-paint-tooltip::after {
-            content: "";
-            position: absolute;
-            top: 107%;
-            left: 45%;
-            margin-top: -5px;
-            border-width: 5px;
-            border-style: solid;
-            border-color: #1f1f1f transparent transparent transparent ;
+            left: 45%; 
         }
 
-   
  }
 
 /* // Large devices (desktops, 992px and up) */
 @media (min-width: 992px) { 
+    
     
     .interface-container {
         width: 40%;
@@ -788,6 +754,10 @@ spectrum custom styles */
 
     .modal-popup-content {
         width: 30%;
+    }
+
+    .modal-toolbar {
+        width: 40%;
     }
  }
 
