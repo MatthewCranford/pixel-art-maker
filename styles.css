@@ -549,9 +549,7 @@ input[type="number"] {
     }
 
     /* activate tooltip on hover */
-    .modal-tooltip:hover .modal-tooltip-text {
-        visibility: visible; 
-    }
+    
 
 .modal-paint-tooltip {
     width: 100px;
@@ -744,6 +742,10 @@ input[type="number"] {
 
     .modal-toolbar {
         width: 40%;
+    }
+
+    .modal-tooltip:hover .modal-tooltip-text {
+        visibility: visible; 
     }
  }
 
