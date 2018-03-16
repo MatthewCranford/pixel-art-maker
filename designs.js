@@ -306,16 +306,13 @@ $(document).ready(function() {
 		}
 	});
 
-	// init spectrum color picker
-	$("#custom").spectrum({
-	});
 	
 
 	// set color input & set draw to true
-	let currentColor = $("#custom").spectrum('get').toHexString();
+	let currentColor = $("#custom").val();
 	$("#custom").change(function() {
 		draw=true;
-		currentColor = $("#custom").spectrum('get').toHexString();
+		currentColor = $("#custom").val();
 		$colorBtn.css("color", currentColor);
 		$colorBtn.css("border-color", "black");
 		$iconActive.removeClass("modal-icon-active");
@@ -324,7 +321,7 @@ $(document).ready(function() {
 
 
 	// remove "intro" tooltip
-	$(".sp-replacer").on("click hover",function() {
+	$(".modal-color-btn").on("click",function() {
 		console.log("Hello");
 		$colorBtn.find("span").removeClass("modal-paint-tooltip");
 		$colorBtn.find("span").addClass("modal-tooltip-text");

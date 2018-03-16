@@ -514,10 +514,10 @@ input[type="number"] {
     border-radius: 100%;
     position: absolute;
     left: 0;
-    top: 222;
+    top: 0px;
     opacity: 0;
-    height: 50px;
-    width: 50px;
+    height: 32px;
+    width: 35px;
     cursor: pointer;
 }
 
@@ -636,20 +636,6 @@ input[type="number"] {
     opacity: 1;
     visibility: visible;
   }
-
-/* 
-spectrum custom styles */
-  .sp-replacer {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    height: 37px;
-    opacity: 0;
-    background-color: red;
-    color: red;
-
-  }
-
 
 /* =============
     IDs
