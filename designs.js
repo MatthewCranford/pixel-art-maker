@@ -33,6 +33,7 @@ $(document).ready(function() {
 	const $colorInput = $(".modal-color-input");
 	const $paintBtn = $(".modal-paint-btn");
 	const $eraseBtn = $(".modal-erase-btn");
+	const $dropperBtn = $(".modal-dropper-btn");
 	const $clearBtn = $(".modal-clear-btn");
 	const $paintTooltip = $(".modal-paint-tooltip");
 	const $colorBtn = $(".modal-color-btn");
@@ -343,6 +344,16 @@ $(document).ready(function() {
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$eraseBtn.addClass("modal-icon-active");
 	});
+
+	
+
+	$dropperBtn.click(function() {
+		console.log("HEY!");
+		draw=false;
+		$(".modal-icon-active").removeClass("modal-icon-active");
+		$dropperBtn.addClass("modal-icon-active");
+	});
+
 
 
 	// condition for popup
