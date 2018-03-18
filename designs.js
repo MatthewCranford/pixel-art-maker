@@ -58,19 +58,8 @@ $(document).ready(function() {
 	let maxHeight; 
 	let maxWidth;
 
-	/* 
-	Create grid using passed parameters. 
-	Store rows and cols in memory via tbody.
-	Append tbody to the DOM via pixel canvas.
-	*/
 
-	// test version @paul 16ms
-
-
-
-
-
-
+	// string concat cache 16ms
 	function makeGrid(height,width) {
 		let tableRows = ''; // store string concatenations aka "cache"
 		let row = 1;
@@ -87,59 +76,36 @@ $(document).ready(function() {
 	}
 
 
-
-
 	// cache version 34ms
-
-
-
-
-
-
-
-
-	function makeGrid(height,width) {
-		let $tbody = $("<tbody></tbody>"); // the "cache"
-		let $tr, $td;
+	// function makeGrid(height,width) {
+	// 	let $tbody = $("<tbody></tbody>"); // the "cache"
+	// 	let $tr, $td;
 		
-		for(let row = 0; row < height; row++) {
-			$tr = $("<tr></tr>");
-			for(let col =0; col < width; col++) {
-				$td = $("<td></td>");
-				$tr.append($td);
-			}  
-			$tbody.append($tr); 
-		}
-		$pixelCanvas.append($tbody); // add grid to dom
-	}
-
-
-
-
-
-
+	// 	for(let row = 0; row < height; row++) {
+	// 		$tr = $("<tr></tr>");
+	// 		for(let col =0; col < width; col++) {
+	// 			$td = $("<td></td>");
+	// 			$tr.append($td);
+	// 		}  
+	// 		$tbody.append($tr); 
+	// 	}
+	// 	$pixelCanvas.append($tbody); // add grid to dom
+	// }
 
 
 	// // non-cache version 52ms
+	// function makeGrid(height,width) {
+	// 	let $tr, $td;
 
-
-
-
-
-	function makeGrid(height,width) {
-		let $tr, $td;
-
-		for(let row = 0; row < height; row++) {
-			$tr = $("<tr></tr>");
-			$pixelCanvas.append($tr); 
-			for(let col =0; col < width; col++) {
-				$td = $("<td></td>");
-				$tr.append($td);
-			}  
-		}
-	}
-
-
+	// 	for(let row = 0; row < height; row++) {
+	// 		$tr = $("<tr></tr>");
+	// 		$pixelCanvas.append($tr); 
+	// 		for(let col =0; col < width; col++) {
+	// 			$td = $("<td></td>");
+	// 			$tr.append($td);
+	// 		}  
+	// 	}
+	// }
 
 
 	// preset grids
@@ -150,21 +116,18 @@ $(document).ready(function() {
 		$(this).addClass("active");
 		assignSize(smallHeight,smallWidth);
 	});
-
 	// medium
 	$presetMedium.on("click", function() {
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
 		assignSize(mediumHeight,mediumWidth);
 	});
-
 	// large
 	$presetLarge.on("click", function() {
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
 		assignSize(largeHeight,largeWidth);
 	});
-
 	// full-screen
 	$presetFull.on("click", function() {
 		$(".preset-container").removeClass("active");
