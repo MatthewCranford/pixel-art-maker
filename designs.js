@@ -65,6 +65,12 @@ $(document).ready(function() {
 	*/
 
 	// test version @paul 16ms
+
+
+
+
+
+
 	function makeGrid(height,width) {
 		let tableRows = '';
 		let row = 1;
@@ -80,7 +86,18 @@ $(document).ready(function() {
 		$modal.css("visibility", "visible");
 	}
 
+
+
+
 	// cache version 34ms
+
+
+
+
+
+
+
+
 	// function makeGrid(height,width) {
 	// 	const $tbody = $("<tbody></tbody>");
 	// 	let $tr, $td;
@@ -97,7 +114,19 @@ $(document).ready(function() {
 	// 	$modal.css("visibility", "visible");
 	// }
 
+
+
+
+
+
+
+
 	// // non-cache version 52ms
+
+
+
+
+
 	// function makeGrid(height,width) {
 	// 	let $tr, $td;
 
@@ -190,7 +219,7 @@ $(document).ready(function() {
 
 
 	// call makeGrid and pass height/width
-	$createBtn.on("click keyup",function(e) {
+	$("#submitBtn").on("click keyup",function(e) {
 		// $pixelCanvas.css("display","block");
 		$modalNav.toggleClass("drop-down");
 		$modalToolbar.toggleClass("slide-up");
