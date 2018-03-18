@@ -72,7 +72,7 @@ $(document).ready(function() {
 
 
 	function makeGrid(height,width) {
-		let tableRows = '';
+		let tableRows = ''; // store string concatenations aka "cache"
 		let row = 1;
 		while (row <= height) {
 				tableRows += '<tr>';
@@ -81,8 +81,8 @@ $(document).ready(function() {
 				}
 				tableRows += '</tr>';
 				row += 1;
-		} // end while loop
-		$pixelCanvas.append(tableRows); // add grid to DOM
+		} 
+		$pixelCanvas.append(tableRows); // add grid to dom
 		$modal.css("visibility", "visible");
 	}
 
@@ -98,21 +98,20 @@ $(document).ready(function() {
 
 
 
-	// function makeGrid(height,width) {
-	// 	const $tbody = $("<tbody></tbody>");
-	// 	let $tr, $td;
+	function makeGrid(height,width) {
+		let $tbody = $("<tbody></tbody>"); // the "cache"
+		let $tr, $td;
 		
-	// 	for(let row = 0; row < height; row++) {
-	// 		$tr = $("<tr></tr>");
-	// 		for(let col =0; col < width; col++) {
-	// 			$td = $("<td></td>");
-	// 			$tr.append($td);
-	// 		}  
-	// 		$tbody.append($tr);
-	// 	}
-	// 	$pixelCanvas.append($tbody);
-	// 	$modal.css("visibility", "visible");
-	// }
+		for(let row = 0; row < height; row++) {
+			$tr = $("<tr></tr>");
+			for(let col =0; col < width; col++) {
+				$td = $("<td></td>");
+				$tr.append($td);
+			}  
+			$tbody.append($tr); 
+		}
+		$pixelCanvas.append($tbody); // add grid to dom
+	}
 
 
 
@@ -127,19 +126,18 @@ $(document).ready(function() {
 
 
 
-	// function makeGrid(height,width) {
-	// 	let $tr, $td;
+	function makeGrid(height,width) {
+		let $tr, $td;
 
-	// 	for(let row = 0; row < height; row++) {
-	// 		$tr = $("<tr></tr>");
-	// 		$pixelCanvas.append($tr);
-	// 		for(let col =0; col < width; col++) {
-	// 			$td = $("<td></td>");
-	// 			$tr.append($td);
-	// 		}  
-	// 	}
-	// 	$modal.css("visibility", "visible");
-	// }
+		for(let row = 0; row < height; row++) {
+			$tr = $("<tr></tr>");
+			$pixelCanvas.append($tr); 
+			for(let col =0; col < width; col++) {
+				$td = $("<td></td>");
+				$tr.append($td);
+			}  
+		}
+	}
 
 
 
