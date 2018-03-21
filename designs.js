@@ -254,22 +254,42 @@ $(document).ready(function() {
 	});
 
 
-	// holds paint/erase state
-	let draw = true;
+	// current selected tool
+	let tool = {
+		"currentTool": ""
+	}
 
-	// draw to canvas while left mouse is down/over "pixel"
+	function setTool(newTool) {
+		tool["currentTool"] = newTool;
+		console.log(tool);
+	}
+	setTool("draw");
+	
+
+
+	// left mouse button handler
 	$pixelCanvas.on("mousedown mouseover","td", function(e) {
 		e.preventDefault();
-		if (draw) {
+		let currentTool = tool["currentTool"];
+		if (currentTool =="draw") {
 			if (e.buttons == 1) {
 				$(e.target).css("background-color", currentColor);
 			}
 		}
-		else {
+		else if (currentTool == "erase") {
 			if (e.buttons === 1) {
 				$(e.target).css("background-color", "white");
+			}
+		}
+		else if (currentTool == "dropper") {
+			console.log("HEYYYYYYS!")
+			if (e.buttons === 1) {
+				currentColor = $(e.target).css("background-color");
+				console.log(currentColor)
+
 			}	
 		}
+		
 	});
 
 	// initial color value
@@ -277,7 +297,7 @@ $(document).ready(function() {
 
 	// set color input & set draw to true
 	$("#custom").change(function() {
-		draw=true;
+		setTool("draw");;
 		currentColor = $("#custom").val();
 		$("#color-icon").css("color", currentColor);
 		$colorBtn.css("border-color", "black");
@@ -296,7 +316,7 @@ $(document).ready(function() {
 
 	// set draw to true
 	$paintBtn.click(function() {
-		draw=true;
+		setTool("draw");
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$paintBtn.addClass("modal-icon-active");
 	});
@@ -304,7 +324,7 @@ $(document).ready(function() {
 
 	// set draw to false
 	$eraseBtn.click(function() {
-		draw=false;
+		setTool("erase");;
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$eraseBtn.addClass("modal-icon-active");
 	});
@@ -312,8 +332,7 @@ $(document).ready(function() {
 	
 
 	$dropperBtn.click(function() {
-		console.log("HEY!");
-		draw=false;
+		setTool("dropper");
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$dropperBtn.addClass("modal-icon-active");
 	});
