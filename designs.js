@@ -46,8 +46,6 @@ $(document).ready(function() {
 	const $modalToolbar = $(".modal-toolbar");
 
 
-	// interface Scripts
-
 	// sizes
 	let smallHeight;
 	let smallWidth;
@@ -75,12 +73,10 @@ $(document).ready(function() {
 		$modal.css("visibility", "visible");
 	}
 
-
 	// cache version 34ms
 	// function makeGrid(height,width) {
 	// 	let $tbody = $("<tbody></tbody>"); // the "cache"
-	// 	let $tr, $td;
-		
+	// 	let $tr, $td;	
 	// 	for(let row = 0; row < height; row++) {
 	// 		$tr = $("<tr></tr>");
 	// 		for(let col =0; col < width; col++) {
@@ -92,11 +88,9 @@ $(document).ready(function() {
 	// 	$pixelCanvas.append($tbody); // add grid to dom
 	// }
 
-
 	// // non-cache version 52ms
 	// function makeGrid(height,width) {
 	// 	let $tr, $td;
-
 	// 	for(let row = 0; row < height; row++) {
 	// 		$tr = $("<tr></tr>");
 	// 		$pixelCanvas.append($tr); 
@@ -109,40 +103,32 @@ $(document).ready(function() {
 
 
 	// preset grids
-
-	// small
-	$presetSmall.on("click", function() {
+	$presetSmall.on("click", function() { // small
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
 		assignSize(smallHeight,smallWidth);
 	});
-	// medium
-	$presetMedium.on("click", function() {
+	$presetMedium.on("click", function() { // medium
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
 		assignSize(mediumHeight,mediumWidth);
 	});
-	// large
-	$presetLarge.on("click", function() {
+	$presetLarge.on("click", function() { // large
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
 		assignSize(largeHeight,largeWidth);
 	});
-	// full-screen
-	$presetFull.on("click", function() {
+	$presetFull.on("click", function() { // full-screen
 		$(".preset-container").removeClass("active");
 		$(this).addClass("active");
 		assignSize(maxHeight,maxWidth);
 	});
 
-
 	// get preset sizes
 	function getSize() {
 		const tdSize = 20;
-
 		maxHeight = parseInt(($pixelCanvasContainer.height() / tdSize).toFixed());
 		maxWidth = parseInt(($pixelCanvasContainer.width() / tdSize).toFixed());
-		
 		smallHeight = ((maxHeight * .4).toFixed());
 		smallWidth = ((maxWidth * .3).toFixed());
 		mediumHeight = ((maxHeight * .6).toFixed());
@@ -173,10 +159,8 @@ $(document).ready(function() {
 		getSize();
 		displaySize();
 	});
-
 	getSize();
 	displaySize();
-
 
 
 	// call makeGrid and pass height/width
@@ -240,9 +224,8 @@ $(document).ready(function() {
 
 
 	// width +/- interface buttons
-	$widthAddBtn.click(function() {
+	$widthAddBtn.click(function() { // ++
 		let counter = $widthInput.val();
-		
 		if (counter < maxWidth) {
 			$widthTooltip.removeClass("interface-tooltip").text("");
 			counter++;
@@ -252,10 +235,8 @@ $(document).ready(function() {
 			$widthTooltip.addClass("interface-tooltip").text("Max width is " + maxWidth);
 		}
 	});
-
-	$widthSubBtn.click(function() {
+	$widthSubBtn.click(function() { // --
 		let counter = $widthInput.val();
-		
 		if (counter > 1) {
 			$widthTooltip.removeClass("interface-tooltip").text("");
 			counter--
@@ -266,21 +247,15 @@ $(document).ready(function() {
 		}
 	});
 
+
 	// remove interface tooltip on click
 	$(".interface-tooltip-height, .interface-tooltip-width").click(function() {
 		$(this).removeClass("interface-tooltip").text("");
 	});
 
 
-	// ==================
-	// Modal Scripts
-	// ==================
-	
-	
-
 	// holds paint/erase state
 	let draw = true;
-
 
 	// draw to canvas while left mouse is down/over "pixel"
 	$pixelCanvas.on("mousedown mouseover","td", function(e) {
@@ -297,11 +272,10 @@ $(document).ready(function() {
 		}
 	});
 
-	
-
-	// set color input & set draw to true
+	// initial color value
 	let currentColor = $("#custom").val();
 
+	// set color input & set draw to true
 	$("#custom").change(function() {
 		draw=true;
 		currentColor = $("#custom").val();
@@ -354,7 +328,6 @@ $(document).ready(function() {
 		quit = true;
 		$popupText.text("All progress will be lost. Are you sure?");
 		$popup.addClass("is-visible");
-		
 	});
 	
 
@@ -363,7 +336,6 @@ $(document).ready(function() {
 		quit = false;
 		$popupText.text("Are you sure you want to reset your canvas?");
 		$popup.addClass("is-visible");
-		
 	});
 
 
