@@ -265,31 +265,23 @@ $(document).ready(function() {
 	}
 	setTool("draw");
 	
-
-
 	// left mouse button handler
 	$pixelCanvas.on("mousedown mouseover","td", function(e) {
 		e.preventDefault();
 		let currentTool = tool["currentTool"];
+		let currentColor = color["currentColor"];
+		if (e.buttons === 1) {
 		if (currentTool =="draw") {
-			if (e.buttons == 1) {
 				$(e.target).css("background-color", currentColor);
 			}
-		}
 		else if (currentTool == "erase") {
-			if (e.buttons === 1) {
 				$(e.target).css("background-color", "white");
 			}
-		}
 		else if (currentTool == "dropper") {
-			console.log("HEYYYYYYS!")
-			if (e.buttons === 1) {
 				currentColor = $(e.target).css("background-color");
 				console.log(currentColor)
-
 			}	
 		}
-		
 	});
 
 	// initial color value
