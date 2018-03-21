@@ -278,8 +278,8 @@ $(document).ready(function() {
 				$(e.target).css("background-color", "white");
 			}
 			else if (currentTool == "dropper") {
-				currentColor = $(e.target).css("background-color");
-				console.log(currentColor)
+				setColor($(e.target).css("background-color"));
+				setColorIcon();
 			}	
 		}		
 	});
