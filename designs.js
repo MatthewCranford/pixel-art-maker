@@ -271,17 +271,17 @@ $(document).ready(function() {
 		let currentTool = tool["currentTool"];
 		let currentColor = color["currentColor"];
 		if (e.buttons === 1) {
-		if (currentTool =="draw") {
+			if (currentTool =="draw") {
 				$(e.target).css("background-color", currentColor);
 			}
-		else if (currentTool == "erase") {
+			else if (currentTool == "erase") {
 				$(e.target).css("background-color", "white");
 			}
-		else if (currentTool == "dropper") {
+			else if (currentTool == "dropper") {
 				currentColor = $(e.target).css("background-color");
 				console.log(currentColor)
 			}	
-		}
+		}		
 	});
 
 	// holds paint color
