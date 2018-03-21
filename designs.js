@@ -284,17 +284,26 @@ $(document).ready(function() {
 		}
 	});
 
-	// initial color value
-	let currentColor = $("#custom").val();
+	// holds paint color
+	color = {
+		"currentColor": ""
+	}
 
-	// set color input & set draw to true
-	$("#custom").change(function() {
-		setTool("draw");;
-		currentColor = $("#custom").val();
+	function setColor(newColor) {
+		color["currentColor"] = newColor;
+	}
+	setColor($("#custom").val()); // initial color value
+
+	function setColorIcon() {
+		let currentColor = color["currentColor"];
 		$("#color-icon").css("color", currentColor);
 		$colorBtn.css("border-color", "black");
-		$iconActive.removeClass("modal-icon-active");
-		$paintBtn.addClass("modal-icon-active");
+	}
+
+	// set new color
+	$("#custom").change(function() {
+		setColor($("#custom").val());
+		setColorIcon();
 	});
 
 
