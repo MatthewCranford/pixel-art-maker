@@ -2,9 +2,7 @@ $(document).ready(function() {
 
 
 	// jquery selectors
-
 	const $mainTitle = $(".main-title");
-
 	// interface
 	const $interface = $(".interface-container");
 	const $input = $(".interface-input"); 
@@ -45,8 +43,7 @@ $(document).ready(function() {
 	const $modalNav = $(".modal-nav");
 	const $modalToolbar = $(".modal-toolbar");
 
-
-	// sizes
+	// grid sizes
 	let smallHeight;
 	let smallWidth;
 	let mediumHeight;
