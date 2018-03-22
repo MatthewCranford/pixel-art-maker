@@ -162,6 +162,9 @@ $(document).ready(function() {
 	getSize();
 	displaySize();
 
+	let gridHeight;
+	let gridWidth;
+
 
 	// call makeGrid and pass height/width
 	$("#submitBtn").on("click keyup",function(e) {
@@ -171,17 +174,18 @@ $(document).ready(function() {
 		$pixelCanvas.toggleClass("slide-right");
 		// $(".modal-toolbar").css("display","flex");
 		let code = e.keyCode || e.which;
-		let currentHeight = parseInt($heightInput.val());
-		let currentWidth = parseInt($widthInput.val());
+		gridHeight = parseInt($heightInput.val());
+		gridWidth = parseInt($widthInput.val());
 
 		// don't submit on tab or space keypress
 		if (code === 32 || code === 9 ) {	
 			return false;
 		}
 
-		else if ((currentHeight <= maxHeight && currentHeight > 0) && (currentWidth <= maxWidth && currentWidth > 0)) {
+		else if ((gridHeight <= maxHeight && gridHeight > 0) && (gridWidth <= maxWidth && gridWidth > 0)) {
+
 			e.preventDefault();
-			makeGrid(currentHeight,currentWidth);
+			makeGrid(gridHeight,gridWidth);
 		
 			$interface.css("display","none");
 			$mainTitle.css("display","none");
@@ -387,6 +391,17 @@ $(document).ready(function() {
 	$popupNoBtn.click(function() {
 		$popup.removeClass("is-visible");
 	});
+
+
+	// save grid
+	function saveGrid() {
+
+		let output = {
+			tableProperties: {
+				"gridHeight": gridHeight 
+			}
+		}
+	}
 
 
 });
