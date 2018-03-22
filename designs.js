@@ -262,7 +262,6 @@ $(document).ready(function() {
 
 	function setTool(newTool) {
 		tool["currentTool"] = newTool;
-		console.log(tool);
 	}
 	setTool("draw");
 	
