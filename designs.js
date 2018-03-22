@@ -407,7 +407,8 @@ $(document).ready(function() {
 			});
 			output["rows"][index] = cols;
 		});
-		return JSON.stringify(output,null,"\t");
+
+		return JSON.stringify(output,null,"\t"); // return JSON of output
 	}
 
 	$(".modal-download-btn").on("click", function() {
