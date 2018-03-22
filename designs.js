@@ -388,16 +388,33 @@ $(document).ready(function() {
 		$popup.removeClass("is-visible");
 	});
 
-
 	// save grid
 	function saveGrid() {
 
 		let output = {
 			tableProperties: {
-				"gridHeight": gridHeight 
-			}
-		}
+				"gridHeight": gridHeight,
+				"gridWidth": gridWidth
+			},
+			"rows": [],
+		};
+
+		// retrieve col background colors
+		$.each($("#pixel-canvas tr"), function(index,value) {
+			let cols = {};
+			$.each(this.cells, function(subIndex,subValue) {
+				cols[subIndex] = $(subValue).css("backgroundColor");	
+			});
+			output["rows"][index] = cols;
+		});
+		return JSON.stringify(output,null,"\t");
 	}
+
+	$(".modal-download-btn").on("click", function() {
+		let save = saveGrid();
+		console.log(save);
+	});
+		
 
 
 });
