@@ -27,7 +27,7 @@ $(document).ready(function() {
 	const $modal = $(".modal");
 	const $pixelCanvasContainer = $(".modal-pixel-canvas-container");
 	const $pixelCanvas = $(".modal-pixel-canvas");
-	const $closeBtn = 	$(".modal-close-btn");
+	const $closeBtn = 	$("#modal-close-btn");
 	const $colorInput = $(".modal-color-input");
 	const $paintBtn = $(".modal-paint-btn");
 	const $eraseBtn = $(".modal-erase-btn");
@@ -44,6 +44,8 @@ $(document).ready(function() {
 	const $iconActive = $(".modal-icon-active");
 	const $modalNav = $(".modal-nav");
 	const $modalToolbar = $(".modal-toolbar");
+	const $saveBtn = $(".modal-save-btn");
+	const $popupCloseBtn = $(".popup-close-btn")
 
 	// grid sizes
 	let smallHeight;
@@ -345,10 +347,14 @@ $(document).ready(function() {
 	// condition for popup
 	let quit = false;
 
-	// close modal icon
+	// modal exit
 	$closeBtn.click(function() {
-		quit = true;
 		$closePopup.addClass("is-visible");
+	});
+
+	$popupCloseBtn.click(function() {
+		quit = true;
+		$(this).parents().removeClass("is-visible");
 	});
 	
 	// clear button popup.
@@ -388,7 +394,14 @@ $(document).ready(function() {
 
 	// popup no btn
 	$popupNoBtn.click(function() {
-		$popup.removeClass("is-visible");
+		if (quit) {
+			$closePopup.removeClass("is-visible");
+		}
+		else {
+			$clearPopup.removeClass("is-visible");
+			$savePopup.removeClass("is-visible");
+		}
+		
 	});
 
 	// save grid
@@ -414,9 +427,13 @@ $(document).ready(function() {
 		return JSON.stringify(output,null,"\t"); // return JSON of output
 	}
 
-	$(".modal-download-btn").on("click", function() {
-		let save = saveGrid();
-		console.log(save);
+
+	// download btn submit
+	$downloadBtn = $("#download-btn").on("click", function(e) {
+		e.preventDefault();
+		console.log("HEYYYY!!");
+		let output = saveGrid();
+		console.log(output);
 	});
 		
 
