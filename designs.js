@@ -35,7 +35,9 @@ $(document).ready(function() {
 	const $clearBtn = $(".modal-clear-btn");
 	const $paintTooltip = $(".modal-paint-tooltip");
 	const $colorBtn = $(".modal-color-btn");
-	const $popup = $(".modal-popup");
+	const $closePopup = $("#close-popup");
+	const $clearPopup = $("#clear-popup");
+	const $savePopup = $("#save-popup");
 	const $popupText = $(".modal-popup-text");
 	const $popupYesBtn = $(".modal-popup-yes-btn");
 	const $popupNoBtn = $(".modal-popup-no-btn");
@@ -346,21 +348,24 @@ $(document).ready(function() {
 	// close modal icon
 	$closeBtn.click(function() {
 		quit = true;
-		$popupText.text("All progress will be lost. Are you sure?");
-		$popup.addClass("is-visible");
+		$closePopup.addClass("is-visible");
 	});
 	
-
 	// clear button popup.
 	$clearBtn.click(function() {
 		quit = false;
-		$popupText.text("Are you sure you want to reset your canvas?");
-		$popup.addClass("is-visible");
+		$clearPopup.addClass("is-visible");
+	});
+
+	// save button popup.
+	$saveBtn.click(function() {
+		$savePopup.addClass("is-visible");
 	});
 
 
 	// popup yes btn
 	$popupYesBtn.click(function() {
+
 		if (quit) {
 			$interface.css("display","flex");
 			$mainTitle.css("display","block");
@@ -369,16 +374,14 @@ $(document).ready(function() {
 			$pixelCanvas.toggleClass("slide-right");
 			$modalToolbar.toggleClass("slide-up");
 			$pixelCanvas.empty();
-			$popup.removeClass("is-visible");
-
-			// set draw and color picker back to default color (black)
-			currentColor = "#000000";
+			$closePopup.removeClass("is-visible");
+			currentColor = "#000000"; 	// set draw and color picker back to default color (black)
 			$("#color-icon").css("color", currentColor);
 		}
 
 		else {
 			$pixelCanvas.find("tr td").css("background-color", "white");
-			$popup.removeClass("is-visible");
+			$clearPopup.removeClass("is-visible");
 		}
 	});
 
