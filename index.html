@@ -87,7 +87,7 @@
     <div class="modal"> 
         <div class="modal-content">
             <div class="modal-nav">
-                <div class="modal-close-btn">&times;</div>
+                <div class="close-btn" id="modal-close-btn">&times;</div>
             </div>
 
             <div class="modal-pixel-canvas-container">
@@ -124,7 +124,7 @@
                         <i class="far fa-file modal-toolbar-icon"></i>
                     </div>
     
-                    <div class="modal-download-btn modal-toolbar-icon-container modal-tooltip" >
+                    <div class="modal-save-btn modal-toolbar-icon-container modal-tooltip" >
                         <span class="modal-tooltip-text">Save</span>
                         <i class="fas fa-save modal-toolbar-icon"></i>
                     </div>
@@ -140,6 +140,7 @@
 
     <div class="modal-popup" id="close-popup">
         <div class="modal-popup-content">
+            <div class="close-btn popup-close-btn">&times;</div>
             <p class="modal-popup-text">
                 All progress will be lost. Are you sure?
             </p>
@@ -152,6 +153,7 @@
 
     <div class="modal-popup" id="clear-popup">
         <div class="modal-popup-content">
+            <div class="close-btn popup-close-btn">&times;</div>
             <p class="modal-popup-text">
                 Are you sure you want to reset your canvas?
             </p>
@@ -164,13 +166,18 @@
 
     <div class="modal-popup" id="save-popup">
         <div class="modal-popup-content">
-            <p class="modal-popup-text">
-                
-            </p>
-            <ul class="modal-popup-list">
-                <li class="modal-popup-yes-btn">Yes</li>
-                <li class="modal-popup-no-btn">No</li>
-            </ul>
+            <div class="close-btn popup-close-btn">&times;</div>
+            <form class="save-form" id="save-grid">
+                <label for="saveFileName">File Name:</label>
+                <input type="text" pattern="[a-z A-Z 0-9]+" name="SaveFileName" id="save-file-name">
+                <label for="saveFileExtension">File Extension:</label>
+                <select name="saveFileExtension" id="save-file-extension">
+                    <option selected value="JSON">JSON</option>
+                    <option selected value="txt">TXT</option>
+                </select>
+                <input class="download-btn" id="download-btn" type="submit" value="Download">
+            </form>
+            <a href=""></a>
         </div>
     </div>
 

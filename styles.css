@@ -353,7 +353,7 @@ input[type="number"] {
         to {top: 0px;}
     }
 
-.modal-close-btn {
+.close-btn {
     color: #1f1f1f;
     font-size: 3rem;
     font-weight: bold;
@@ -361,6 +361,8 @@ input[type="number"] {
     margin-right: 1.5rem;
     transition: transform .2s linear 
 }
+
+
 
     .modal-close-btn:hover {
         transform: scale(1.2); 
@@ -586,6 +588,10 @@ input[type="number"] {
     border: solid 2px #1f1f1f;
     border-radius: 10px;
 }
+.popup-close-btn {
+    text-align: right;
+    color: white;
+}
 
 .modal-popup-list {
     list-style-type: none;
@@ -593,6 +599,10 @@ input[type="number"] {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+.modal-popup-text {
+    margin: 1rem 0 2rem 0;
 }
 
 .modal-popup-list li {
@@ -608,6 +618,32 @@ input[type="number"] {
     opacity: 1;
     visibility: visible;
   }
+
+.save-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+    .save-form label {
+        margin: .5rem;
+    }
+
+    .save-form input {
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+    .save-form select {
+        width: 100%;
+        margin: 0 0 3rem;
+    }
+
+.download-btn {
+    align-self: center;
+    height: 30px;
+    width: 30%;
+    border-radius: 2px;
+}
 
 /* =============
     IDs
