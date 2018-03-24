@@ -58,7 +58,7 @@ $(document).ready(function() {
 	let maxWidth;
 
 
-	// string concat cache 16ms
+	// // string concat cache 16ms
 	function makeGrid(height,width) {
 		let tableRows = ''; // store string concatenations aka "cache"
 		let row = 1;
@@ -73,6 +73,33 @@ $(document).ready(function() {
 		$pixelCanvas.append(tableRows); // add grid to dom
 		$modal.css("visibility", "visible");
 	}
+
+	// new paul loop (pure vanilla js)
+	// 	function makeGrid(height,width) {
+	// 		  let grid = document.getElementById('pixel-canvas');
+	//     let rows = $("#inputHeight").val();
+	//     let columns = $("#inputWidth").val();
+
+	//     while (grid.hasChildNodes()) {
+	//       grid.removeChild(grid.lastChild); // delete any previous table rows
+	//     }
+
+	// //Build the grid row by row and then append to the table
+	// //  project rubrics requires use of for and while loops
+
+	//     let tableRows = '';
+	//     let r = 1;
+	//     while (r <= height) {
+	//         tableRows += '<tr>';
+	//         for (let c=1; c <= width; c++) {
+	//             tableRows += '<td></td>';
+	//         }
+	//         tableRows += '</tr>';
+	//         r += 1;
+	//     } // end while loop
+	// 		grid.insertAdjacentHTML('afterbegin', tableRows); // add grid to DOM
+	// 		$modal.css("visibility", "visible");
+	// 	}
 
 	// cache version 34ms
 	// function makeGrid(height,width) {
