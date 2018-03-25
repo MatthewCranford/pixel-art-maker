@@ -214,7 +214,6 @@ $(document).ready(function() {
 
 			e.preventDefault();
 			makeGrid(gridHeight,gridWidth);
-		
 			$interface.css("display","none");
 			$mainTitle.css("display","none");
 		} 
@@ -258,6 +257,7 @@ $(document).ready(function() {
 	// width +/- interface buttons
 	$widthAddBtn.click(function() { // ++
 		let counter = $widthInput.val();
+
 		if (counter < maxWidth) {
 			$widthTooltip.removeClass("interface-tooltip").text("");
 			counter++;
@@ -267,8 +267,10 @@ $(document).ready(function() {
 			$widthTooltip.addClass("interface-tooltip").text("Max width is " + maxWidth);
 		}
 	});
+
 	$widthSubBtn.click(function() { // --
 		let counter = $widthInput.val();
+
 		if (counter > 1) {
 			$widthTooltip.removeClass("interface-tooltip").text("");
 			counter--
@@ -428,7 +430,6 @@ $(document).ready(function() {
 			$clearPopup.removeClass("is-visible");
 			$savePopup.removeClass("is-visible");
 		}
-		
 	});
 
 	// save grid
@@ -450,7 +451,6 @@ $(document).ready(function() {
 			});
 			output["rows"][index] = cols;
 		});
-
 		return JSON.stringify(output,null,"\t"); // return JSON of output
 	}
 
@@ -463,6 +463,5 @@ $(document).ready(function() {
 		console.log(output);
 	});
 		
-
 
 });
