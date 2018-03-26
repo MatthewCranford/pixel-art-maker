@@ -169,7 +169,7 @@
             <div class="close-btn popup-close-btn">&times;</div>
             <form class="save-form" id="save-grid">
                 <label for="saveFileName">File Name:</label>
-                <input type="text" pattern="[a-z A-Z 0-9]+" name="SaveFileName" id="save-file-name">
+                <input type="text" pattern="[a-z A-Z 0-9]+" name="SaveFileName" id="save-file-name" required>
                 <label for="saveFileExtension">File Extension:</label>
                 <select name="saveFileExtension" id="save-file-extension">
                     <option selected value="JSON">JSON</option>
@@ -177,7 +177,7 @@
                 </select>
                 <input class="download-btn" id="download-btn" type="submit" value="Download">
             </form>
-            <a href="#" id="download-element" style="display: none">Download File</a>
+            <!-- <a href="#" id="download-element" style="display: none">Download File</a> -->
         </div>
     </div>
 

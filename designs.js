@@ -456,11 +456,19 @@ $(document).ready(function() {
 
 
 	// download btn submit
-	$downloadBtn = $("#download-btn").on("click", function(e) {
+	$("#save-grid").submit(function(e) {
 		e.preventDefault();
-		console.log("HEYYYY!!");
+		
 		let output = saveGrid();
-		console.log(output);
+		let file = $("#save-file-name").val() + "." + $("#save-file-extension").val();
+		let downloadElement = $('a');
+		
+		downloadElement.attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(output));
+		downloadElement.attr("download", file);
+		$("body").append(downloadElement);
+		downloadElement[0].click
+		console.log(output, file);
+
 	});
 		
 
