@@ -1,9 +1,7 @@
 /* theme colors
-
 #02b3e4d0 blue
 #353636f5 dark gray
 #5f5f5fd0 light gray 
-
 */
 
 /* =============
@@ -420,7 +418,6 @@ input[type="number"] {
     border-radius: 5px;
     position: relative;    
     flex-wrap: wrap;
-
 }
 
 .slide-up {
@@ -463,7 +460,6 @@ input[type="number"] {
     font-size: 1.7rem; 
     cursor: pointer;  
     color: #1f1f1f;
- 
 }
 
 .modal-icon-active svg {
