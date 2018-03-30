@@ -129,7 +129,7 @@
                         <i class="fas fa-save modal-toolbar-icon"></i>
                     </div>
     
-                    <div class="modal-import-btn modal-toolbar-icon-container modal-tooltip" >
+                    <div class="modal-load-btn modal-toolbar-icon-container modal-tooltip" >
                         <span class="modal-tooltip-text">Import</span>
                         <i class="fas fa-folder-open modal-toolbar-icon"></i>
                     </div>            
@@ -176,6 +176,20 @@
                     <option selected value="txt">TXT</option>
                 </select>
                 <input class="download-btn" id="download-btn" type="submit" value="Download">
+            </form>
+            <!-- <a href="#" id="download-element" style="display: none">Download File</a> -->
+        </div>
+    </div>
+
+    <div class="modal-popup" id="load-popup">
+        <div class="modal-popup-content">
+            <div class="close-btn popup-close-btn">&times;</div>
+            <form class="load-form" id="loadGrid">
+                <label>File name:</label>
+                <textarea id="load-file-content" readonly></textarea>
+                <input class="load-file-btn" type="file" id="load-file">
+                <input class="submit-file-btn" type="submit" value="Load Pixel Art File">
+            </form>
             </form>
             <!-- <a href="#" id="download-element" style="display: none">Download File</a> -->
         </div>

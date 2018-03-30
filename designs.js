@@ -38,6 +38,7 @@ $(document).ready(function() {
 	const $closePopup = $("#close-popup");
 	const $clearPopup = $("#clear-popup");
 	const $savePopup = $("#save-popup");
+	const $loadPopup = $("#load-popup");
 	const $popupText = $(".modal-popup-text");
 	const $popupYesBtn = $(".modal-popup-yes-btn");
 	const $popupNoBtn = $(".modal-popup-no-btn");
@@ -45,6 +46,7 @@ $(document).ready(function() {
 	const $modalNav = $(".modal-nav");
 	const $modalToolbar = $(".modal-toolbar");
 	const $saveBtn = $(".modal-save-btn");
+	const $loadBtn = $(".modal-load-btn");
 	const $popupCloseBtn = $(".popup-close-btn")
 
 	
@@ -66,7 +68,7 @@ $(document).ready(function() {
 		while (row <= height) {
 				tableRows += '<tr>';
 				for (let col=1; col <= width; col++) {
-						tableRows += '<td></td>';
+          tableRows += '<td></td>';
 				}
 				tableRows += '</tr>';
 				row += 1;
@@ -400,6 +402,12 @@ $(document).ready(function() {
 	});
 
 
+	// save button popup.
+	$loadBtn.click(function() {
+		$loadPopup.addClass("is-visible");
+	});
+
+
 	// popup yes btn
 	$popupYesBtn.click(function() {
 
@@ -466,7 +474,7 @@ $(document).ready(function() {
 		let downloadElement = $('<a>')
 			.attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(output))
 			.attr("download", file);
-			
+
 		$("body").append(downloadElement);
 		downloadElement[0].click();
 		console.log(output, file);

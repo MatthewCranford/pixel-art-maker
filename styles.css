@@ -641,6 +641,28 @@ input[type="number"] {
     border-radius: 2px;
 }
 
+.load-form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem 1rem;
+}
+
+    .load-file-btn {
+        margin-top: 1rem;
+    }
+    .submit-file-btn {
+        width: 50%;
+        margin: 1rem auto 0;
+    }
+
+    #load-file-content {
+        height: 150px;
+    }
+
+    
+
+    
+
 /* =============
     IDs
 ================*/
