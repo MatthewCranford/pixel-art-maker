@@ -463,12 +463,12 @@ $(document).ready(function() {
 		
 		let output = saveGrid();
 		let file = $("#save-file-name").val() + "." + $("#save-file-extension").val();
-		let downloadElement = $('a');
-		
-		downloadElement.attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(output));
-		downloadElement.attr("download", file);
+		let downloadElement = $('<a>')
+			.attr("href", 'data:text/plain;charset=utf-8,' + encodeURIComponent(output))
+			.attr("download", file);
+			
 		$("body").append(downloadElement);
-		downloadElement[0].click
+		downloadElement[0].click();
 		console.log(output, file);
 
 	});
