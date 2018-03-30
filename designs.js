@@ -47,6 +47,7 @@ $(document).ready(function() {
 	const $saveBtn = $(".modal-save-btn");
 	const $popupCloseBtn = $(".popup-close-btn")
 
+	
 	// grid sizes
 	let smallHeight;
 	let smallWidth;
@@ -364,13 +365,11 @@ $(document).ready(function() {
 	});
 
 	
-
 	$dropperBtn.click(function() {
 		setTool("dropper");
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$dropperBtn.addClass("modal-icon-active");
 	});
-
 
 
 	// condition for popup
@@ -381,16 +380,19 @@ $(document).ready(function() {
 		$closePopup.addClass("is-visible");
 	});
 
+
 	$popupCloseBtn.click(function() {
 		quit = true;
 		$(this).parents().removeClass("is-visible");
 	});
 	
+
 	// clear button popup.
 	$clearBtn.click(function() {
 		quit = false;
 		$clearPopup.addClass("is-visible");
 	});
+
 
 	// save button popup.
 	$saveBtn.click(function() {
