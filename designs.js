@@ -63,6 +63,7 @@ $(document).ready(function() {
 
 	// // string concat cache 16ms
 	function makeGrid(height,width) {
+		$("#pixel-canvas").empty();
 		let tableRows = ''; // store string concatenations aka "cache"
 		let row = 1;
 		while (row <= height) {
@@ -379,6 +380,7 @@ $(document).ready(function() {
 
 	// modal exit
 	$closeBtn.click(function() {
+		quit = true;
 		$closePopup.addClass("is-visible");
 	});
 
@@ -433,6 +435,7 @@ $(document).ready(function() {
 
 	// popup no btn
 	$popupNoBtn.click(function() {
+
 		if (quit) {
 			$closePopup.removeClass("is-visible");
 		}
@@ -456,19 +459,22 @@ $(document).ready(function() {
 		// retrieve col background colors
 		$.each($("#pixel-canvas tr"), function(index,value) {
 			let cols = {};
+
 			$.each(this.cells, function(subIndex,subValue) {
 				cols[subIndex] = $(subValue).css("backgroundColor");	
 			});
+
 			output["rows"][index] = cols;
 		});
+
 		return JSON.stringify(output,null,"\t"); // return JSON of output
 	}
 
 
 	// download btn submit
 	$("#save-grid").submit(function(e) {
+
 		e.preventDefault();
-		
 		let output = saveGrid();
 		let file = $("#save-file-name").val() + "." + $("#save-file-extension").val();
 		let downloadElement = $('<a>')
@@ -477,9 +483,59 @@ $(document).ready(function() {
 
 		$("body").append(downloadElement);
 		downloadElement[0].click();
-		console.log(output, file);
-
 	});
+
+	$("#load-file").on("change",function() {
+
+		$("#load-file-content").val(''); // reset content
+		let file = $(this)[0].files[0];
+		let reader = new FileReader();
+
+		reader.onload = function(e) {
+			let content = e.target.result;
+			$("#load-file-content").val(content);
+		}
+		reader.readAsText(file);
+	})
+
+
+	// load btn submit
+	$("#load-grid").submit(function(e) {
+		e.preventDefault();
+	
+		if (loadGrid($("#load-file-content").val())) {
+			$(this).parents().removeClass("is-visible");
+		}
+		else {
+			alert("error");
+		}
+	});
+
+	function loadGrid(file) {
+		let jsonObject;
+
+		try {
+			jsonObject = $.parseJSON(file);
+	
+		}
+		catch(e) {
+			// console.log(e);
+			return false; // load failure
+		}
+
+		gridHeight = jsonObject.tableProperties.gridHeight;
+		gridWidth = jsonObject.tableProperties.gridWidth;
+		makeGrid(gridHeight,gridWidth);
+
+		// add saved grid's color
+		$.each($('#pixel-canvas tr'), function(index,value) {
+			$.each(this.cells, function(subIndex,subVal) {
+				$(subVal).attr("backgroundColor",jsonObject.rows[index][subIndex]);
+				$(subVal).css("background-color",jsonObject.rows[index][subIndex]);
+			});
+		});
+		return true; // load successful
+	}
 		
 
 });
