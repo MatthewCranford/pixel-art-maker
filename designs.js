@@ -200,10 +200,12 @@ $(document).ready(function() {
 
 	// call makeGrid and pass height/width
 	$("#submitBtn").on("click keyup",function(e) {
+
 		// $pixelCanvas.css("display","block");
 		$modalNav.toggleClass("drop-down");
 		$modalToolbar.toggleClass("slide-up");
 		$pixelCanvas.toggleClass("slide-right");
+
 		// $(".modal-toolbar").css("display","flex");
 		let code = e.keyCode || e.which;
 		gridHeight = parseInt($heightInput.val());
@@ -507,7 +509,7 @@ $(document).ready(function() {
 			$(this).parents().removeClass("is-visible");
 		}
 		else {
-			alert("error");
+			alert("File cannot be loaded. Try a different file.");
 		}
 	});
 
