@@ -334,45 +334,65 @@ input[type="number"] {
     background-color: #02b3e4;
     background-color: #02b3e4d0;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: .2rem 0;
     border: solid #1f1f1f;
     border-width: 2px 0;
     position: relative;
     flex: 0 0 50px; 
+    align-items: center;
 }
 
-.drop-down {
-    animation: dropDown 1s ease-in-out;
-}
-
-    @keyframes dropDown { 
-        from {top: -100px;}
-        to {top: 0px;}
+    .nav-menu {
+        /* display: flex; */
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        height: 25px;
+        cursor: pointer;
+        margin-left: 1.5rem;
+        
+            
     }
 
-.close-btn {
-    color: #1f1f1f;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 1.5rem;
-    transition: transform .2s linear 
-}
-
-
-
-    .modal-close-btn:hover {
-        transform: scale(1.2); 
+    .menu-btn {
+        cursor: pointer;
+        width: 55px;
+        height: 25px;
     }
+
+    .nav-menu ul {
+        margin: 0;
+    }
+
+    .close-btn {
+        color: #1f1f1f;
+        font-size: 3rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-right: 1.5rem;
+        transition: transform .2s linear 
+    }
+
+    .drop-down {
+        animation: dropDown 1s ease-in-out;
+    }
+
+        @keyframes dropDown { 
+            from {top: -100px;}
+            to {top: 0px;}
+        }
+
+  
+
+        .modal-close-btn:hover {
+            transform: scale(1.2); 
+        }
 
 .modal-pixel-canvas-container {
     display: flex;
     flex: 1 1;
     margin: 0 0 1rem 0;
 }
-
-
 
 .modal-pixel-canvas {
     border-collapse: collapse;
