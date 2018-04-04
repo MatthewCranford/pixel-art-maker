@@ -343,27 +343,44 @@ input[type="number"] {
     align-items: center;
 }
 
-    .nav-menu {
+    .nav-dropdown{
         /* display: flex; */
         /* flex-direction: column; */
         /* justify-content: center; */
         height: 25px;
         cursor: pointer;
-        margin-left: 1.5rem;
+        margin-left: 1.5rem;        
+    }
+   
+        .file-btn {
+            cursor: pointer;
+            width: 55px;
+            height: 25px;
+            background-color: #fafafa;
+        }
+
+        .dropdown-content ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            display: none;
+        }
+
+            .nav-dropdown:hover .dropdown-content ul {
+                display: block;
+            }
+
+            .dropdown-content ul li  {
+                background-color: #fafafa;
+                width: 100px;
+                padding: 5px;
+            }
+
+
         
-            
-    }
 
-    .menu-btn {
-        cursor: pointer;
-        width: 55px;
-        height: 25px;
-    }
-
-    .nav-menu ul {
-        margin: 0;
-    }
-
+        
     .close-btn {
         color: #1f1f1f;
         font-size: 3rem;
