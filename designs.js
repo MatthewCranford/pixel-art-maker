@@ -539,10 +539,18 @@ $(document).ready(function() {
 		return true; // load successful
 	}
 		
+	// open dropdown menu
+	$('.dropdown-toggle').click(function(){
+		$(this).next('.dropdown-content').toggle();
+	});
+	
+	// close dropdown menu
+	$(document).click(function(e) {
+		const target = e.target;
 
-	$("#open-dropdown").click(function() {
-		console.log("HEY");
-		$("#dropdown-list").toggleClass("show");
+		if (!$(target).is('.dropdown-toggle') && !$(target).parents().is('.dropdown-toggle')) {
+			$('.dropdown-content').hide();
+		}
 	});
 
 });

@@ -46,9 +46,7 @@ input[type="number"] {
   height: 100%;
 }
 
-.show {
-  display: block;
-}
+
 
 .main-title {
   font-family: 'Press Start 2P', cursive;
@@ -356,25 +354,24 @@ input[type="number"] {
   margin-left: 1.5rem;        
 }
 
-  .dropdown-menu {
+  .dropdown-toggle {
     cursor: pointer;
     width: 55px;
     height: 25px;
-
+    display: inline;
   }
 
-    .menu-btn {
+    .toggle-btn {
       font-size: 1.2rem;
       font-weight: 500;
     }
-
 
     i {
       border: solid black;
       border-width: 0 3px 3px 0;
       display: inline-block;
       padding: 3px;
-      margin: 0 0 3px 5px;
+      margin: 0 0 3px 3px;
     }
 
     .down {
@@ -382,16 +379,13 @@ input[type="number"] {
       -webkit-transform: rotate(45deg);
     }
 
-  .dropdown-content ul {
+  .dropdown-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
     position: absolute;
-    display: none;
+   
   }
-
-
-
 
   .dropdown-content ul li div  {
     background-color: #fafafa;
@@ -399,6 +393,7 @@ input[type="number"] {
     padding: 5px;
     display: flex;
     flex-direction: row; 
+    border: 1px solid #1f1f1f;
   }
     
     .dropdown-content ul li div:hover  {
