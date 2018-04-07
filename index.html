@@ -88,12 +88,18 @@
         <div class="modal-content">
             <div class="modal-nav">
                 <div class="nav-dropdown">
-                    <div class="dropdown-menu">
+                    <div class="dropdown-menu" id="open-dropdown">
                         <span class="menu-btn">File</span>
                         <i class="down"></i>
                     </div>
                     <div class="dropdown-content">
-                        <ul class="menu-list">
+                        <ul id="dropdown-list">
+                            <li>
+                                <div class="modal-clear-btn">
+                                    <i class="far fa-file"></i>
+                                    <span>Clear</span>
+                                </div>
+                            </li>
                             <li>
                                 <div class="modal-save-btn">
                                     <i class="fas fa-save"></i>
@@ -106,6 +112,7 @@
                                     <span>Load</span>
                                 </div>
                             </li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -146,15 +153,7 @@
                         <i class="far fa-file modal-toolbar-icon"></i>
                     </div>
     
-                    <div class="modal-save-btn modal-toolbar-icon-container modal-tooltip" >
-                        <span class="modal-tooltip-text">Save</span>
-                        <i class="fas fa-save modal-toolbar-icon"></i>
-                    </div>
-    
-                    <div class="modal-load-btn modal-toolbar-icon-container modal-tooltip" >
-                        <span class="modal-tooltip-text">Load</span>
-                        <i class="fas fa-folder-open modal-toolbar-icon"></i>
-                    </div>            
+              
                 </div>                
             </div>
         </div>

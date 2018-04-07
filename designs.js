@@ -540,4 +540,9 @@ $(document).ready(function() {
 	}
 		
 
+	$("#open-dropdown").click(function() {
+		console.log("HEY");
+		$("#dropdown-list").toggleClass("show");
+	});
+
 });

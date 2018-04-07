@@ -46,6 +46,10 @@ input[type="number"] {
     height: 100%;
 }
 
+.show {
+    display: block;
+}
+
 .main-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 1.5rem;
@@ -386,9 +390,8 @@ input[type="number"] {
         display: none;
     }
 
-        .nav-dropdown:hover .dropdown-content ul {
-            display: block;
-        }
+
+
 
     .dropdown-content ul li div  {
         background-color: #fafafa;
@@ -398,7 +401,7 @@ input[type="number"] {
         flex-direction: row; 
     }
         
-        .dropdown-content ul li:hover  {
+        .dropdown-content ul li div:hover  {
         background-color: #e0e0e0
         }
 
@@ -781,7 +784,7 @@ input[type="number"] {
     .interface-container {
         width: 60%;
         height: auto;
-        margin-top: 2rem;
+        margin-top: 5rem;
     }
 
     .interface-title {
