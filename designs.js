@@ -557,4 +557,15 @@ $(document).ready(function() {
 		}
 	});
 
+	// td hover color
+	$("#pixel-canvas").on("mouseenter", "td", function() {
+		console.log("HEY!");
+		$(this).css("box-shadow", "inset 0px 0px 1px 5px " + color.currentColor);
+	});
+
+	$("#pixel-canvas").on("mouseleave", "td", function() {
+	
+		$(this).css("box-shadow", "");
+	});
+
 });
