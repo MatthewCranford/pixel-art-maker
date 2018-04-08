@@ -364,7 +364,7 @@ $(document).ready(function() {
 
 	// set draw to false
 	$eraseBtn.click(function() {
-		setTool("erase");;
+		setTool("erase");
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$eraseBtn.addClass("modal-icon-active");
 	});
@@ -384,6 +384,7 @@ $(document).ready(function() {
 	$closeBtn.click(function() {
 		quit = true;
 		$closePopup.addClass("is-visible");
+
 	});
 
 
@@ -426,6 +427,9 @@ $(document).ready(function() {
 			$closePopup.removeClass("is-visible");
 			currentColor = "#000000"; 	// set draw and color picker back to default color (black)
 			$("#color-icon").css("color", currentColor);
+			setTool("draw"); 
+			$(".modal-icon-active").removeClass("modal-icon-active");
+			$paintBtn.addClass("modal-icon-active");
 		}
 
 		else {
