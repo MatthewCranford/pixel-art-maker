@@ -385,7 +385,12 @@ input[type="number"] {
     margin: 0;
     position: absolute;
    
-  }
+	}
+	
+	.dropdown-content{
+		position: relative;
+		z-index: 100;
+	}
 
   .dropdown-content ul li div  {
     background-color: #fafafa;
@@ -393,11 +398,13 @@ input[type="number"] {
     padding: 5px;
     display: flex;
     flex-direction: row; 
-    border: 1px solid #1f1f1f;
+		border: 1px solid #1f1f1f;
+
   }
     
     .dropdown-content ul li div:hover  {
-    background-color: #e0e0e0
+		background-color: #1f1f1f;
+		color: #fafafa;
     }
 
   .dropdown-content ul li span {
