@@ -317,8 +317,17 @@ $(document).ready(function() {
 				$(e.target).css("background-color", "white");
 			}
 			else if (currentTool == "dropper") {
+
 				setColor($(e.target).css("background-color"));
 				setColorIcon();
+
+				$(".announcement-text").text(currentColor + " copied!");
+				setTool("draw");
+				$(".announcement-container").fadeIn();
+				$(".announcement-container").fadeOut(4000);
+				
+				$(".modal-icon-active").removeClass("modal-icon-active");
+				$paintBtn.addClass("modal-icon-active");
 			}	
 		}		
 	});
@@ -563,9 +572,12 @@ $(document).ready(function() {
 		$(this).css("box-shadow", "inset 0px 0px 1px 5px " + color.currentColor);
 	});
 
+
+	// remove td hover color
 	$("#pixel-canvas").on("mouseleave", "td", function() {
-	
 		$(this).css("box-shadow", "");
 	});
+
+
 
 });

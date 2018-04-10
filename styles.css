@@ -14,7 +14,7 @@ body, html {
 
 body {
   text-align: center;
-  background: url("https://www.dropbox.com/s/u9fy4h8y303v15v/square-2724387_1920.jpg?raw=1") no-repeat center center fixed;
+  background: url("https://github.com/MatthewCranford/my-files/blob/master/square-2724387_640.jpg?raw=true") no-repeat center center fixed;
   background-size: cover;
   /* background: linear-gradient(to right, #283048, #859398); */
   font-family: Arial, Helvetica, sans-serif;
@@ -59,7 +59,7 @@ input[type="number"] {
   border: solid #1f1f1f;
   border-width: 2px 0;
   position: relative;
-  animation: titleSlideRight 2.5s ease-in-out;
+  animation: titleSlideRight 1.5s ease-in-out;
 }
 
   @keyframes titleSlideRight {
@@ -71,7 +71,7 @@ input[type="number"] {
 .interface-container {
   width: 100%;
   box-shadow: 5px 5px 11px #1f1f1f;
-  animation: interfaceDropDown 1.5s ease-in-out;
+  animation: interfaceDropDown 1s ease-in-out;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -325,7 +325,7 @@ input[type="number"] {
   height: 100%;
   top: 0;
   z-index: 1;
-  background: url("https://www.dropbox.com/s/u9fy4h8y303v15v/square-2724387_1920.jpg?raw=1") no-repeat center center fixed;
+  /* background: url("https://www.dropbox.com/s/u9fy4h8y303v15v/square-2724387_1920.jpg?raw=1") no-repeat center center fixed; */
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -436,8 +436,27 @@ input[type="number"] {
 .modal-pixel-canvas-container {
   display: flex;
   flex: 1 1;
-  margin: 0 0 1rem 0;
+	margin: 0 0 1rem 0;
+	
 }
+
+	.announcement-container {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		top: 10%;
+		z-index: 1;
+		padding: 10px;
+		border-radius: 4px;
+		background-color: #1f1f1f;
+		display: none;
+
+	}
+
+	.announcement-container {
+		color: #fafafa
+	}
+
 
   .modal-pixel-canvas {
     border-collapse: collapse;
