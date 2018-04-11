@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-
 	// jquery selectors
 	const $mainTitle = $(".main-title");
 	// interface
@@ -73,9 +72,10 @@ $(document).ready(function() {
 				}
 				tableRows += '</tr>';
 				row += 1;
-		} 
+		}     
 		$pixelCanvas.append(tableRows); // add grid to dom
 		$modal.css("visibility", "visible");
+		$("#pixel-canvas").css("cursor","url("+brushUrl+" ), default");
 	}
 
 	// new paul loop (pure vanilla js)
@@ -304,6 +304,7 @@ $(document).ready(function() {
 	}
 	setTool("draw");
 	
+	
 	// left mouse button handler
 	$pixelCanvas.on("mousedown mouseover","td", function(e) {
 		e.preventDefault();
@@ -328,6 +329,7 @@ $(document).ready(function() {
 				
 				$(".modal-icon-active").removeClass("modal-icon-active");
 				$paintBtn.addClass("modal-icon-active");
+				$("body").css("cursor","url("+brushUrl+" ), default");
 			}	
 		}		
 	});
@@ -363,11 +365,18 @@ $(document).ready(function() {
 	})
 
 
+	let brushUrl = "https://www.dropbox.com/s/t4f3mawc99ba8wy/brush.png?raw=1"
+	let eraserUrl = "https://www.dropbox.com/s/ybao1zb4kbau40f/eraser.png?raw=1"
+	let dropperUrl = "https://www.dropbox.com/s/q5q6743q5r2f167/dropper.png?raw=1"
+
+	
+
 	// set draw to true
 	$paintBtn.click(function() {
 		setTool("draw");
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$paintBtn.addClass("modal-icon-active");
+		$("#pixel-canvas").css("cursor","url("+brushUrl+" ), default");
 	});
 
 
@@ -376,6 +385,7 @@ $(document).ready(function() {
 		setTool("erase");
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$eraseBtn.addClass("modal-icon-active");
+		$("#pixel-canvas").css("cursor","url("+eraserUrl+" ), default");
 	});
 
 	
@@ -383,6 +393,7 @@ $(document).ready(function() {
 		setTool("dropper");
 		$(".modal-icon-active").removeClass("modal-icon-active");
 		$dropperBtn.addClass("modal-icon-active");
+		$("#pixel-canvas").css("cursor","url("+dropperUrl+" ), default");
 	});
 
 

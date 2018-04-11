@@ -18,7 +18,7 @@ body {
   background-size: cover;
   /* background: linear-gradient(to right, #283048, #859398); */
   font-family: Arial, Helvetica, sans-serif;
-  margin: 0;   
+	margin: 0;                    ;
 }
 
 /* Hide HTML5 Up and Down arrows. */
@@ -484,7 +484,7 @@ input[type="number"] {
 
       .modal-pixel-canvas td:hover {
         box-shadow: inset 0px 0px 1px 5px #02b3e4;
-        cursor: pointer;
+        /* cursor: pointer; */
       }
 
 .modal-toolbar {
@@ -528,7 +528,7 @@ input[type="number"] {
   padding: 4px;
   background-color: #fafafa;
   margin: .2rem .6rem .2rem 0;
-  transition: transform .2s linear;
+	/* transition: transform .2s linear; glitches out mousover icons? */ 
   height: 25px;
 }
 
